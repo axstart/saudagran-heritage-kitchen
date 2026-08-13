@@ -93,7 +93,7 @@ logo-lockup {
 }
 
 .logo-wordmark--nav {
-  font-size: clamp(1.15rem, 3.6vw, 1.55rem);
+  font-size: clamp(1.55rem, 4.2vw + 0.7rem, 2.45rem);
 }
 
 .logo-wordmark--md {
@@ -101,11 +101,11 @@ logo-lockup {
 }
 
 .logo-wordmark--hero {
-  font-size: clamp(2.6rem, 10vw, 5.6rem);
+  font-size: clamp(3.05rem, 11.5vw, 6.4rem);
 }
 
 .logo-wordmark--footer {
-  font-size: clamp(1.45rem, 4vw, 1.85rem);
+  font-size: clamp(1.65rem, 4.2vw, 2.1rem);
 }
 
 .logo-tagline {
@@ -160,8 +160,8 @@ logo-lockup {
 .logo-seal--nav,
 .logo-seal--icon,
 .logo-seal--plain {
-  width: 3rem;
-  height: 3rem;
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
 .logo-seal--md {
@@ -170,8 +170,8 @@ logo-lockup {
 }
 
 .logo-seal--footer {
-  width: 5.25rem;
-  height: 5.25rem;
+  width: 5.75rem;
+  height: 5.75rem;
 }
 
 .logo-seal--hero {
@@ -185,7 +185,8 @@ logo-lockup {
 }
 
 .brand-home {
-  gap: 0.55rem;
+  gap: 0.65rem;
+  overflow: hidden;
 }
 
 h1 logo-wordmark,
@@ -203,13 +204,13 @@ h1 .logo-wordmark {
 
 @media (max-width: 767px) {
   .brand-home {
-    max-width: calc(100% - 9.5rem);
+    max-width: calc(100% - 7.25rem);
   }
 }
 
 @media (max-width: 380px) {
   .logo-wordmark--nav {
-    font-size: 1.05rem;
+    font-size: clamp(1.45rem, 8.2vw, 1.7rem);
   }
   .logo-tagline {
     white-space: normal;
@@ -219,16 +220,16 @@ h1 .logo-wordmark {
 
 @media (max-width: 340px) {
   .logo-wordmark--nav {
-    font-size: 0.95rem;
+    font-size: 1.4rem;
   }
   .logo-seal--nav,
   .logo-seal--icon,
   .logo-seal--plain {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
   .brand-home {
-    gap: 0.4rem;
+    gap: 0.45rem;
   }
 }
 
@@ -278,6 +279,26 @@ h1 .logo-wordmark {
   background: rgba(245, 245, 240, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
+}
+
+.nav-glass nav {
+  min-height: 4.75rem;
+  height: auto;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+@media (min-width: 768px) {
+  .nav-glass nav {
+    min-height: 5.25rem;
+  }
+
+  .logo-seal--nav,
+  .logo-seal--icon,
+  .logo-seal--plain {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
 }
 
 .hero-flyer {

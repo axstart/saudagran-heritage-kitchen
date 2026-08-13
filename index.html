@@ -1016,8 +1016,8 @@
     <a href="#menu" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[80] focus:bg-saffron focus:px-4 focus:py-2 focus:text-cocoa">Skip to menu</a>
 
     <header class="nav-glass sticky top-0 z-50">
-      <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" aria-label="Primary">
-        <a href="#top" class="brand-home tap flex h-12 min-h-12 min-w-0 items-center">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" aria-label="Primary">
+        <a href="#top" class="brand-home tap flex min-h-12 min-w-0 items-center">
           <logo-seal size="nav" plain></logo-seal>
           <logo-wordmark size="nav"></logo-wordmark>
         </a>
@@ -1039,9 +1039,9 @@
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
           </button>
-          <button data-open-cart class="btn-gold tap inline-flex items-center gap-2 px-4 text-sm" aria-label="Open cart">
+          <button data-open-cart class="btn-gold tap inline-flex shrink-0 items-center gap-2 px-3 text-sm sm:px-4" aria-label="Open cart">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            Cart
+            <span class="hidden sm:inline">Cart</span>
             <span data-cart-badge data-count="0" class="cart-badge">0</span>
           </button>
         </div>
