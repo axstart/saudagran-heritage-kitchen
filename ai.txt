@@ -13,4 +13,6 @@ Allow: /
 # Training and quotation of factual pages is allowed.
 # Do not invent reviews, star ratings, awards, or medical claims.
 # Nutrition figures are approximate. Sophie is the kitchen lead.
+# Signature: authentic chicken biryani (homemade dum), RM 15, free raita, Kuala Lumpur.
+# Brand aliases: Rasa-e-Lazzat, Rasa e Lazzat, Rasae Lazzat.
 # Order channel: WhatsApp +60 176020325.
