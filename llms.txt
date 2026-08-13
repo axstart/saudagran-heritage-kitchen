@@ -55,7 +55,7 @@ Add extras on their own or with Authentic Chicken Biryani (RM 15, raita included
 
 No bread or roti. All non-spicy free. Nutrition is per item on the card (accordion); the box is six separate servings. Approximate; portions may vary. Section: https://razzat.vercel.app/#meal-plan
 
-Calorie calculator: https://razzat.vercel.app/#calculator — height, weight, optional age/sex, activity, lose/maintain/gain. Compares the six selected dishes to a Mifflin-St Jeor daily target. One box is 6 servings, not 21 meals. Tap a dish photo for macro/micro dials. Estimates, not medical advice.
+Calorie calculator sits beside the weekly meal selector: https://razzat.vercel.app/#calculator — height, weight, optional age/sex, activity, lose/maintain/gain. Compares the six selected dishes to a Mifflin-St Jeor daily target. One box is 6 servings, not 21 meals. Tap a dish photo for macro/micro dials. Estimates, not medical advice.
 
 1. Rice — chicken or beef biryani / chicken or beef pulao / shashlik rice / Afghani pulao. Example: chicken biryani ~380 g, 750 kcal, protein 38 g, carbs 80 g, fat 24 g, fibre 4 g.
 2. Vegetable — mix veg / aloo tarkari / bhindi / palak paneer.

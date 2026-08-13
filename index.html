@@ -2530,7 +2530,7 @@
           <h2 id="meal-plan-title" class="section-title text-2xl sm:text-3xl">Weekly meal</h2>
           <p class="body-copy mt-2 text-sm">6 items · RM 100 · no bread.</p>
 
-          <div class="plan-grid mt-8">
+          <div class="plan-calc-split">
             <article class="plan-card featured" id="product-plan-weekly" data-plan-card="plan-weekly">
               <h3 class="section-title text-lg">Weekly meal</h3>
               <p class="mt-1 text-xs text-muted">6 items · RM 100 · no bread</p>
@@ -2638,99 +2638,98 @@
                 <button type="button" data-add="plan-weekly" class="btn-gold tap px-4 text-sm">Subscribe</button>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
 
-      <section id="calculator" class="calc-band py-16 sm:py-20" aria-labelledby="calculator-title">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 id="calculator-title" class="section-title text-2xl sm:text-3xl">Your targets</h2>
-          <p class="body-copy mt-2 text-sm">One RM 100 box is 6 servings — not 21 meals. Tap a dish photo for dials.</p>
+            <aside id="calculator" class="calc-compact" aria-labelledby="calculator-title">
+              <div class="calc-card">
+                <h3 id="calculator-title" class="section-title text-lg">Your targets</h3>
+                <form class="calc-form" id="calc-form" data-calc-form>
+                  <div class="calc-row">
+                    <div class="calc-field">
+                      <span class="calc-label-row">
+                        Height
+                        <span class="calc-seg calc-seg-mini" role="group" aria-label="Height unit">
+                          <button type="button" class="calc-seg-btn is-on tap" data-height-unit="cm" aria-pressed="true">cm</button>
+                          <button type="button" class="calc-seg-btn tap" data-height-unit="ft" aria-pressed="false">ft</button>
+                        </span>
+                      </span>
+                      <div data-height-cm>
+                        <input class="calc-input" name="cm" type="number" inputmode="decimal" min="120" max="220" step="0.1" placeholder="165" aria-label="Height in centimetres">
+                      </div>
+                      <div class="calc-ft" data-height-ft hidden>
+                        <input class="calc-input" name="ft" type="number" inputmode="numeric" min="4" max="7" placeholder="5" aria-label="Feet">
+                        <input class="calc-input" name="inch" type="number" inputmode="decimal" min="0" max="11" step="0.5" placeholder="5" aria-label="Inches">
+                      </div>
+                    </div>
+                    <div class="calc-field">
+                      Weight
+                      <input class="calc-input" name="kg" type="number" inputmode="decimal" min="35" max="200" step="0.1" placeholder="kg" aria-label="Weight in kilograms">
+                    </div>
+                  </div>
+                  <div class="calc-row">
+                    <div class="calc-field">
+                      Age
+                      <input class="calc-input" name="age" type="number" inputmode="numeric" min="15" max="80" placeholder="30" aria-label="Age in years, optional">
+                    </div>
+                    <div class="calc-field">
+                      Sex
+                      <div class="calc-seg" role="group" aria-label="Sex, optional">
+                        <button type="button" class="calc-seg-btn tap" data-sex="female" aria-pressed="false">F</button>
+                        <button type="button" class="calc-seg-btn tap" data-sex="male" aria-pressed="false">M</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calc-field calc-field-wide">
+                    Activity
+                    <div class="calc-seg" role="group" aria-label="Activity">
+                      <button type="button" class="calc-seg-btn tap" data-activity="sedentary" aria-pressed="false" aria-label="Sedentary">Sit</button>
+                      <button type="button" class="calc-seg-btn is-on tap" data-activity="light" aria-pressed="true">Light</button>
+                      <button type="button" class="calc-seg-btn tap" data-activity="moderate" aria-pressed="false" aria-label="Moderate">Move</button>
+                    </div>
+                  </div>
+                  <div class="calc-field calc-field-wide">
+                    Goal
+                    <div class="calc-seg" role="group" aria-label="Goal">
+                      <button type="button" class="calc-seg-btn tap" data-goal="lose" aria-pressed="false">Lose</button>
+                      <button type="button" class="calc-seg-btn is-on tap" data-goal="maintain" aria-pressed="true" aria-label="Maintain">Keep</button>
+                      <button type="button" class="calc-seg-btn tap" data-goal="gain" aria-pressed="false">Gain</button>
+                    </div>
+                  </div>
+                </form>
 
-          <form class="calc-card calc-form" id="calc-form" data-calc-form>
-            <div class="calc-row">
-              <div class="calc-field">
-                Height
-                <div class="calc-seg" role="group" aria-label="Height unit">
-                  <button type="button" class="calc-seg-btn is-on tap" data-height-unit="cm" aria-pressed="true">cm</button>
-                  <button type="button" class="calc-seg-btn tap" data-height-unit="ft" aria-pressed="false">ft/in</button>
+                <div class="calc-out" data-calc-out>
+                  <dl class="calc-nums">
+                    <div class="calc-num">
+                      <dt>Daily</dt>
+                      <dd><span data-calc-daily>2,000</span> <span class="calc-unit">kcal</span></dd>
+                    </div>
+                    <div class="calc-num">
+                      <dt>Box</dt>
+                      <dd><span data-calc-box-kcal>2,340</span> <span class="calc-unit">kcal</span></dd>
+                    </div>
+                  </dl>
+                  <p class="calc-copy-muted calc-copy" data-calc-box-macros>123 g P · 214 g C · 102 g F · 25 g Fi</p>
+                  <div class="calc-bar" aria-hidden="true"><span data-calc-bar style="width:17%"></span></div>
+                  <p class="calc-fill"><strong data-calc-fill-kcal>17%</strong> of week · protein <strong data-calc-fill-pro>15%</strong></p>
+                  <div class="calc-dials" data-calc-macros></div>
+                  <div class="calc-detail" data-calc-detail hidden></div>
+                  <details class="calc-more">
+                    <summary class="tap">
+                      <span>More</span>
+                      <span class="faq-chevron text-saffron-deep" aria-hidden="true">▾</span>
+                    </summary>
+                    <div class="calc-dials calc-dials-micro" data-calc-micros></div>
+                  </details>
+                  <div class="calc-stash" hidden>
+                    <span data-calc-weekly>14,000</span>
+                    <p data-calc-scale></p>
+                    <p data-calc-gap></p>
+                    <p data-calc-vs></p>
+                    <p data-calc-tip></p>
+                    <p data-calc-note></p>
+                  </div>
                 </div>
-                <div data-height-cm>
-                  <input class="calc-input" name="cm" type="number" inputmode="decimal" min="120" max="220" step="0.1" placeholder="165" aria-label="Height in centimetres">
-                </div>
-                <div class="calc-ft" data-height-ft hidden>
-                  <input class="calc-input" name="ft" type="number" inputmode="numeric" min="4" max="7" placeholder="5" aria-label="Feet">
-                  <input class="calc-input" name="inch" type="number" inputmode="decimal" min="0" max="11" step="0.5" placeholder="5" aria-label="Inches">
-                </div>
               </div>
-              <div class="calc-field">
-                Weight
-                <input class="calc-input" name="kg" type="number" inputmode="decimal" min="35" max="200" step="0.1" placeholder="kg" aria-label="Weight in kilograms">
-              </div>
-            </div>
-            <div class="calc-row">
-              <div class="calc-field">
-                Age <span class="font-medium normal-case tracking-normal text-muted">optional</span>
-                <input class="calc-input" name="age" type="number" inputmode="numeric" min="15" max="80" placeholder="30" aria-label="Age in years">
-              </div>
-              <div class="calc-field">
-                Sex <span class="font-medium normal-case tracking-normal text-muted">optional</span>
-                <div class="calc-seg" role="group" aria-label="Sex">
-                  <button type="button" class="calc-seg-btn tap" data-sex="female" aria-pressed="false">F</button>
-                  <button type="button" class="calc-seg-btn tap" data-sex="male" aria-pressed="false">M</button>
-                </div>
-              </div>
-            </div>
-            <div class="calc-field calc-field-wide">
-              Activity
-              <div class="calc-seg" role="group" aria-label="Activity">
-                <button type="button" class="calc-seg-btn tap" data-activity="sedentary" aria-pressed="false">Sedentary</button>
-                <button type="button" class="calc-seg-btn is-on tap" data-activity="light" aria-pressed="true">Light</button>
-                <button type="button" class="calc-seg-btn tap" data-activity="moderate" aria-pressed="false">Moderate</button>
-              </div>
-            </div>
-            <div class="calc-field calc-field-wide">
-              Goal
-              <div class="calc-seg" role="group" aria-label="Goal">
-                <button type="button" class="calc-seg-btn tap" data-goal="lose" aria-pressed="false">Lose</button>
-                <button type="button" class="calc-seg-btn is-on tap" data-goal="maintain" aria-pressed="true">Maintain</button>
-                <button type="button" class="calc-seg-btn tap" data-goal="gain" aria-pressed="false">Gain</button>
-              </div>
-            </div>
-          </form>
-
-          <div class="calc-card" data-calc-out>
-            <dl class="calc-nums">
-              <div class="calc-num">
-                <dt>Daily</dt>
-                <dd><span data-calc-daily>2,000</span> <span class="text-sm font-semibold text-muted">kcal</span></dd>
-              </div>
-              <div class="calc-num">
-                <dt>Weekly</dt>
-                <dd><span data-calc-weekly>14,000</span> <span class="text-sm font-semibold text-muted">kcal</span></dd>
-              </div>
-            </dl>
-            <p class="calc-copy mt-3"><strong data-calc-box-kcal>2,340</strong> kcal from this box (6 servings)</p>
-            <p class="calc-copy-muted calc-copy" data-calc-box-macros>123 g protein · 214 g carbs · 102 g fat · 25 g fibre</p>
-            <div class="calc-bar" aria-hidden="true"><span data-calc-bar style="width:17%"></span></div>
-            <p class="calc-fill">Weekly kcal <strong data-calc-fill-kcal>17%</strong> · protein <strong data-calc-fill-pro>15%</strong></p>
-            <p class="calc-copy-muted calc-copy" data-calc-scale></p>
-            <p class="calc-copy" data-calc-gap></p>
-            <p class="calc-copy" data-calc-vs></p>
-            <p class="calc-copy-muted calc-copy" data-calc-tip></p>
-            <p class="calc-copy-muted calc-copy text-xs" data-calc-note>Approximate; not medical advice.</p>
-
-            <p class="calc-copy mt-4 text-xs font-bold uppercase tracking-wide text-earth">This box ÷ 7 days vs daily goal</p>
-            <div class="calc-dials" data-calc-macros></div>
-            <div class="calc-detail" data-calc-detail hidden></div>
-            <details class="calc-more">
-              <summary class="tap">
-                <span>More nutrients</span>
-                <span class="faq-chevron text-saffron-deep" aria-hidden="true">▾</span>
-              </summary>
-              <div class="calc-dials calc-dials-micro" data-calc-micros></div>
-            </details>
-            <p class="calc-copy-muted calc-copy text-xs">Estimates, not lab tests. Not affiliated with MyFitnessPal.</p>
+            </aside>
           </div>
         </div>
       </section>
@@ -2875,7 +2874,7 @@
                   Calories and allergens?
                   <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
                 </summary>
-                <p class="body-copy pb-3 text-sm">On each menu card, under Nutrition &amp; allergens. Tap a dish photo for dials versus your daily goal. Weekly meal: change slots, then see <a class="font-medium text-earth hover:underline" href="#calculator">Your targets</a>. Approximate. Shared kitchen: dairy, gluten, nuts, sesame, mustard.</p>
+                <p class="body-copy pb-3 text-sm">On each menu card, under Nutrition &amp; allergens. Tap a dish photo for dials versus your daily goal. Weekly meal: change slots — the box vs daily goal updates beside them. Approximate. Shared kitchen: dairy, gluten, nuts, sesame, mustard.</p>
               </details>
               <details class="faq-item group px-0 py-1">
                 <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-cocoa">

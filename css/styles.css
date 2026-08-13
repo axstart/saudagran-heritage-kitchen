@@ -1329,9 +1329,30 @@ h1 .logo-wordmark {
   gap: 1.25rem;
 }
 
+.plan-calc-split {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  align-items: start;
+}
+
+.plan-calc-split > * {
+  min-width: 0;
+}
+
 @media (min-width: 900px) {
   .plan-grid {
     grid-template-columns: minmax(0, 36rem);
+  }
+
+  .plan-calc-split {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 1.15rem;
+  }
+
+  .calc-compact {
+    position: sticky;
+    top: 5rem;
   }
 }
 
@@ -1515,37 +1536,64 @@ h1 .logo-wordmark {
 
 /* ——— Calorie calculator + nutrient dials ——— */
 
-.calc-band {
-  background:
-    radial-gradient(ellipse 55% 40% at 8% 0%, rgba(119, 160, 71, 0.1), transparent 55%),
-    var(--cream);
-  border-top: 1px solid var(--line);
+.calc-compact {
+  min-width: 0;
 }
 
 .calc-card {
-  margin-top: 1.25rem;
+  margin-top: 0;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 1.1rem 1.1rem 1.2rem;
+  padding: 0.85rem 0.9rem 1rem;
+}
+
+.calc-compact .calc-card {
+  padding: 0.85rem 0.9rem 0.95rem;
+}
+
+.calc-compact .calc-form {
+  margin-top: 0.65rem;
+}
+
+.calc-label-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.calc-seg-mini {
+  width: 100%;
+}
+
+.calc-unit {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.calc-out {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--line);
 }
 
 .calc-form {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.55rem;
 }
 
 .calc-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
+  gap: 0.5rem;
 }
 
 .calc-field {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  font-size: 0.68rem;
+  gap: 0.22rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1561,8 +1609,8 @@ h1 .logo-wordmark {
   display: block;
   width: 100%;
   min-height: 48px;
-  margin-top: 0.15rem;
-  padding: 0 0.7rem;
+  margin-top: 0;
+  padding: 0 0.55rem;
   border: 1px solid rgba(107, 62, 38, 0.28);
   border-radius: 6px;
   background: #fff;
@@ -1585,18 +1633,19 @@ h1 .logo-wordmark {
 
 .calc-seg {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.28rem;
 }
 
 .calc-seg-btn {
   flex: 1;
   min-height: 48px;
+  padding: 0 0.3rem;
   border: 1px solid rgba(107, 62, 38, 0.22);
   border-radius: 6px;
   background: #fff;
   color: var(--cocoa);
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: none;
   letter-spacing: 0;
@@ -1610,11 +1659,11 @@ h1 .logo-wordmark {
 .calc-nums {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
+  gap: 0.45rem;
 }
 
 .calc-num dt {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1622,15 +1671,15 @@ h1 .logo-wordmark {
 }
 
 .calc-num dd {
-  margin: 0.15rem 0 0;
-  font-size: 1.45rem;
+  margin: 0.1rem 0 0;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--cocoa);
 }
 
 .calc-bar {
-  margin-top: 0.85rem;
-  height: 10px;
+  margin-top: 0.5rem;
+  height: 8px;
   border-radius: 999px;
   background: rgba(107, 62, 38, 0.1);
   overflow: hidden;
@@ -1644,15 +1693,15 @@ h1 .logo-wordmark {
 }
 
 .calc-fill {
-  margin: 0.45rem 0 0;
-  font-size: 0.78rem;
+  margin: 0.3rem 0 0;
+  font-size: 0.72rem;
   color: var(--muted);
 }
 
 .calc-copy {
-  margin: 0.7rem 0 0;
-  font-size: 0.82rem;
-  line-height: 1.45;
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
   color: var(--cocoa);
 }
 
@@ -1671,6 +1720,12 @@ h1 .logo-wordmark {
   .calc-dials {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+}
+
+.calc-compact .calc-dials {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.28rem;
+  margin-top: 0.5rem;
 }
 
 .calc-dials-micro {
@@ -1791,6 +1846,82 @@ h1 .logo-wordmark {
 
 .calc-more summary::-webkit-details-marker {
   display: none;
+}
+
+.calc-compact .calc-dials-micro {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.calc-compact .calc-dial {
+  gap: 0.12rem;
+  min-width: 0;
+  padding: 0.2rem 0.08rem 0.22rem;
+  border-radius: 8px;
+}
+
+.calc-compact .calc-ring {
+  width: 2.85rem;
+  height: 2.85rem;
+}
+
+.calc-compact .calc-dial-center {
+  top: 0.52rem;
+}
+
+.calc-compact .calc-dial-center strong {
+  font-size: 0.58rem;
+}
+
+.calc-compact .calc-dial-center em {
+  font-size: 0.48rem;
+}
+
+.calc-compact .calc-dial-label {
+  font-size: 0.52rem;
+  text-align: center;
+  line-height: 1.1;
+  max-width: 100%;
+}
+
+.calc-compact .calc-more {
+  margin-top: 0.45rem;
+}
+
+.calc-compact .calc-more summary {
+  padding: 0 0.7rem;
+  font-size: 0.75rem;
+}
+
+.calc-compact .calc-detail {
+  margin-top: 0.45rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.calc-compact .calc-stat {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 900px) {
+  .calc-label-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .calc-seg-mini {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .calc-seg-mini .calc-seg-btn {
+    flex: 0 0 auto;
+    min-width: 40px;
+    padding: 0 0.5rem;
+  }
+
+  .calc-compact .calc-input {
+    min-height: 40px;
+  }
 }
 
 .calc-detail {

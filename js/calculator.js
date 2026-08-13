@@ -575,32 +575,45 @@
     const kcalPct = goals.weeklyKcal > 0 ? clamp(box.kcal / goals.weeklyKcal, 0, 1) : 0;
     const proPct = goals.weeklyProtein > 0 ? box.protein / goals.weeklyProtein : 0;
 
+    const setText = (sel, text) => {
+      const el = out.querySelector(sel);
+      if (el) el.textContent = text;
+    };
+
     out.hidden = false;
-    out.querySelector("[data-calc-daily]").textContent = goals.kcal.toLocaleString("en");
-    out.querySelector("[data-calc-weekly]").textContent = goals.weeklyKcal.toLocaleString("en");
-    out.querySelector("[data-calc-box-kcal]").textContent = box.kcal.toLocaleString("en");
-    out.querySelector("[data-calc-box-macros]").textContent =
-      box.protein + " g protein · " + box.carbs + " g carbs · " + box.fat + " g fat · " + box.fibre + " g fibre";
-    out.querySelector("[data-calc-bar]").style.width = round(kcalPct * 100) + "%";
-    out.querySelector("[data-calc-fill-kcal]").textContent = round((box.kcal / goals.weeklyKcal) * 100) + "%";
-    out.querySelector("[data-calc-fill-pro]").textContent = round(proPct * 100) + "%";
-    out.querySelector("[data-calc-gap]").textContent = gapCopy(box, goals, input.goal);
-    out.querySelector("[data-calc-vs]").textContent = vsTarget(box, goals, input.goal);
-    out.querySelector("[data-calc-tip]").textContent = slotTip(currentPicks(), gifts());
-    out.querySelector("[data-calc-note]").textContent = goals.usedDefaults
-      ? "Using a 2000 kcal day until you enter height and weight. Approximate; not medical advice."
-      : (goals.ageAssumed ? "Age treated as 30. " : "") +
-        (goals.sexAssumed ? "Sex midpoint used for BMR. " : "") +
-        "Approximate; not medical advice.";
+    setText("[data-calc-daily]", goals.kcal.toLocaleString("en"));
+    setText("[data-calc-weekly]", goals.weeklyKcal.toLocaleString("en"));
+    setText("[data-calc-box-kcal]", box.kcal.toLocaleString("en"));
+    setText(
+      "[data-calc-box-macros]",
+      box.protein + " g P · " + box.carbs + " g C · " + box.fat + " g F · " + box.fibre + " g Fi"
+    );
+    const bar = out.querySelector("[data-calc-bar]");
+    if (bar) bar.style.width = round(kcalPct * 100) + "%";
+    setText("[data-calc-fill-kcal]", round((box.kcal / goals.weeklyKcal) * 100) + "%");
+    setText("[data-calc-fill-pro]", round(proPct * 100) + "%");
+    setText("[data-calc-gap]", gapCopy(box, goals, input.goal));
+    setText("[data-calc-vs]", vsTarget(box, goals, input.goal));
+    setText("[data-calc-tip]", slotTip(currentPicks(), gifts()));
+    setText(
+      "[data-calc-note]",
+      goals.usedDefaults
+        ? "Using a 2000 kcal day until you enter height and weight. Approximate; not medical advice."
+        : (goals.ageAssumed ? "Age treated as 30. " : "") +
+            (goals.sexAssumed ? "Sex midpoint used for BMR. " : "") +
+            "Approximate; not medical advice."
+    );
 
     const sixDay = goals.kcal * 6;
-    out.querySelector("[data-calc-scale]").textContent =
+    setText(
+      "[data-calc-scale]",
       "Box " +
-      box.kcal.toLocaleString("en") +
-      " kcal · 6 days of goals " +
-      sixDay.toLocaleString("en") +
-      " · 7-day week " +
-      goals.weeklyKcal.toLocaleString("en");
+        box.kcal.toLocaleString("en") +
+        " kcal · 6 days of goals " +
+        sixDay.toLocaleString("en") +
+        " · 7-day week " +
+        goals.weeklyKcal.toLocaleString("en")
+    );
 
     renderDials(out.querySelector("[data-calc-macros]"), perDay, goals, openDialKey);
     renderMicroDials(out.querySelector("[data-calc-micros]"), perDay, goals, openDialKey);

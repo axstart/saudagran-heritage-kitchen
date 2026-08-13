@@ -138,7 +138,7 @@ No bread, roti, or naan. All non-spicy free. Nutrition is per item (accordion on
 
 Example (chicken biryani): ~380 g, 750 kcal, protein 38 g, carbs 80 g, fat 24 g, fibre 4 g.
 
-Calorie calculator: https://razzat.vercel.app/#calculator — height, weight, optional age/sex, activity, lose (−500 kcal/day) / maintain / gain (+400). Mifflin-St Jeor BMR. The six selected dishes are summed from the card. One box is 6 servings, not 21 meals. Tap a dish photo for macro/micro dials versus the daily goal. Estimates, not medical advice. Not affiliated with MyFitnessPal.
+Calorie calculator sits beside the weekly meal selector: https://razzat.vercel.app/#calculator — height, weight, optional age/sex, activity, lose (−500 kcal/day) / maintain / gain (+400). Mifflin-St Jeor BMR. The six selected dishes are summed from the card. One box is 6 servings, not 21 meals. Tap a dish photo for macro/micro dials versus the daily goal. Estimates, not medical advice. Not affiliated with MyFitnessPal.
 
 ## Entity names (keep consistent)
 
