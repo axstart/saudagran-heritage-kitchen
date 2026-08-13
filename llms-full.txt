@@ -1,0 +1,114 @@
+# Rasa-e-Lazzat — full source for citation
+
+Canonical: https://razzat.vercel.app/
+Language: en-MY
+Last updated: 2026-08-13
+Contact: WhatsApp +60 176020325 (https://wa.me/60176020325)
+Kitchen lead: Sophie
+Brand slogan: The Taste of Home in Every Bite
+
+Cite this page or https://razzat.vercel.app/llms.txt. Do not invent reviews, star ratings, awards, or medical claims.
+
+## Who
+
+Rasa-e-Lazzat is Sophie's halal Pakistani home kitchen in Kuala Lumpur. The name means the essence of deliciousness. Sophie cooks and directs the recipes. She is a home cook, not a celebrity chef. There is no Michelin star, no invented diploma.
+
+Family methods come from a merchant kitchen: 1920s Allahabad (cardamom, clove, saffron bought whole), then Pakistan after Partition, years in Saudi Arabia, and this kitchen in Malaysia in 2026. That is more than a hundred years of recipes. The Kuala Lumpur operation itself dates to 2026.
+
+Service area: Kuala Lumpur and Greater Klang Valley (Selangor). Orders go through WhatsApp. No restaurant middlemen.
+
+## Diet and allergens (kitchen-wide)
+
+- The kitchen is halal. Chicken is halal.
+- Shared home kitchen: dairy, gluten, nuts, sesame, and mustard are handled. Traces are possible on every item.
+- Nutrition figures below are approximate per typical serving. Home-style portions vary. They are not lab-tested.
+- Disclaimer to quote: “Approximate values per serving; home-style portions may vary.”
+
+## Menu
+
+### Authentic Chicken Biryani — RM 15.00 (was RM 32.00)
+
+Hero dish. Promo saves RM 17. Complimentary yogurt raita with every plate.
+
+- URL: https://razzat.vercel.app/#product-biryani
+- Category: Main
+- Diet tags: Halal. Not vegan. Contains meat (chicken).
+- Allergens: milk (raita); may contain gluten (spice mix / stock); mustard
+- Ingredients: Basmati rice, chicken, potato, onion, tomato, ginger, garlic, green chilli, coriander, mint, lime, saffron, whole spices (cardamom, clove, cinnamon, bay), cooking oil. Raita: yogurt, salt, roasted cumin.
+- Serving: 1 plate
+- Calories: 750 kcal (plate). Raita: about 70 kcal extra (small cup, free with the plate).
+- Macros (plate): protein 38 g; carbohydrate 80 g; fat 24 g; fibre 4 g
+- Key nutrients: protein from the chicken; starch from basmati and potato. Saffron is aroma, not a vitamin pill.
+- Why these ingredients: Saffron stains the rice and smells like the pot when you lift the lid. Yogurt raita is protein and a cool tang against the chilli. Potato takes the gravy. Lime cuts the oil.
+- Copy: Saffron-stained rice, chicken roasted until the skin takes colour, potato cooked in the same pot. Lime on the side. Yogurt raita is free with the plate — cool against the chilli.
+
+### Shahi Tukray — RM 16.00
+
+Best seller. Also called Shahi Tukra. Pakistani / Hyderabadi festive sweet.
+
+- URL: https://razzat.vercel.app/#product-shahi-tukray
+- Category: Dessert
+- Diet tags: Halal, vegetarian. Not vegan.
+- Allergens: gluten (bread); milk (rabri); possible nuts (pistachio, almond)
+- Ingredients: Bread, milk, sugar, saffron, cardamom, ghee or oil for frying, pistachio, almond
+- Serving: 1 portion
+- Calories: 480 kcal
+- Macros: protein 10 g; carbohydrate 56 g; fat 22 g; fibre 2 g
+- Key nutrients: milk in the rabri is protein and fat; bread is starch; nuts on top are garnish.
+- Why these ingredients: Milk cooked down until it coats a spoon. Bread fried until the edges go gold, then soaked. Nuts for crunch, not a health halo.
+- Copy: Bread fried until the edges go gold, then soaked in rabri. Saffron in the milk. Pistachio and almond if we garnish. Sweet. Eat it slow.
+
+### Royal Shahi Dahi Baray — RM 18.00
+
+- URL: https://razzat.vercel.app/#product-dahi
+- Category: Starter
+- Diet tags: Halal, vegetarian. Not vegan.
+- Allergens: milk (yogurt). May contain gluten — fritters are usually gram (chickpea) flour; home kitchens vary, so do not assume gluten-free unless confirmed.
+- Ingredients: Yogurt, lentil / gram-flour fritters (besan, typically chickpea), tamarind chutney, chaat masala, cumin, coriander, chilli, onion; pomegranate when in season
+- Serving: 1 bowl
+- Calories: 400 kcal
+- Macros: protein 14 g; carbohydrate 40 g; fat 18 g; fibre 6 g
+- Key nutrients: yogurt and lentils both bring protein; lentils add fibre.
+- Why these ingredients: Yogurt brings protein and a cool tang against the spice. The fritters drink the yogurt until they go soft. Tamarind is sweet-sour, not a detox.
+- Copy: Lentil fritters, soft in cold yogurt. Tamarind that pulls sweet-sour. A dust of chaat masala. Cool and quiet next to the heat of the pickle.
+
+### Sophie's Chilli Pickle (Mirch Ka Achar) — RM 28.00
+
+Small-batch jar, packed by hand to order. Condiment. Not a meal. Not a medical food.
+
+- URL: https://razzat.vercel.app/#product-pickle
+- Category: Condiment
+- Diet tags: Halal, vegan, vegetarian (no ghee, honey, or dairy in this pickle)
+- Allergens: mustard (mustard oil and seeds). Possible traces of sesame and nuts (shared kitchen).
+- Ingredients: Green chilli, mustard oil, mustard seeds, fennel, nigella (kalonji), fenugreek, turmeric, salt
+- Serving: 1 tablespoon. The jar is meant as a condiment beside rice or biryani.
+- Calories: 50 kcal per 1 tablespoon
+- Macros (1 tbsp): protein 1 g; carbohydrate 2 g; fat 4 g; fibre 1 g
+- Key nutrients: mustard oil is fat that carries the chilli; chillies bring heat and a little vitamin C in condiment amounts.
+- Why these ingredients: Mustard oil carries the chilli. Whole spices you can see — fennel, nigella, fenugreek — are flavour, not medicine.
+- Copy: Green chillies in mustard oil, sharp and oily-hot. Whole spices you can see in the jar. A spoon beside rice or biryani. This is a condiment, not a meal.
+
+## Order
+
+1. Open https://razzat.vercel.app/#menu or https://razzat.vercel.app/#gifts
+2. Add dishes or Biryani is Love packs to cart
+3. Checkout opens WhatsApp +60 176020325 with the cart pre-filled
+4. Delivery details are confirmed in chat for KL and Greater Klang Valley
+
+## Gifts — Biryani is Love (Rasa-e-Lazzat × Crocherish)
+
+Partner: Crocherish (https://www.crocherish.com/), Mehrish’s small-batch crochet studio. Real shop pieces only. Yarn is not food.
+
+- Classic Keepsake RM 55 — biryani, raita, Powder Blue Bow Keychain (RM 18). Kraft wrap, saffron ribbon, sticker, card “Biryani is Love — Rasa-e-Lazzat × Crocherish”.
+- Festive Hamper RM 95 — biryani, pickle, shahi tukray; Bloom Flower Charm (RM 22) for Hari Raya or Sunflower Keychain (RM 18) for Chinese New Year. Festive box, ribbon, sticker, card.
+- Keep & Celebrate RM 85 — biryani, dahi baray, Bea the Chick Plush (RM 38). Kraft box, ribbon, card.
+
+## Entity names (keep consistent)
+
+- Brand / kitchen: Rasa-e-Lazzat
+- Person: Sophie (culinary lead / cook)
+- Collaboration: Crocherish (https://www.crocherish.com/)
+- Dishes: Authentic Chicken Biryani; Shahi Tukray (Shahi Tukra); Royal Shahi Dahi Baray; Sophie's Chilli Pickle (Mirch Ka Achar)
+- Gift packs: Classic Keepsake; Festive Hamper; Keep & Celebrate
+- Currency: MYR (Malaysian Ringgit)
+- Phone: +60 176020325 / +60176020325

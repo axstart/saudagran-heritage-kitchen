@@ -274,6 +274,112 @@ h1 .logo-wordmark {
   position: relative;
 }
 
+.hero-flyer--cinema {
+  min-height: min(100svh, 58rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #1a1008 url("../assets/rasa-biryani.png") center / cover no-repeat;
+}
+
+.hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: contrast(1.14) saturate(1.28) sepia(0.14) brightness(0.88);
+  transform: scale(1.08);
+  animation: hero-kenburns 22s ease-in-out infinite alternate;
+}
+
+.hero-media-grade,
+.hero-media-vignette,
+.hero-media-rays,
+.hero-media-steam {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-media-grade {
+  background:
+    linear-gradient(180deg, rgba(18, 10, 5, 0.62) 0%, rgba(45, 27, 16, 0.28) 42%, rgba(18, 10, 5, 0.7) 100%),
+    linear-gradient(90deg, rgba(18, 10, 5, 0.38), transparent 28%, transparent 72%, rgba(18, 10, 5, 0.38));
+}
+
+.hero-media-vignette {
+  box-shadow: inset 0 0 140px 48px rgba(8, 4, 2, 0.58);
+}
+
+.hero-media-rays {
+  inset: -12%;
+  background:
+    radial-gradient(ellipse 48% 36% at 72% 18%, rgba(232, 162, 61, 0.26), transparent 58%),
+    radial-gradient(ellipse 36% 28% at 28% 78%, rgba(232, 162, 61, 0.1), transparent 52%);
+  mix-blend-mode: screen;
+  animation: hero-rays 14s ease-in-out infinite alternate;
+}
+
+.hero-media-steam {
+  background: radial-gradient(ellipse 62% 38% at 50% 72%, rgba(255, 246, 228, 0.14), transparent 62%);
+  mix-blend-mode: soft-light;
+  animation: hero-steam 9s ease-in-out infinite alternate;
+}
+
+.hero-flyer--cinema .logo-wordmark,
+.hero-flyer--cinema .promo-line {
+  color: var(--cream);
+  text-shadow: 0 2px 22px rgba(8, 4, 2, 0.5);
+}
+
+.hero-flyer--cinema .logo-tagline {
+  color: rgba(250, 250, 246, 0.9);
+  text-shadow: 0 1px 14px rgba(8, 4, 2, 0.45);
+}
+
+.hero-flyer--cinema .hero-content .text-cocoa {
+  color: #f3e6c8;
+}
+
+.hero-flyer--cinema .hero-content .text-earth {
+  color: #efc56a;
+}
+
+.hero-flyer--cinema .hero-content a:not(.btn-gold) {
+  color: inherit;
+}
+
+.hero-flyer--cinema .price-was {
+  color: rgba(250, 250, 246, 0.55);
+}
+
+.hero-flyer--cinema .hero-food {
+  box-shadow: 0 18px 56px rgba(8, 4, 2, 0.48);
+}
+
+@keyframes hero-kenburns {
+  from { transform: scale(1.06); }
+  to { transform: scale(1.18); }
+}
+
+@keyframes hero-rays {
+  from { opacity: 0.72; transform: translate3d(0, 0, 0); }
+  to { opacity: 1; transform: translate3d(-2%, 1.5%, 0); }
+}
+
+@keyframes hero-steam {
+  from { opacity: 0.55; transform: translateY(6px) scale(1); }
+  to { opacity: 0.95; transform: translateY(-8px) scale(1.06); }
+}
+
 .hero-food {
   width: min(100%, 34rem);
   aspect-ratio: 1 / 0.95;
@@ -361,6 +467,31 @@ h1 .logo-wordmark {
   .era-panel {
     display: block;
   }
+}
+
+.story-pickle {
+  width: 100%;
+}
+
+.story-pickle-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(28rem, 70vw);
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+.story-pickle-caption {
+  margin: 0;
+  padding: 0.9rem 1.15rem 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  color: var(--muted);
+  background: var(--cream);
 }
 
 .card-lux {
@@ -494,6 +625,427 @@ h1 .logo-wordmark {
   border: 1px solid var(--line);
 }
 
+/* ——— Diet / allergen chips + nutrition panel ——— */
+
+.diet-chips,
+.allergen-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.55rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.chip-diet {
+  color: #3f5c24;
+  background: rgba(119, 160, 71, 0.16);
+  border: 1px solid rgba(119, 160, 71, 0.38);
+}
+
+.chip-allergen {
+  color: var(--earth);
+  background: rgba(107, 62, 38, 0.06);
+  border: 1px solid rgba(107, 62, 38, 0.18);
+}
+
+.chip-meat {
+  color: var(--cocoa);
+  background: rgba(232, 162, 61, 0.14);
+  border: 1px solid rgba(232, 162, 61, 0.4);
+}
+
+.nutrition-panel {
+  margin-top: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.nutrition-panel summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+.nutrition-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.nutrition-panel[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.nutrition-body {
+  padding: 0 0.85rem 0.95rem;
+  border-top: 1px solid var(--line);
+}
+
+.nutrition-body h4 {
+  margin: 0.85rem 0 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.nutrition-body p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.kcal-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  margin-top: 0.15rem;
+}
+
+.kcal-line strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+.macro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.macro-cell {
+  margin: 0;
+  padding: 0.4rem 0.45rem;
+  border-radius: 6px;
+  background: var(--marble);
+  text-align: center;
+}
+
+.macro-cell dt {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.macro-cell dd {
+  margin: 0.12rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+.nutrition-note {
+  margin-top: 0.85rem !important;
+  font-size: 0.7rem !important;
+  font-style: italic;
+}
+
+.press-facts dl {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.55rem 1rem;
+  margin: 0;
+}
+
+.press-facts dt {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--earth);
+}
+
+.press-facts dd {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.footer-credit {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.footer-credit a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--earth);
+}
+
+@media (max-width: 420px) {
+  .press-facts dl {
+    grid-template-columns: 1fr;
+    gap: 0.15rem 0;
+  }
+
+  .press-facts dt {
+    margin-top: 0.55rem;
+  }
+
+  .press-facts dt:first-child {
+    margin-top: 0;
+  }
+}
+
+/* ——— DuitNow checkout QR ——— */
+
+.pay-qr {
+  margin-top: 0.25rem;
+  padding: 1rem 0 0.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.pay-qr h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.pay-qr p {
+  margin: 0 0 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.pay-qr-frame {
+  display: block;
+  width: min(100%, 17.5rem);
+  margin: 0 auto 0.85rem;
+  padding: 0.55rem;
+  background: #fff;
+  border: 1px solid rgba(107, 62, 38, 0.18);
+  border-radius: 8px;
+}
+
+.pay-qr-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pay-amount {
+  margin: 0 0 0.25rem;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--earth);
+}
+
+.cart-confirm {
+  padding: 0.5rem 0 0.25rem;
+}
+
+.cart-confirm h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* ——— Biryani is Love / Crocherish gifts ——— */
+
+.gifts-band {
+  background:
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(232, 162, 61, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 96% 80%, rgba(119, 160, 71, 0.1), transparent 50%),
+    var(--cream);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.gift-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.gift-chip {
+  border: 1px solid rgba(107, 62, 38, 0.22);
+  background: #fff;
+  color: var(--cocoa);
+  border-radius: 999px;
+  padding: 0 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.gift-chip:hover {
+  border-color: var(--saffron);
+  background: rgba(232, 162, 61, 0.1);
+}
+
+.gift-chip.is-on {
+  background: var(--saffron);
+  border-color: var(--saffron-deep);
+  color: var(--cocoa);
+}
+
+.gift-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .gift-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gift-pack {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: opacity 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gift-pack.is-dim {
+  opacity: 0.42;
+}
+
+.gift-pack:hover,
+.gift-pack:focus-within {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(45, 27, 16, 0.08);
+}
+
+.gift-visual {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 11.5rem;
+  background: var(--earth);
+}
+
+.gift-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gift-food {
+  object-position: 48% 42%;
+}
+
+.gift-crochet {
+  object-position: 50% 40%;
+  border-left: 3px solid #fff;
+}
+
+.gift-badge {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 1;
+  border-radius: 4px;
+  background: var(--saffron);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+.gift-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.gift-packaging {
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  background: var(--marble);
+  border: 1px dashed rgba(107, 62, 38, 0.28);
+}
+
+.gift-packaging h4 {
+  margin: 0 0 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.gift-packaging p {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.gift-cart-occasion,
+.gift-occasion {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0.25rem;
+  padding: 0 0.7rem;
+  border: 1px solid rgba(107, 62, 38, 0.28);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--cocoa);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.gift-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -503,6 +1055,14 @@ h1 .logo-wordmark {
   .cart-drawer,
   .toast {
     transition: none;
+    animation: none;
+  }
+  .hero-video {
+    display: none;
+  }
+  .hero-media-rays,
+  .hero-media-steam,
+  .hero-video {
     animation: none;
   }
 }

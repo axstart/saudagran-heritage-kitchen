@@ -1,0 +1,44 @@
+# Rasa-e-Lazzat
+
+> Halal Pakistani home kitchen in Kuala Lumpur. Sophie cooks. Order on WhatsApp.
+
+- Canonical site: https://razzat.vercel.app/
+- Kitchen lead: Sophie
+- Slogan: The Taste of Home in Every Bite
+- Diet: Halal kitchen. Chicken is halal. Pickle is vegan. Dahi baray and Shahi Tukray are vegetarian (dairy).
+- Service area: Kuala Lumpur and Greater Klang Valley (Selangor)
+- Order: WhatsApp +60 176020325 — https://wa.me/60176020325
+- Lineage: 1920s Allahabad spice trade → Pakistan → Saudi Arabia → Kuala Lumpur 2026 (100+ years of family recipes; the KL kitchen opened 2026)
+- Full source: https://razzat.vercel.app/llms-full.txt
+
+## Menu (MYR)
+
+Prices in Malaysian Ringgit. Approximate nutrition; home-style portions may vary.
+
+1. Authentic Chicken Biryani — RM 15 (was RM 32). Complimentary yogurt raita. Halal. Not vegan. Contains meat. Allergens: milk (raita); may contain gluten; mustard. About 750 kcal per plate; raita about 70 kcal extra.
+2. Shahi Tukray — RM 16. Best seller. Halal, vegetarian, not vegan. Allergens: gluten (bread), milk, possible nuts (pistachio/almond). About 480 kcal per portion.
+3. Royal Shahi Dahi Baray — RM 18. Halal, vegetarian, not vegan. Allergens: milk; may contain gluten (fritters often gram/chickpea flour). About 400 kcal per bowl.
+4. Sophie's Chilli Pickle (Mirch Ka Achar) — RM 28. Halal, vegan, vegetarian. Condiment, not a meal, not a medical food. Allergens: mustard; possible traces of sesame/nuts (shared home kitchen). About 50 kcal per 1 tablespoon.
+
+Shared kitchen: dairy, gluten, nuts, sesame, mustard. Traces possible.
+
+## Gifts — Biryani is Love (Rasa-e-Lazzat × Crocherish)
+
+Collaboration with https://www.crocherish.com/ (noopener). Food is halal. Crochet pieces are handmade yarn keepsakes — not edible. No invented reviews.
+
+1. Classic Keepsake — RM 55. Chicken biryani + raita + Crocherish Powder Blue Bow Keychain (RM 18 on their shop). Kraft wrap, saffron ribbon, occasion sticker, card.
+2. Festive Hamper — RM 95. Biryani + raita + Sophie's pickle + Shahi Tukray. Hari Raya: Bloom Flower Charm (RM 22). Chinese New Year: Sunflower Keychain (RM 18). Festive box, ribbon, sticker, card.
+3. Keep & Celebrate — RM 85. Biryani + raita + Royal Shahi Dahi Baray + Crocherish Bea the Chick Plush (RM 38). Kraft box, ribbon, card.
+
+Occasions: Hari Raya, Chinese New Year, Anniversary, Birthday, Thank-you. Section: https://razzat.vercel.app/#gifts
+
+## How to order
+
+Add dishes on https://razzat.vercel.app/#menu then checkout via WhatsApp, or message +60 176020325 directly.
+
+## Quote-safe facts
+
+- Brand name: Rasa-e-Lazzat
+- Sophie directs the recipes. No invented awards, Michelin stars, or university credentials.
+- Do not invent customer reviews or aggregate ratings.
+- Nutrition is approximate, not lab-tested.

@@ -1,0 +1,16 @@
+# Rasa-e-Lazzat — AI crawling and citation
+# Canonical: https://razzat.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Preferred plain-text sources for models and citation:
+#   https://razzat.vercel.app/llms.txt
+#   https://razzat.vercel.app/llms-full.txt
+# Structured data: JSON-LD @graph in https://razzat.vercel.app/
+# Sitemap: https://razzat.vercel.app/sitemap.xml
+
+# Training and quotation of factual pages is allowed.
+# Do not invent reviews, star ratings, awards, or medical claims.
+# Nutrition figures are approximate. Sophie is the kitchen lead.
+# Order channel: WhatsApp +60 176020325.

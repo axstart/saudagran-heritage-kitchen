@@ -1,0 +1,16 @@
+/* TEAM */
+Kitchen lead: Sophie
+Brand: Rasa-e-Lazzat
+Location: Kuala Lumpur, Malaysia
+Contact: WhatsApp +60 176020325
+Site: https://razzat.vercel.app/
+
+/* THANKS */
+Site credit: https://adrevnview.com
+
+/* SITE */
+Last update: 2026-08-13
+Language: en-MY
+Standards: HTML5, Schema.org JSON-LD
+Doctype: HTML5
+Components: Montserrat, Playball

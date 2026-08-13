@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitchen · Rasa-e-Lazzat</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#F5F5F0" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <div id="gate">
+      <form class="gate-card" id="login-form">
+        <h1>Kitchen</h1>
+        <p>Back office for orders, stock, and a simple P&amp;L. Sign in to continue.</p>
+        <label for="login-user">Username</label>
+        <input id="login-user" name="username" type="text" autocomplete="username" maxlength="64" required />
+        <label for="login-pass">Password</label>
+        <input id="login-pass" name="password" type="password" autocomplete="current-password" maxlength="64" required />
+        <p class="gate-error" id="login-error" role="alert"></p>
+        <button type="submit" class="btn-gold tap">Open kitchen</button>
+        <a class="gate-back" href="index.html">Back to the menu</a>
+      </form>
+    </div>
+
+    <div id="app">
+      <header class="topbar">
+        <p class="brand-mark">Rasa-e-Lazzat<span>Kitchen board</span></p>
+        <nav class="nav" aria-label="Kitchen">
+          <button type="button" class="tap" data-view="dashboard" aria-current="page">Dashboard</button>
+          <button type="button" class="tap" data-view="orders">Orders</button>
+          <button type="button" class="tap" data-view="inventory">Stock</button>
+          <button type="button" class="tap" data-view="costing">Costing</button>
+          <button type="button" class="tap" data-view="pnl">P&amp;L</button>
+        </nav>
+        <button type="button" class="btn-ghost tap" id="logout">Logout</button>
+      </header>
+      <main class="main" id="view"></main>
+    </div>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal-card" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div id="modal-body"></div>
+      </div>
+    </div>
+    <div id="toasts" class="toast-host" aria-live="polite"></div>
+
+    <script src="js/inventory-data.js"></script>
+    <script src="js/gifts.js"></script>
+    <script src="js/kitchen-store.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

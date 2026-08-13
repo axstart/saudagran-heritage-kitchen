@@ -9,6 +9,8 @@ credentials.json
 # Figma / prototype source artifacts
 extracted/
 *.zip
+.tools/
+assets/hero-biryani-src.mp4
 
 # OS
 .DS_Store

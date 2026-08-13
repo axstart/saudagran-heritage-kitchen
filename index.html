@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-MY">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rasa-e-Lazzat | The Taste of Home in Every Bite</title>
+    <title>Rasa-e-Lazzat | Halal Pakistani Home Kitchen, KL</title>
     <meta
       name="description"
-      content="Rasa-e-Lazzat — The Taste of Home in Every Bite. Authentic Chicken Biryani now available in Kuala Lumpur. Order via WhatsApp +60 176020325. Also serving Shahi Tukray, Shahi Dahi Baray, and Sophie's Chilli Pickle."
+      content="Halal Pakistani home cooking in Kuala Lumpur. Chicken biryani RM 15 with free raita, Shahi Tukray, Dahi Baray, Sophie's chilli pickle. WhatsApp +60 176020325."
     />
+    <meta name="author" content="Sophie, Rasa-e-Lazzat" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#F5F5F0" />
-    <link rel="canonical" href="https://saudagranheritage.kitchen/" />
-    <meta property="og:title" content="Rasa-e-Lazzat | The Taste of Home in Every Bite" />
+    <link rel="canonical" href="https://razzat.vercel.app/" />
+    <link rel="sitemap" type="application/xml" href="https://razzat.vercel.app/sitemap.xml" />
+    <link rel="author" href="https://razzat.vercel.app/humans.txt" />
+    <link rel="alternate" type="text/plain" href="https://razzat.vercel.app/llms.txt" title="LLM source" />
+    <meta property="og:locale" content="en_MY" />
+    <meta property="og:site_name" content="Rasa-e-Lazzat" />
+    <meta property="og:title" content="Rasa-e-Lazzat | Halal Pakistani Home Kitchen, KL" />
     <meta
       property="og:description"
-      content="Authentic Chicken Biryani now available! Order today via WhatsApp +60 176020325. Follow Rasa-e-Lazzat on Facebook."
+      content="Sophie's halal kitchen in KL. Chicken biryani RM 15 with free raita. Shahi Tukray, Dahi Baray, chilli pickle. WhatsApp +60 176020325."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/rasa-biryani.png" />
+    <meta property="og:url" content="https://razzat.vercel.app/" />
+    <meta property="og:image" content="https://razzat.vercel.app/assets/rasa-biryani.png" />
+    <meta property="og:image:alt" content="Chicken biryani with saffron rice, roasted chicken, potato, coriander, and lime" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rasa-e-Lazzat | Halal Pakistani Home Kitchen, KL" />
+    <meta
+      name="twitter:description"
+      content="Halal Pakistani home cooking in Kuala Lumpur. Chicken biryani RM 15 with free raita. Order on WhatsApp +60 176020325."
+    />
+    <meta name="twitter:image" content="https://razzat.vercel.app/assets/rasa-biryani.png" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,56 +70,235 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Restaurant",
-            "@id": "https://saudagranheritage.kitchen/#restaurant",
+            "@type": "PostalAddress",
+            "@id": "https://razzat.vercel.app/#address",
+            "addressLocality": "Kuala Lumpur",
+            "addressRegion": "Wilayah Persekutuan",
+            "addressCountry": "MY"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://razzat.vercel.app/#sophie",
+            "name": "Sophie",
+            "jobTitle": "Culinary lead",
+            "worksFor": { "@id": "https://razzat.vercel.app/#organization" },
+            "description": "Sophie cooks for Rasa-e-Lazzat in Kuala Lumpur. She directs the home recipes — biryani, achar, dahi baray, shahi tukray — carried from a 1920s Allahabad merchant kitchen through Pakistan and Saudi Arabia. Home cook, not a restaurant CV. No invented awards."
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://razzat.vercel.app/#organization",
             "name": "Rasa-e-Lazzat",
-            "image": "assets/rasa-biryani.png",
-            "description": "Rasa-e-Lazzat — The Taste of Home in Every Bite. Authentic Pakistani home cooking in Kuala Lumpur: Chicken Biryani, Shahi Tukray, Shahi Dahi Baray, and Sophie's Chilli Pickle (Mirch Ka Achar). Order direct via WhatsApp.",
+            "url": "https://razzat.vercel.app/",
+            "logo": "https://razzat.vercel.app/assets/favicon.svg",
+            "image": "https://razzat.vercel.app/assets/rasa-biryani.png",
             "slogan": "The Taste of Home in Every Bite",
-            "servesCuisine": ["Pakistani", "South Asian", "Mughlai", "Heritage Home Cooking"],
-            "priceRange": "RM15–RM28",
-            "telephone": "+60176020325",
-            "foundingDate": "1920",
-            "areaServed": [
-              { "@type": "City", "name": "Kuala Lumpur" },
-              { "@type": "AdministrativeArea", "name": "Greater Klang Valley" }
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Kuala Lumpur",
-              "addressRegion": "Wilayah Persekutuan",
-              "addressCountry": "MY"
+            "description": "Rasa-e-Lazzat is Sophie's halal Pakistani home kitchen in Kuala Lumpur. Family recipes run from 1920s Allahabad spice trade through Pakistan and Saudi Arabia to Malaysia in 2026. Order via WhatsApp +60 176020325. Service area: Kuala Lumpur and Greater Klang Valley.",
+            "founder": { "@id": "https://razzat.vercel.app/#sophie" },
+            "address": { "@id": "https://razzat.vercel.app/#address" },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "telephone": "+60176020325",
+              "url": "https://wa.me/60176020325",
+              "availableLanguage": ["en", "ms"],
+              "areaServed": "MY"
             },
+            "knowsAbout": [
+              "Pakistani cuisine",
+              "Chicken biryani",
+              "Mirch Ka Achar",
+              "Shahi Tukra",
+              "Shahi Dahi Baray",
+              "Halal home cooking",
+              "Crocherish",
+              "Gift hampers"
+            ]
+          },
+          {
+            "@type": "Restaurant",
+            "@id": "https://razzat.vercel.app/#restaurant",
+            "name": "Rasa-e-Lazzat",
+            "url": "https://razzat.vercel.app/",
+            "image": "https://razzat.vercel.app/assets/rasa-biryani.png",
+            "description": "Halal Pakistani home kitchen in Kuala Lumpur, led by Sophie. Chicken biryani RM 15 with complimentary yogurt raita, Shahi Tukray RM 16, Royal Shahi Dahi Baray RM 18, Sophie's Chilli Pickle RM 28. Family recipes from the 1920s; KL kitchen 2026. WhatsApp +60 176020325.",
+            "slogan": "The Taste of Home in Every Bite",
+            "servesCuisine": ["Pakistani", "South Asian", "Mughlai"],
+            "priceRange": "RM15–RM95",
+            "currenciesAccepted": "MYR",
+            "telephone": "+60176020325",
+            "foundingDate": "2026",
+            "founder": { "@id": "https://razzat.vercel.app/#sophie" },
+            "parentOrganization": { "@id": "https://razzat.vercel.app/#organization" },
+            "address": { "@id": "https://razzat.vercel.app/#address" },
             "geo": {
               "@type": "GeoCoordinates",
               "latitude": 3.139,
               "longitude": 101.6869
             },
-            "hasMenu": "https://saudagranheritage.kitchen/#menu",
+            "areaServed": [
+              { "@type": "City", "name": "Kuala Lumpur" },
+              { "@type": "AdministrativeArea", "name": "Selangor" },
+              { "@type": "AdministrativeArea", "name": "Greater Klang Valley" }
+            ],
+            "hasMenu": { "@id": "https://razzat.vercel.app/#foodmenu" },
             "acceptsReservations": "False",
-            "url": "https://saudagranheritage.kitchen/",
-            "sameAs": ["https://www.facebook.com/search/top?q=Rasa-e-Lazzat"]
+            "knowsAbout": [
+              "Pakistani cuisine",
+              "Chicken biryani",
+              "Mirch Ka Achar",
+              "Halal cooking",
+              "Crocherish collaboration",
+              "Gift hampers"
+            ],
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "Family recipe lineage",
+                "value": "1920s Allahabad to 2026 Kuala Lumpur"
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Diet",
+                "value": "Halal"
+              }
+            ]
           },
           {
             "@type": "Brand",
-            "@id": "https://saudagranheritage.kitchen/#brand",
+            "@id": "https://razzat.vercel.app/#brand",
             "name": "Rasa-e-Lazzat",
-            "slogan": "The Taste of Home in Every Bite"
+            "slogan": "The Taste of Home in Every Bite",
+            "url": "https://razzat.vercel.app/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://razzat.vercel.app/#website",
+            "url": "https://razzat.vercel.app/",
+            "name": "Rasa-e-Lazzat",
+            "description": "Official site for Rasa-e-Lazzat, Sophie's halal Pakistani home kitchen in Kuala Lumpur.",
+            "inLanguage": "en-MY",
+            "publisher": { "@id": "https://razzat.vercel.app/#organization" },
+            "about": { "@id": "https://razzat.vercel.app/#restaurant" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://razzat.vercel.app/#webpage",
+            "url": "https://razzat.vercel.app/",
+            "name": "Rasa-e-Lazzat | Halal Pakistani Home Kitchen, KL",
+            "isPartOf": { "@id": "https://razzat.vercel.app/#website" },
+            "about": { "@id": "https://razzat.vercel.app/#restaurant" },
+            "primaryImageOfPage": "https://razzat.vercel.app/assets/rasa-biryani.png",
+            "inLanguage": "en-MY",
+            "dateModified": "2026-08-13",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["#press-facts", "#faq", "#gifts", ".promo-line"]
+            },
+            "mainEntity": { "@id": "https://razzat.vercel.app/#restaurant" },
+            "breadcrumb": { "@id": "https://razzat.vercel.app/#breadcrumb" },
+            "mentions": [
+              { "@id": "https://razzat.vercel.app/#sophie" },
+              { "@id": "https://razzat.vercel.app/#biryani" },
+              { "@id": "https://razzat.vercel.app/#pickle" },
+              { "@id": "https://razzat.vercel.app/#dahi-baray" },
+              { "@id": "https://razzat.vercel.app/#shahi-tukray" },
+              { "@id": "https://razzat.vercel.app/#gift-classic" },
+              { "@id": "https://razzat.vercel.app/#gift-festive" },
+              { "@id": "https://razzat.vercel.app/#gift-celebrate" }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://razzat.vercel.app/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://razzat.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Menu",
+                "item": "https://razzat.vercel.app/#menu"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Gifts",
+                "item": "https://razzat.vercel.app/#gifts"
+              }
+            ]
+          },
+          {
+            "@type": "NutritionInformation",
+            "@id": "https://razzat.vercel.app/#biryani-nutrition",
+            "name": "Authentic Chicken Biryani, per plate",
+            "servingSize": "1 plate",
+            "calories": "750 kcal",
+            "proteinContent": "38 g",
+            "carbohydrateContent": "80 g",
+            "fatContent": "24 g",
+            "fiberContent": "4 g",
+            "description": "Approximate values per serving; home-style portions may vary. Complimentary yogurt raita adds about 70 kcal."
+          },
+          {
+            "@type": "NutritionInformation",
+            "@id": "https://razzat.vercel.app/#pickle-nutrition",
+            "name": "Sophie's Chilli Pickle, per tablespoon",
+            "servingSize": "1 tablespoon",
+            "calories": "50 kcal",
+            "proteinContent": "1 g",
+            "carbohydrateContent": "2 g",
+            "fatContent": "4 g",
+            "fiberContent": "1 g",
+            "description": "Approximate values per 1 tablespoon. The jar is a condiment, not a meal. Approximate values per serving; home-style portions may vary."
+          },
+          {
+            "@type": "NutritionInformation",
+            "@id": "https://razzat.vercel.app/#dahi-nutrition",
+            "name": "Royal Shahi Dahi Baray, per bowl",
+            "servingSize": "1 bowl",
+            "calories": "400 kcal",
+            "proteinContent": "14 g",
+            "carbohydrateContent": "40 g",
+            "fatContent": "18 g",
+            "fiberContent": "6 g",
+            "description": "Approximate values per serving; home-style portions may vary."
+          },
+          {
+            "@type": "NutritionInformation",
+            "@id": "https://razzat.vercel.app/#tukray-nutrition",
+            "name": "Shahi Tukray, per portion",
+            "servingSize": "1 portion",
+            "calories": "480 kcal",
+            "proteinContent": "10 g",
+            "carbohydrateContent": "56 g",
+            "fatContent": "22 g",
+            "fiberContent": "2 g",
+            "description": "Approximate values per serving; home-style portions may vary."
           },
           {
             "@type": "Product",
-            "@id": "https://saudagranheritage.kitchen/#biryani",
+            "@id": "https://razzat.vercel.app/#biryani",
             "name": "Authentic Chicken Biryani",
-            "description": "Top-down dum biryani with saffron basmati, roasted chicken, potato, coriander, and lime. Hero dish from Rasa-e-Lazzat in Kuala Lumpur. Complimentary yogurt raita included.",
-            "image": "assets/rasa-biryani.png",
+            "description": "Saffron-stained rice, chicken roasted until the skin takes colour, potato cooked in the same pot. Complimentary yogurt raita with every plate. Halal. Not vegan. Contains meat. Allergens: milk (raita); may contain gluten; mustard. About 750 kcal per plate; raita about 70 kcal extra. Approximate values per serving; home-style portions may vary.",
+            "image": "https://razzat.vercel.app/assets/rasa-biryani.png",
             "category": "Main Course",
-            "brand": { "@id": "https://saudagranheritage.kitchen/#brand" },
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "nutrition": { "@id": "https://razzat.vercel.app/#biryani-nutrition" },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet", "value": "Halal" },
+              { "@type": "PropertyValue", "name": "Contains meat", "value": "Chicken" },
+              { "@type": "PropertyValue", "name": "Allergens", "value": "Milk (raita); may contain gluten; mustard" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "15.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock",
-              "url": "https://saudagranheritage.kitchen/#menu",
+              "url": "https://razzat.vercel.app/#product-biryani",
               "priceSpecification": [
                 {
                   "@type": "UnitPriceSpecification",
@@ -123,65 +317,309 @@
           },
           {
             "@type": "Product",
-            "@id": "https://saudagranheritage.kitchen/#pickle",
+            "@id": "https://razzat.vercel.app/#pickle",
             "name": "Sophie's Chilli Pickle",
             "alternateName": "Mirch Ka Achar",
-            "description": "Small-batch green chilli pickle (Mirch Ka Achar) brined with whole spices across four generations. Heat-forward, bright, and deeply aromatic. Hand-filled jars packed to order from Kuala Lumpur.",
-            "image": "https://images.unsplash.com/photo-1596040033229-a9821f5d8c4a?auto=format&fit=crop&w=800&q=80",
+            "description": "Green chillies in mustard oil, sharp and oily-hot. Packed by hand to order. Halal, vegan, vegetarian. Condiment, not a meal, not a medical food. Allergens: mustard; possible traces of sesame and nuts. About 50 kcal per 1 tablespoon. Approximate values per serving; home-style portions may vary.",
+            "image": "https://razzat.vercel.app/assets/sophie-chilli-pickle.png",
             "category": "Condiment",
-            "brand": { "@id": "https://saudagranheritage.kitchen/#brand" },
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "nutrition": { "@id": "https://razzat.vercel.app/#pickle-nutrition" },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet", "value": "Halal; vegan; vegetarian" },
+              { "@type": "PropertyValue", "name": "Allergens", "value": "Mustard; possible traces of sesame and nuts" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "28.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock",
-              "url": "https://saudagranheritage.kitchen/#menu",
+              "url": "https://razzat.vercel.app/#product-pickle",
               "itemCondition": "https://schema.org/NewCondition"
             }
           },
           {
             "@type": "Product",
-            "@id": "https://saudagranheritage.kitchen/#dahi-baray",
+            "@id": "https://razzat.vercel.app/#dahi-baray",
             "name": "Royal Shahi Dahi Baray",
-            "description": "Airy lentil dumplings soaked in silken whipped yoghurt, finished with tamarind chutney, chaat masala, and pomegranate.",
+            "description": "Lentil fritters, soft in cold yogurt, with tamarind chutney. Halal, vegetarian, not vegan. Allergens: milk; may contain gluten (fritters usually gram/chickpea flour). About 400 kcal per bowl. Approximate values per serving; home-style portions may vary.",
             "image": "https://images.unsplash.com/photo-1680764955303-81618ecb67b5?auto=format&fit=crop&w=800&q=80",
             "category": "Starter",
-            "brand": { "@id": "https://saudagranheritage.kitchen/#brand" },
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "nutrition": { "@id": "https://razzat.vercel.app/#dahi-nutrition" },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet", "value": "Halal; vegetarian" },
+              { "@type": "PropertyValue", "name": "Allergens", "value": "Milk; may contain gluten" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "18.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock",
-              "url": "https://saudagranheritage.kitchen/#menu"
+              "url": "https://razzat.vercel.app/#product-dahi"
             }
           },
           {
             "@type": "Product",
-            "@id": "https://saudagranheritage.kitchen/#shahi-tukray",
+            "@id": "https://razzat.vercel.app/#shahi-tukray",
             "name": "Shahi Tukray",
             "alternateName": "Shahi Tukra",
-            "description": "Saffron-soaked fried bread in thickened rabri, garnished with pistachios and silver leaf. A traditional Pakistani and Hyderabadi festive dessert from Rasa-e-Lazzat in Kuala Lumpur.",
+            "description": "Bread fried until the edges go gold, then soaked in rabri. Halal, vegetarian, not vegan. Allergens: gluten (bread), milk, possible nuts (pistachio, almond). About 480 kcal per portion. Approximate values per serving; home-style portions may vary.",
             "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
-            "category": "Royal Dessert",
-            "brand": { "@id": "https://saudagranheritage.kitchen/#brand" },
+            "category": "Dessert",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "nutrition": { "@id": "https://razzat.vercel.app/#tukray-nutrition" },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet", "value": "Halal; vegetarian" },
+              { "@type": "PropertyValue", "name": "Allergens", "value": "Gluten (bread); milk; possible nuts (pistachio, almond)" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "16.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock",
-              "url": "https://saudagranheritage.kitchen/#menu"
+              "url": "https://razzat.vercel.app/#product-shahi-tukray"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-biryani",
+            "name": "Authentic Chicken Biryani",
+            "url": "https://razzat.vercel.app/#product-biryani",
+            "suitableForDiet": "https://schema.org/HalalDiet",
+            "nutrition": { "@id": "https://razzat.vercel.app/#biryani-nutrition" },
+            "offers": {
+              "@type": "Offer",
+              "price": "15.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock"
+            },
+            "menuAddOn": {
+              "@type": "MenuItem",
+              "name": "Yogurt raita",
+              "description": "Complimentary small cup with every biryani plate. About 70 kcal. Contains milk."
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-tukray",
+            "name": "Shahi Tukray",
+            "url": "https://razzat.vercel.app/#product-shahi-tukray",
+            "suitableForDiet": ["https://schema.org/HalalDiet", "https://schema.org/VegetarianDiet"],
+            "nutrition": { "@id": "https://razzat.vercel.app/#tukray-nutrition" },
+            "offers": {
+              "@type": "Offer",
+              "price": "16.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-dahi",
+            "name": "Royal Shahi Dahi Baray",
+            "url": "https://razzat.vercel.app/#product-dahi",
+            "suitableForDiet": ["https://schema.org/HalalDiet", "https://schema.org/VegetarianDiet"],
+            "nutrition": { "@id": "https://razzat.vercel.app/#dahi-nutrition" },
+            "offers": {
+              "@type": "Offer",
+              "price": "18.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-pickle",
+            "name": "Sophie's Chilli Pickle",
+            "url": "https://razzat.vercel.app/#product-pickle",
+            "suitableForDiet": [
+              "https://schema.org/HalalDiet",
+              "https://schema.org/VeganDiet",
+              "https://schema.org/VegetarianDiet"
+            ],
+            "nutrition": { "@id": "https://razzat.vercel.app/#pickle-nutrition" },
+            "offers": {
+              "@type": "Offer",
+              "price": "28.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@type": "Menu",
+            "@id": "https://razzat.vercel.app/#foodmenu",
+            "name": "Rasa-e-Lazzat menu",
+            "url": "https://razzat.vercel.app/#menu",
+            "hasMenuSection": [
+              {
+                "@type": "MenuSection",
+                "name": "Mains",
+                "hasMenuItem": { "@id": "https://razzat.vercel.app/#menuitem-biryani" }
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Desserts",
+                "hasMenuItem": { "@id": "https://razzat.vercel.app/#menuitem-tukray" }
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Starters",
+                "hasMenuItem": { "@id": "https://razzat.vercel.app/#menuitem-dahi" }
+              },
+              {
+                "@type": "MenuSection",
+                "name": "Condiments",
+                "hasMenuItem": { "@id": "https://razzat.vercel.app/#menuitem-pickle" }
+              }
+            ],
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "MYR",
+              "lowPrice": "15.00",
+              "highPrice": "28.00",
+              "offerCount": 4
+            }
+          },
+          {
+            "@type": "Brand",
+            "@id": "https://razzat.vercel.app/#crocherish-brand",
+            "name": "Crocherish",
+            "url": "https://www.crocherish.com/",
+            "description": "Handmade crochet wearables, charms and plushies by Mehrish. Small-batch studio. Yarn keepsakes — not food."
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#gift-classic",
+            "name": "Biryani is Love Classic Keepsake",
+            "description": "Rasa-e-Lazzat × Crocherish gift pack. Halal chicken biryani with complimentary yogurt raita, plus a Crocherish Powder Blue Bow Keychain (handmade crochet charm, RM 18 on crocherish.com — not edible). Kraft wrap, saffron ribbon, occasion sticker, card: Biryani is Love — Rasa-e-Lazzat × Crocherish. Occasions: thank-you, birthday, anniversary, Hari Raya, Chinese New Year.",
+            "image": [
+              "https://razzat.vercel.app/assets/heritage-biryani.png",
+              "https://razzat.vercel.app/assets/crocherish-bow-keychain.jpg"
+            ],
+            "category": "Gift pack",
+            "brand": [
+              { "@id": "https://razzat.vercel.app/#brand" },
+              { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+            ],
+            "isRelatedTo": {
+              "@type": "Product",
+              "name": "Powder Blue Bow Keychain",
+              "url": "https://www.crocherish.com/shop",
+              "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+            },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet (food)", "value": "Halal chicken biryani; raita contains milk" },
+              { "@type": "PropertyValue", "name": "Crocherish piece", "value": "Powder Blue Bow Keychain — crochet, not food" },
+              { "@type": "PropertyValue", "name": "Packaging", "value": "Kraft wrap, saffron ribbon, occasion sticker, collaboration card" }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "name": "Biryani is Love Classic Keepsake",
+              "price": "55.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#product-gift-classic",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#gift-festive",
+            "name": "Biryani is Love Festive Hamper",
+            "description": "Rasa-e-Lazzat × Crocherish festive hamper. Halal chicken biryani with raita, Sophie's Chilli Pickle, Shahi Tukray, plus a Crocherish charm: Bloom Flower Charm (RM 22) for Hari Raya or Sunflower Keychain (RM 18) for Chinese New Year. Crochet is yarn, not food. Festive box, ribbon, occasion sticker, collaboration card.",
+            "image": [
+              "https://razzat.vercel.app/assets/sophie-chilli-pickle.png",
+              "https://razzat.vercel.app/assets/crocherish-bloom-charm.jpg",
+              "https://razzat.vercel.app/assets/crocherish-sunflower-keychain.jpg"
+            ],
+            "category": "Gift pack",
+            "brand": [
+              { "@id": "https://razzat.vercel.app/#brand" },
+              { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+            ],
+            "isRelatedTo": [
+              {
+                "@type": "Product",
+                "name": "Bloom Flower Charm",
+                "url": "https://www.crocherish.com/shop",
+                "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+              },
+              {
+                "@type": "Product",
+                "name": "Sunflower Keychain",
+                "url": "https://www.crocherish.com/shop",
+                "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+              }
+            ],
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet (food)", "value": "Halal; pickle vegan; shahi tukray vegetarian (dairy, gluten, possible nuts)" },
+              { "@type": "PropertyValue", "name": "Crocherish piece", "value": "Hari Raya: Bloom Flower Charm. Chinese New Year: Sunflower Keychain. Crochet, not food." },
+              { "@type": "PropertyValue", "name": "Packaging", "value": "Festive box, ribbon, Raya or CNY sticker, collaboration card" }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "name": "Biryani is Love Festive Hamper",
+              "price": "95.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#product-gift-festive",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#gift-celebrate",
+            "name": "Biryani is Love Keep & Celebrate",
+            "description": "Rasa-e-Lazzat × Crocherish anniversary or birthday pack. Halal chicken biryani with raita, Royal Shahi Dahi Baray, plus Crocherish Bea the Chick Plush (handmade crochet, RM 38 on crocherish.com — not edible). Kraft gift box, ribbon, occasion sticker, collaboration card.",
+            "image": [
+              "https://razzat.vercel.app/assets/rasa-biryani.png",
+              "https://razzat.vercel.app/assets/crocherish-bea-chick.jpg"
+            ],
+            "category": "Gift pack",
+            "brand": [
+              { "@id": "https://razzat.vercel.app/#brand" },
+              { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+            ],
+            "isRelatedTo": {
+              "@type": "Product",
+              "name": "Bea the Chick Plush",
+              "url": "https://www.crocherish.com/shop",
+              "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+            },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet (food)", "value": "Halal; dahi baray vegetarian (dairy)" },
+              { "@type": "PropertyValue", "name": "Crocherish piece", "value": "Bea the Chick Plush — crochet, not food" },
+              { "@type": "PropertyValue", "name": "Packaging", "value": "Kraft gift box, ribbon, occasion sticker, collaboration card" }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "name": "Biryani is Love Keep & Celebrate",
+              "price": "85.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#product-gift-celebrate",
+              "itemCondition": "https://schema.org/NewCondition"
             }
           },
           {
             "@type": "FAQPage",
-            "@id": "https://saudagranheritage.kitchen/#faq",
+            "@id": "https://razzat.vercel.app/#faq",
             "mainEntity": [
               {
                 "@type": "Question",
                 "name": "What is Rasa-e-Lazzat?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Rasa-e-Lazzat is a Pakistani home-cooking brand in Kuala Lumpur. The name means the essence of deliciousness. The kitchen carries 100+ years of ancestral recipes — from 1920s Allahabad family roots through Pakistan and Saudi Arabia to Malaysia in 2026."
+                  "text": "A Pakistani home kitchen in Kuala Lumpur, led by Sophie. The name means the essence of deliciousness. Family recipes from 1920s Allahabad through Pakistan and Saudi Arabia to Malaysia in 2026. Halal. Order on WhatsApp +60 176020325."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where can I order authentic Pakistani biryani in Kuala Lumpur?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "From Rasa-e-Lazzat in Kuala Lumpur. Order on WhatsApp +60 176020325. We send across KL and Greater Klang Valley. Chicken biryani is RM 15 (was RM 32), yogurt raita included."
                 }
               },
               {
@@ -189,7 +627,15 @@
                 "name": "Is Authentic Chicken Biryani available now?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Authentic Chicken Biryani is now available from Rasa-e-Lazzat. Order today via WhatsApp at +60 176020325. It is the hero dish, now RM 15.00 (was RM 32.00), with complimentary yogurt raita."
+                  "text": "Yes. Order today via WhatsApp at +60 176020325. Now RM 15 (was RM 32), with complimentary yogurt raita."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Rasa-e-Lazzat food halal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. This is a halal Pakistani home kitchen. Chicken is halal. The pickle is vegan. Dahi baray and shahi tukray are vegetarian — yogurt and milk, no meat."
                 }
               },
               {
@@ -197,15 +643,15 @@
                 "name": "Where do the recipes come from?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The recipes follow over a century of culinary heritage: 1920s–1940s Allahabad family spice trade; post-Partition kitchens in Pakistan and Saudi Arabia; and Rasa-e-Lazzat in Kuala Lumpur today, 2026."
+                  "text": "1920s–1940s Allahabad family spice trade; then Pakistan and Saudi Arabia; now this kitchen in Kuala Lumpur, 2026. More than a hundred years of recipes. The KL kitchen itself opened in 2026."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What is Sophie's Chilli Pickle (Mirch Ka Achar)?",
+                "name": "What is Sophie's Chilli Pickle?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Sophie's Signature Chilli Pickle is a small-batch green chilli pickle brined with whole spices across four generations. Each jar is packed by hand to order and priced at RM 28.00."
+                  "text": "Sophie's Mirch Ka Achar — green chilli in mustard oil, packed by hand. RM 28. Heat, not a health product. About 50 kcal per tablespoon. Allergens: mustard."
                 }
               },
               {
@@ -213,7 +659,15 @@
                 "name": "What are the top sellers and prices?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Authentic Chicken Biryani is the hero dish at RM 15.00 (was RM 32.00), with complimentary raita. Shahi Tukray is a best seller at RM 16.00. Royal Shahi Dahi Baray is RM 18.00. Sophie's Chilli Pickle (Mirch Ka Achar) is RM 28.00. All prices are in Malaysian Ringgit."
+                  "text": "Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Shahi Tukray RM 16 (best seller). Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you list calories and allergens?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Each dish has approximate calories, macros, ingredients, and allergen chips. Home-style portions vary. Figures are not lab-tested. Shared kitchen: dairy, gluten, nuts, sesame, mustard."
                 }
               },
               {
@@ -221,7 +675,15 @@
                 "name": "How do I order from Rasa-e-Lazzat?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Add dishes to your cart on the website, then checkout through WhatsApp at +60 176020325. Your cart is auto-formatted into a pre-filled message. Follow Rasa-e-Lazzat on Facebook."
+                  "text": "Add items to your cart on https://razzat.vercel.app/, scan the DuitNow QR to pay Jabeen Iffat the subtotal (any banking app or eWallet / Touch 'n Go), then place the order. WhatsApp +60 176020325 confirms dishes, total, and DuitNow payment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the Biryani is Love gift with Crocherish?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Rasa-e-Lazzat × Crocherish collaboration. Three packs: Classic Keepsake RM 55 (biryani, raita, Crocherish Powder Blue Bow Keychain), Festive Hamper RM 95 (biryani, Sophie's pickle, shahi tukray, plus Bloom Flower Charm for Hari Raya or Sunflower Keychain for Chinese New Year), Keep & Celebrate RM 85 (biryani, dahi baray, Bea the Chick Plush). Food is halal. Crochet pieces are handmade yarn keepsakes from https://www.crocherish.com/ — not edible. Kraft or festive box, ribbon, occasion sticker, card. Order on the Gifts section and WhatsApp."
                 }
               }
             ]
@@ -243,6 +705,7 @@
           <a href="#story" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Story</a>
           <a href="#timeline" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Lineage</a>
           <a href="#menu" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Menu</a>
+          <a href="#gifts" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Gifts</a>
           <a href="#faq" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">FAQ</a>
         </div>
         <div class="flex items-center gap-2">
@@ -267,14 +730,33 @@
           <a href="#story" class="tap flex items-center text-sm font-medium text-cocoa">The Story</a>
           <a href="#timeline" class="tap flex items-center text-sm font-medium text-cocoa">Century Lineage</a>
           <a href="#menu" class="tap flex items-center text-sm font-medium text-cocoa">Signature Menu</a>
+          <a href="#gifts" class="tap flex items-center text-sm font-medium text-cocoa">Gifts</a>
           <a href="#faq" class="tap flex items-center text-sm font-medium text-cocoa">FAQ</a>
         </div>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero-flyer relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:px-8">
-        <div class="mx-auto max-w-3xl text-center">
+      <section class="hero-flyer hero-flyer--cinema relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+        <div class="hero-media" aria-hidden="true">
+          <video
+            class="hero-video"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/rasa-biryani.png"
+            disablepictureinpicture
+          >
+            <source src="assets/hero-biryani.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-media-grade"></div>
+          <div class="hero-media-vignette"></div>
+          <div class="hero-media-rays"></div>
+          <div class="hero-media-steam"></div>
+        </div>
+        <div class="hero-content relative z-10 mx-auto max-w-3xl text-center">
           <h1>
             <logo-wordmark size="hero"></logo-wordmark>
           </h1>
@@ -293,7 +775,7 @@
           </figure>
 
           <p class="promo-line mx-auto mt-10 max-w-xl text-[1.35rem] sm:text-2xl lg:text-[1.75rem]">
-            Authentic Chicken Biryani Now Available! Order Today!
+            Chicken biryani is on. Order today.
           </p>
           <p class="mt-3 flex flex-wrap items-baseline justify-center gap-x-2.5 gap-y-1 text-cocoa">
             <span class="price-was">RM 32</span>
@@ -432,16 +914,29 @@
               </div>
             </article>
           </div>
+
+          <figure class="story-pickle mx-auto mt-16 max-w-3xl overflow-hidden rounded-2xl border border-earth/10 bg-cream">
+            <img
+              src="assets/sophie-chilli-pickle.png"
+              alt="Coarse green chilli pickle in mustard oil, with whole spices"
+              class="story-pickle-img"
+              width="1200"
+              height="900"
+            />
+            <figcaption class="story-pickle-caption">
+              Sophie's chilli pickle — mustard oil, coarse crush, whole spices
+            </figcaption>
+          </figure>
         </div>
       </section>
 
       <section id="menu" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p class="section-kicker">Signature catalog</p>
-            <h2 class="section-title mt-2 text-3xl sm:text-4xl">Order direct, skip the queue</h2>
+            <p class="section-kicker">From our kitchen</p>
+            <h2 class="section-title mt-2 text-3xl sm:text-4xl">Four dishes. WhatsApp when you're ready.</h2>
           </div>
-          <p class="body-copy max-w-xs text-sm">Prices in Malaysian Ringgit. Add to cart, then send a pre-filled WhatsApp order. Same-day KL &amp; Klang Valley.</p>
+          <p class="body-copy max-w-xs text-sm">Prices in Malaysian Ringgit. Halal kitchen. Approximate nutrition on each card. Shared home kitchen: dairy, gluten, nuts, sesame, mustard — traces possible.</p>
         </div>
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -449,7 +944,7 @@
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
                 src="assets/heritage-biryani.png"
-                alt="Authentic Chicken Biryani with chicken, potato, cilantro, and lime"
+                alt="Chicken biryani with saffron rice, roasted chicken, potato, coriander, and lime"
                 class="food-crop h-full w-full"
                 width="800"
                 height="600"
@@ -460,7 +955,40 @@
             <div class="flex flex-1 flex-col p-5">
               <h3 class="section-title text-xl sm:text-2xl">Authentic Chicken Biryani</h3>
               <p class="mt-1 text-xs font-medium text-earth">Now RM 15 · raita complimentary</p>
-              <p class="body-copy mt-3 flex-1 text-sm">Saffron basmati layered with roasted chicken and potato, sealed and dum-cooked. Yogurt raita is free with every plate — the flyer dish, cooked in KL.</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">Contains mustard</span>
+                <span class="chip chip-allergen">May contain gluten</span>
+              </div>
+              <p class="body-copy mt-3 flex-1 text-sm">Saffron-stained rice, chicken roasted until the skin takes colour, potato cooked in the same pot. Lime on the side. Yogurt raita is free with the plate — cool against the chilli.</p>
+              <details class="nutrition-panel">
+                <summary class="tap">
+                  <span>Ingredients, nutrition &amp; allergens</span>
+                  <span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span>
+                </summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Basmati rice, chicken, potato, onion, tomato, ginger, garlic, green chilli, coriander, mint, lime, saffron, whole spices (cardamom, clove, cinnamon, bay), cooking oil. Raita: yogurt, salt, roasted cumin.</p>
+                  <h4>Per plate</h4>
+                  <p class="kcal-line"><strong>750 kcal</strong> <span>plus ~70 kcal for the free raita</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>38 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>80 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>24 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>4 g</dd></div>
+                  </dl>
+                  <p class="mt-3">Key nutrients: protein from the chicken; starch from basmati and potato.</p>
+                  <h4>Allergens</h4>
+                  <p>Milk in the raita. Mustard. May contain gluten (spice mix / stock). Contains chicken.</p>
+                  <h4>Why these ingredients</h4>
+                  <p>Saffron stains the rice and smells like the pot when you lift the lid. Yogurt raita is protein and a cool tang against the chilli. Potato takes the gravy. Lime cuts the oil.</p>
+                  <p class="nutrition-note">Approximate values per serving; home-style portions may vary.</p>
+                </div>
+              </details>
               <div class="mt-5 flex items-end justify-between gap-3 border-t border-earth/10 pt-4">
                 <div>
                   <p class="flex flex-wrap items-baseline gap-x-2">
@@ -478,7 +1006,7 @@
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
                 src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80"
-                alt="Shahi Tukray — saffron-soaked fried bread in rabri with pistachios"
+                alt="Fried bread soaked in rabri, finished with nuts"
                 class="h-full w-full object-cover"
                 width="800"
                 height="600"
@@ -489,8 +1017,41 @@
             </div>
             <div class="flex flex-1 flex-col p-5">
               <h3 class="section-title text-xl sm:text-2xl">Shahi Tukray</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Shahi Tukra · Royal dessert</p>
-              <p class="body-copy mt-3 flex-1 text-sm">Saffron-soaked fried bread in thickened rabri, garnished with pistachios and silver leaf — a festive Pakistani and Hyderabadi heritage sweet.</p>
+              <p class="mt-1 text-xs font-medium text-earth">Shahi Tukra · fried bread in rabri</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">Contains nuts</span>
+              </div>
+              <p class="body-copy mt-3 flex-1 text-sm">Bread fried until the edges go gold, then soaked in rabri. Saffron in the milk. Pistachio and almond if we garnish. Sweet. Eat it slow.</p>
+              <details class="nutrition-panel">
+                <summary class="tap">
+                  <span>Ingredients, nutrition &amp; allergens</span>
+                  <span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span>
+                </summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Bread, milk, sugar, saffron, cardamom, ghee or oil for frying, pistachio, almond.</p>
+                  <h4>Per portion</h4>
+                  <p class="kcal-line"><strong>480 kcal</strong></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>10 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>56 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>22 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>2 g</dd></div>
+                  </dl>
+                  <p class="mt-3">Key nutrients: milk in the rabri is protein and fat; bread is starch; nuts on top are garnish.</p>
+                  <h4>Allergens</h4>
+                  <p>Gluten from the bread. Milk in the rabri. Possible pistachio and almond.</p>
+                  <h4>Why these ingredients</h4>
+                  <p>Milk cooked down until it coats a spoon. Bread fried until the edges go gold, then soaked. Nuts for crunch, not a health halo.</p>
+                  <p class="nutrition-note">Approximate values per serving; home-style portions may vary.</p>
+                </div>
+              </details>
               <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
                 <p class="text-2xl font-bold text-earth">RM 16.00</p>
                 <button data-add="shahi-tukray" class="btn-gold tap px-4 text-sm">Add to cart</button>
@@ -501,19 +1062,52 @@
           <article class="card-lux flex flex-col" id="product-pickle">
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
-                src="https://images.unsplash.com/photo-1596040033229-a9821f5d8c4a?auto=format&fit=crop&w=800&q=80"
-                alt="Whole spices and chilli — Sophie's Chilli Pickle"
+                src="assets/sophie-chilli-pickle.png"
+                alt="Coarse green chilli pickle in mustard oil, with whole spices"
                 class="h-full w-full object-cover"
                 width="800"
-                height="600"
+                height="800"
               />
               <span class="absolute left-4 top-4 rounded bg-herb px-2 py-1 text-[0.62rem] font-bold text-white">New launch</span>
               <span class="absolute bottom-4 left-4 text-[0.68rem] font-medium text-cream">Condiment</span>
             </div>
             <div class="flex flex-1 flex-col p-5">
               <h3 class="section-title text-xl sm:text-2xl">Sophie's Chilli Pickle</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Mirch Ka Achar · Small-batch</p>
-              <p class="body-copy mt-3 flex-1 text-sm">Green chilli brined with whole spices across four generations. Heat-forward, bright, deeply aromatic — packed by hand to order.</p>
+              <p class="mt-1 text-xs font-medium text-earth">Mirch Ka Achar · packed by hand</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegan</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains mustard</span>
+                <span class="chip chip-allergen">May contain nuts</span>
+              </div>
+              <p class="body-copy mt-3 flex-1 text-sm">Green chillies in mustard oil, sharp and oily-hot. Whole spices you can see in the jar. A spoon beside rice or biryani. This is a condiment, not a meal.</p>
+              <details class="nutrition-panel">
+                <summary class="tap">
+                  <span>Ingredients, nutrition &amp; allergens</span>
+                  <span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span>
+                </summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Green chilli, mustard oil, mustard seeds, fennel, nigella (kalonji), fenugreek, turmeric, salt.</p>
+                  <h4>Per 1 tablespoon</h4>
+                  <p class="kcal-line"><strong>50 kcal</strong> <span>the jar is a condiment</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>1 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>2 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>4 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>1 g</dd></div>
+                  </dl>
+                  <p class="mt-3">Key nutrients: mustard oil is fat that carries the chilli; chillies bring heat and a little vitamin C in condiment amounts. Not a medical food.</p>
+                  <h4>Allergens</h4>
+                  <p>Mustard (oil and seeds). Possible traces of sesame and nuts from the shared kitchen.</p>
+                  <h4>Why these ingredients</h4>
+                  <p>Mustard oil carries the chilli. Whole spices you can see — fennel, nigella, fenugreek — are flavour, not medicine.</p>
+                  <p class="nutrition-note">Approximate values per serving; home-style portions may vary.</p>
+                </div>
+              </details>
               <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
                 <p class="text-2xl font-bold text-earth">RM 28.00</p>
                 <button data-add="pickle" class="btn-gold tap px-4 text-sm">Add to cart</button>
@@ -525,7 +1119,7 @@
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
                 src="https://images.unsplash.com/photo-1680764955303-81618ecb67b5?auto=format&fit=crop&w=800&q=80"
-                alt="Royal Shahi Dahi Baray with yoghurt and chutney"
+                alt="Lentil fritters in yogurt with tamarind chutney"
                 class="h-full w-full object-cover"
                 width="800"
                 height="600"
@@ -535,8 +1129,40 @@
             </div>
             <div class="flex flex-1 flex-col p-5">
               <h3 class="section-title text-xl sm:text-2xl">Royal Shahi Dahi Baray</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Velvet yoghurt, crisp lentil dumplings</p>
-              <p class="body-copy mt-3 flex-1 text-sm">Airy lentil dumplings in silken whipped yoghurt, finished with tamarind chutney, chaat masala, and pomegranate.</p>
+              <p class="mt-1 text-xs font-medium text-earth">Yogurt, lentil fritters</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">May contain gluten</span>
+              </div>
+              <p class="body-copy mt-3 flex-1 text-sm">Lentil fritters, soft in cold yogurt. Tamarind that pulls sweet-sour. A dust of chaat masala. Cool and quiet next to the heat of the pickle.</p>
+              <details class="nutrition-panel">
+                <summary class="tap">
+                  <span>Ingredients, nutrition &amp; allergens</span>
+                  <span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span>
+                </summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Yogurt, lentil / gram-flour fritters (besan, typically chickpea), tamarind chutney, chaat masala, cumin, coriander, chilli, onion; pomegranate when in season.</p>
+                  <h4>Per bowl</h4>
+                  <p class="kcal-line"><strong>400 kcal</strong></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>14 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>40 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>18 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>6 g</dd></div>
+                  </dl>
+                  <p class="mt-3">Key nutrients: yogurt and lentils both bring protein; lentils add fibre.</p>
+                  <h4>Allergens</h4>
+                  <p>Milk (yogurt). Fritters are usually chickpea (gram) flour — often gluten-free, but home kitchens vary, so treat as may contain gluten unless we confirm.</p>
+                  <h4>Why these ingredients</h4>
+                  <p>Yogurt brings protein and a cool tang against the spice. The fritters drink the yogurt until they go soft. Tamarind is sweet-sour, not a detox.</p>
+                  <p class="nutrition-note">Approximate values per serving; home-style portions may vary.</p>
+                </div>
+              </details>
               <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
                 <p class="text-2xl font-bold text-earth">RM 18.00</p>
                 <button data-add="dahi-baray" class="btn-gold tap px-4 text-sm">Add to cart</button>
@@ -546,13 +1172,197 @@
         </div>
       </section>
 
+      <section id="gifts" class="gifts-band py-20" aria-labelledby="gifts-title">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p class="section-kicker">Rasa-e-Lazzat × Crocherish</p>
+          <h2 id="gifts-title" class="section-title mt-2 max-w-2xl text-3xl sm:text-4xl">Biryani is Love</h2>
+          <p class="body-copy mt-4 max-w-2xl text-base">
+            Sophie’s plate and Mehrish’s yarn in one box. Halal Pakistani food from this kitchen; a handmade Crocherish keepsake from
+            <a class="font-medium text-earth underline-offset-2 hover:underline" href="https://www.crocherish.com/" target="_blank" rel="noopener noreferrer">crocherish.com</a>
+            — clip it to keys, sit it on a shelf. Do not eat the crochet.
+          </p>
+
+          <div class="mt-8" role="group" aria-label="Occasion">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-earth">What’s the occasion?</p>
+            <div class="gift-chips">
+              <button type="button" class="gift-chip tap" data-gift-chip="hari-raya" aria-pressed="false">Hari Raya</button>
+              <button type="button" class="gift-chip tap" data-gift-chip="cny" aria-pressed="false">Chinese New Year</button>
+              <button type="button" class="gift-chip tap" data-gift-chip="anniversary" aria-pressed="false">Anniversary</button>
+              <button type="button" class="gift-chip tap" data-gift-chip="birthday" aria-pressed="false">Birthday</button>
+              <button type="button" class="gift-chip tap" data-gift-chip="thank-you" aria-pressed="false">Thank-you</button>
+            </div>
+          </div>
+
+          <div class="gift-grid mt-10">
+            <article class="gift-pack" id="product-gift-classic" data-gift-pack="gift-classic">
+              <div class="gift-visual">
+                <img
+                  class="gift-food"
+                  src="assets/heritage-biryani.png"
+                  alt="Chicken biryani with saffron rice and roasted chicken"
+                  width="640"
+                  height="480"
+                />
+                <img
+                  class="gift-crochet"
+                  data-crochet-img
+                  src="assets/crocherish-bow-keychain.jpg"
+                  alt="Crocherish Powder Blue Bow Keychain, handmade crochet charm"
+                  width="480"
+                  height="600"
+                />
+                <span class="gift-badge">Classic · RM 55</span>
+              </div>
+              <div class="gift-body">
+                <h3 class="section-title text-xl sm:text-2xl">Classic Keepsake</h3>
+                <p class="mt-1 text-xs font-medium text-earth">Biryani is Love · one plate, one bow</p>
+                <p class="body-copy mt-3 flex-1 text-sm">
+                  Chicken biryani with the free yogurt raita — rice still smelling of saffron when you lift the lid. Beside it, Crocherish’s
+                  <span data-crochet-name>Powder Blue Bow Keychain</span>
+                  (RM 18 on their shop): a small crochet bow for keys or a bag. Yarn. Not a garnish.
+                </p>
+                <ul class="mt-3 space-y-1 text-sm text-muted">
+                  <li>Authentic Chicken Biryani + raita — RM 15 on the menu</li>
+                  <li>Crocherish Powder Blue Bow Keychain — <span data-crochet-price>RM 18 on Crocherish</span></li>
+                </ul>
+                <div class="gift-packaging">
+                  <h4>Packaging</h4>
+                  <p>Kraft wrap, saffron ribbon, occasion sticker, handwritten-style card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”.</p>
+                </div>
+                <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
+                  Occasion
+                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Classic Keepsake">
+                    <option value="thank-you" selected>Thank-you</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="hari-raya">Hari Raya</option>
+                    <option value="cny">Chinese New Year</option>
+                  </select>
+                </label>
+                <p class="gift-note mt-2">Priced above a plain plate. Food is halal. Crochet is a keepsake.</p>
+                <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
+                  <p class="text-2xl font-bold text-earth">RM 55</p>
+                  <button data-add="gift-classic" class="btn-gold tap px-4 text-sm">Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="gift-pack featured card-lux" id="product-gift-festive" data-gift-pack="gift-festive">
+              <div class="gift-visual">
+                <img
+                  class="gift-food"
+                  src="assets/sophie-chilli-pickle.png"
+                  alt="Sophie's chilli pickle in mustard oil"
+                  width="640"
+                  height="480"
+                />
+                <img
+                  class="gift-crochet"
+                  data-crochet-img
+                  src="assets/crocherish-bloom-charm.jpg"
+                  alt="Crocherish Bloom Flower Charm, handmade crochet flower"
+                  width="480"
+                  height="600"
+                />
+                <span class="gift-badge">Hamper · RM 95</span>
+              </div>
+              <div class="gift-body">
+                <h3 class="section-title text-xl sm:text-2xl">Festive Hamper</h3>
+                <p class="mt-1 text-xs font-medium text-earth">Hari Raya or Chinese New Year — you pick</p>
+                <p class="body-copy mt-3 flex-1 text-sm">
+                  The spread: biryani and raita, a jar of Sophie’s chilli pickle, shahi tukray after. In the same festive box, a Crocherish charm —
+                  <span data-crochet-name>Bloom Flower Charm</span>
+                  for Raya, or their Sunflower Keychain for CNY. Flower and sunflower are yarn. The pickle is the heat.
+                </p>
+                <ul class="mt-3 space-y-1 text-sm text-muted">
+                  <li>Biryani + raita, Sophie’s Pickle (RM 28), Shahi Tukray (RM 16)</li>
+                  <li>Raya: Bloom Flower Charm (RM 22) · CNY: Sunflower Keychain (RM 18)</li>
+                </ul>
+                <div class="gift-packaging">
+                  <h4>Packaging</h4>
+                  <p>Festive box, ribbon, occasion sticker (green-and-gold for Hari Raya, red-and-gold for Chinese New Year), card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”.</p>
+                </div>
+                <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
+                  Occasion
+                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Festive Hamper">
+                    <option value="hari-raya" selected>Hari Raya</option>
+                    <option value="cny">Chinese New Year</option>
+                  </select>
+                </label>
+                <p class="gift-note mt-2">Charm swaps with the festival you pick. Same hamper price.</p>
+                <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
+                  <p class="text-2xl font-bold text-earth">RM 95</p>
+                  <button data-add="gift-festive" class="btn-gold tap px-4 text-sm">Add to cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="gift-pack" id="product-gift-celebrate" data-gift-pack="gift-celebrate">
+              <div class="gift-visual">
+                <img
+                  class="gift-food"
+                  src="assets/rasa-biryani.png"
+                  alt="Chicken biryani plated with raita and spices"
+                  width="640"
+                  height="480"
+                />
+                <img
+                  class="gift-crochet"
+                  data-crochet-img
+                  src="assets/crocherish-bea-chick.jpg"
+                  alt="Crocherish Bea the Chick Plush, handmade crochet plush"
+                  width="480"
+                  height="600"
+                />
+                <span class="gift-badge">Celebrate · RM 85</span>
+              </div>
+              <div class="gift-body">
+                <h3 class="section-title text-xl sm:text-2xl">Keep &amp; Celebrate</h3>
+                <p class="mt-1 text-xs font-medium text-earth">Anniversary or birthday · dinner, then a shelf friend</p>
+                <p class="body-copy mt-3 flex-1 text-sm">
+                  Biryani for the table, royal shahi dahi baray cold beside it — yogurt, lentil fritters, tamarind. After the plates, Bea the Chick:
+                  Crocherish’s crochet plush (RM 38 on their shop). She sits on a shelf. She is not dessert.
+                </p>
+                <ul class="mt-3 space-y-1 text-sm text-muted">
+                  <li>Authentic Chicken Biryani + raita</li>
+                  <li>Royal Shahi Dahi Baray — RM 18 on the menu</li>
+                  <li>Crocherish <span data-crochet-name>Bea the Chick Plush</span> — <span data-crochet-price>RM 38 on Crocherish</span></li>
+                </ul>
+                <div class="gift-packaging">
+                  <h4>Packaging</h4>
+                  <p>Kraft gift box, ribbon, occasion sticker, card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”. Names on the card if you tell us on WhatsApp.</p>
+                </div>
+                <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
+                  Occasion
+                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Keep and Celebrate">
+                    <option value="birthday" selected>Birthday</option>
+                    <option value="anniversary">Anniversary</option>
+                  </select>
+                </label>
+                <p class="gift-note mt-2">Sensible portions — a main and a cooling bowl, not a stacked feast.</p>
+                <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
+                  <p class="text-2xl font-bold text-earth">RM 85</p>
+                  <button data-add="gift-celebrate" class="btn-gold tap px-4 text-sm">Add to cart</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="mt-8 max-w-2xl text-xs text-muted">
+            Crocherish pieces are from Mehrish’s small-batch studio —
+            <a class="font-medium text-earth underline-offset-2 hover:underline" href="https://www.crocherish.com/shop" target="_blank" rel="noopener noreferrer">shop the full collection</a>.
+            Photos of the charms and plush are Crocherish’s. Food photos are ours. Pack prices in MYR; crochet list prices shown are as listed on crocherish.com.
+          </p>
+        </div>
+      </section>
+
       <section class="relative overflow-hidden bg-earth py-20">
         <div class="relative z-10 mx-auto max-w-2xl px-4 text-center">
           <p class="text-sm font-medium text-saffron">Ready to order?</p>
           <h2 class="mt-3 text-3xl font-bold text-cream sm:text-4xl">
             Authentic Chicken Biryani — RM 15 today, raita on the house.
           </h2>
-          <p class="mt-5 font-normal text-cream/80">Order direct via WhatsApp. No commission, no cold food, no queue. We confirm delivery details in the chat.</p>
+          <p class="mt-5 font-normal text-cream/80">WhatsApp the kitchen. We confirm delivery in the chat — KL and Klang Valley.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-3">
             <a href="#menu" class="btn-gold tap inline-flex items-center px-8 text-sm">Browse menu</a>
             <a
@@ -568,7 +1378,7 @@
       </section>
 
       <section id="faq" class="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-        <p class="section-kicker text-center">For guests &amp; search engines</p>
+        <p class="section-kicker text-center">For guests &amp; citations</p>
         <h2 class="section-title mt-3 text-center text-3xl sm:text-4xl">Questions we hear in KL</h2>
         <div class="mt-10 space-y-3">
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2" open>
@@ -576,58 +1386,119 @@
               What is Rasa-e-Lazzat?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">A Pakistani home-cooking brand in Kuala Lumpur — the taste of home in every bite. Over a century of ancestral recipes, from 1920s Allahabad through Pakistan and Saudi Arabia to Malaysia in 2026. Follow us on Facebook as Rasa-e-Lazzat.</p>
+            <p class="body-copy pb-4 text-sm">A Pakistani home kitchen in Kuala Lumpur, led by Sophie. The name means the essence of deliciousness. Family recipes from 1920s Allahabad through Pakistan and Saudi Arabia to Malaysia in 2026. Halal. Order on WhatsApp +60 176020325.</p>
+          </details>
+          <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
+            <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
+              Where can I order authentic Pakistani biryani in Kuala Lumpur?
+              <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
+            </summary>
+            <p class="body-copy pb-4 text-sm">From Rasa-e-Lazzat in Kuala Lumpur. Order on WhatsApp +60 176020325. We send across KL and Greater Klang Valley. Chicken biryani is RM 15 (was RM 32), yogurt raita included.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
               Is Authentic Chicken Biryani available now?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Yes — order today via WhatsApp at +60 176020325. Now RM 15.00 (was RM 32.00), with complimentary yogurt raita.</p>
+            <p class="body-copy pb-4 text-sm">Yes. Order today via WhatsApp at +60 176020325. Now RM 15 (was RM 32), with complimentary yogurt raita.</p>
+          </details>
+          <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
+            <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
+              Is Rasa-e-Lazzat food halal?
+              <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
+            </summary>
+            <p class="body-copy pb-4 text-sm">Yes. This is a halal Pakistani home kitchen. Chicken is halal. The pickle is vegan. Dahi baray and shahi tukray are vegetarian — yogurt and milk, no meat.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
               Where do the recipes come from?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">A century of culinary heritage: 1920s–1940s Allahabad family spice trade; post-Partition kitchens in Pakistan and Saudi Arabia; Rasa-e-Lazzat in Malaysia today, 2026.</p>
+            <p class="body-copy pb-4 text-sm">1920s–1940s Allahabad family spice trade; then Pakistan and Saudi Arabia; now this kitchen in Kuala Lumpur, 2026. More than a hundred years of recipes. The KL kitchen itself opened in 2026.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
               What is Sophie's Chilli Pickle?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Sophie's Mirch Ka Achar — small-batch green chilli pickle brined with whole spices across four generations. Hand-filled jars, RM 28.00.</p>
+            <p class="body-copy pb-4 text-sm">Sophie's Mirch Ka Achar — green chilli in mustard oil, packed by hand. RM 28. Heat, not a health product. About 50 kcal per tablespoon. Allergens: mustard.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
               What are the top sellers and prices?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Authentic Chicken Biryani RM 15.00 (was RM 32.00, raita complimentary), Shahi Tukray RM 16.00 (best seller), Royal Shahi Dahi Baray RM 18.00, Sophie's Chilli Pickle RM 28.00. All prices MYR.</p>
+            <p class="body-copy pb-4 text-sm">Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Shahi Tukray RM 16 (best seller). Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
-              How do I order?
+              Do you list calories and allergens?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Add items to your cart, then checkout via WhatsApp. The site auto-formats your dishes, quantities, and subtotal into a pre-filled message.</p>
+            <p class="body-copy pb-4 text-sm">Yes. Each dish has approximate calories, macros, ingredients, and allergen chips. Home-style portions vary. Figures are not lab-tested. Shared kitchen: dairy, gluten, nuts, sesame, mustard.</p>
           </details>
+          <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
+            <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
+              How do I order from Rasa-e-Lazzat?
+              <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
+            </summary>
+            <p class="body-copy pb-4 text-sm">Add items to your cart, scan the DuitNow QR to pay Jabeen Iffat the subtotal (any banking app or eWallet / Touch 'n Go), then place the order. WhatsApp +60 176020325 is confirmation — dishes, total, and that you’ve paid or will pay via DuitNow.</p>
+          </details>
+          <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
+            <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
+              What is the Biryani is Love gift with Crocherish?
+              <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
+            </summary>
+            <p class="body-copy pb-4 text-sm">Sophie’s kitchen with Mehrish’s crochet. Classic Keepsake RM 55 — biryani, raita, Crocherish Powder Blue Bow Keychain. Festive Hamper RM 95 — biryani, pickle, shahi tukray, plus a Bloom Flower Charm for Hari Raya or Sunflower Keychain for Chinese New Year. Keep &amp; Celebrate RM 85 — biryani, dahi baray, Bea the Chick Plush. Food is halal. The crochet is yarn; do not eat it. Kraft or festive box, ribbon, sticker, card. See <a class="font-medium text-earth hover:underline" href="#gifts">Gifts</a> and <a class="font-medium text-earth hover:underline" href="https://www.crocherish.com/" target="_blank" rel="noopener noreferrer">crocherish.com</a>.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="press-facts" class="press-facts border-t border-earth/10 bg-white/40">
+        <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+          <p class="section-kicker">For press &amp; citations</p>
+          <h2 class="section-title mt-2 text-2xl sm:text-3xl">The short version</h2>
+          <dl class="mt-8">
+            <dt>Brand</dt>
+            <dd>Rasa-e-Lazzat — The Taste of Home in Every Bite</dd>
+            <dt>Kitchen lead</dt>
+            <dd>Sophie. Home cook directing the recipes in Kuala Lumpur. No invented awards.</dd>
+            <dt>Lineage</dt>
+            <dd>1920s Allahabad spice trade → Pakistan → Saudi Arabia → Kuala Lumpur 2026. Family recipes 100+ years; this kitchen opened 2026.</dd>
+            <dt>Diet</dt>
+            <dd>Halal kitchen. Chicken is halal. Pickle is vegan. Dahi baray and Shahi Tukray are vegetarian (dairy).</dd>
+            <dt>Service area</dt>
+            <dd>Kuala Lumpur and Greater Klang Valley (Selangor)</dd>
+            <dt>Order</dt>
+            <dd>WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></dd>
+            <dt>Menu (MYR)</dt>
+            <dd>Biryani RM 15 (was RM 32, free raita) · Shahi Tukray RM 16 · Dahi Baray RM 18 · Sophie's Chilli Pickle RM 28</dd>
+            <dt>Gifts</dt>
+            <dd>Biryani is Love with <a class="font-medium text-cocoa hover:underline" href="https://www.crocherish.com/" target="_blank" rel="noopener noreferrer">Crocherish</a>: Classic Keepsake RM 55 · Festive Hamper RM 95 · Keep &amp; Celebrate RM 85. Food is halal; crochet is not edible.</dd>
+            <dt>Site</dt>
+            <dd><a class="font-medium text-cocoa hover:underline" href="https://razzat.vercel.app/">https://razzat.vercel.app/</a></dd>
+          </dl>
         </div>
       </section>
     </main>
 
     <footer class="border-t border-earth/10 bg-white/40">
-      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-4 py-8 sm:px-6 lg:px-8">
-        <div class="footer-brand flex min-w-0 items-center">
-          <logo-seal size="footer"></logo-seal>
-          <div>
-            <logo-wordmark size="footer"></logo-wordmark>
-            <p class="logo-tagline !mt-1 !text-xs !whitespace-normal">The Taste of Home in Every Bite</p>
-            <p class="mt-2 text-xs text-muted">Kuala Lumpur · WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></p>
+      <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-between gap-6">
+          <div class="footer-brand flex min-w-0 items-center">
+            <logo-seal size="footer"></logo-seal>
+            <div>
+              <logo-wordmark size="footer"></logo-wordmark>
+              <p class="logo-tagline !mt-1 !text-xs !whitespace-normal">The Taste of Home in Every Bite</p>
+              <p class="mt-2 text-xs text-muted">Kuala Lumpur · WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></p>
+            </div>
           </div>
+          <p class="text-xs text-muted">© 2026 Rasa-e-Lazzat · <a class="hover:text-earth hover:underline" href="admin.html" rel="nofollow">Kitchen</a></p>
         </div>
-        <p class="text-xs text-muted">© 2026 Rasa-e-Lazzat</p>
+        <p class="footer-credit mt-6">
+          Powered by
+          <a href="https://adrevnview.com" target="_blank" rel="noopener noreferrer">adrevnview.com</a>
+        </p>
       </div>
     </footer>
 
@@ -650,14 +1521,22 @@
             <span class="text-sm font-medium text-muted">Subtotal</span>
             <span id="cart-subtotal" class="text-2xl font-bold text-earth">RM 0.00</span>
           </div>
-          <button type="button" data-whatsapp-checkout class="tap flex w-full items-center justify-center gap-2 rounded-md bg-[#25d366] text-sm font-bold text-white">
-            Order via WhatsApp
-          </button>
-          <p class="mt-3 text-center text-xs text-muted">Opens WhatsApp with your cart pre-filled. We confirm delivery next.</p>
+          <div class="cart-actions">
+            <button type="button" data-place-paid class="btn-gold tap flex w-full items-center justify-center text-sm">
+              I’ve paid — place order
+            </button>
+            <button type="button" data-whatsapp-checkout class="tap flex w-full items-center justify-center gap-2 rounded-md bg-[#25d366] text-sm font-bold text-white">
+              Confirm on WhatsApp
+            </button>
+          </div>
+          <p class="mt-3 text-center text-xs text-muted">Scan the DuitNow QR above, pay Jabeen Iffat the subtotal, then place the order. WhatsApp is confirmation — the kitchen already has the ticket.</p>
         </div>
       </aside>
     </div>
 
+    <script src="js/inventory-data.js"></script>
+    <script src="js/gifts.js"></script>
+    <script src="js/kitchen-store.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
