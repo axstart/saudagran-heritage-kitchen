@@ -1,5 +1,5 @@
 /**
- * Weekly-box calorie targets + MyFitnessPal-style dials.
+ * Weekly-box calorie targets + MyFitnessPal-style macro dials and micro bars.
  * Mifflin-St Jeor BMR. Box macros from LazzatGifts.PLAN_NUTRITION.
  * Estimates only — not medical advice, not affiliated with MyFitnessPal.
  */
@@ -488,11 +488,45 @@
     ).join("");
   }
 
-  function renderMicroDials(host, provided, goals, selectedKey) {
+  function microBarRow(key, label, provided, goal, selected) {
+    const pct = goal > 0 ? provided / goal : 0;
+    const tone = toneClass(pct);
+    const fillPct = round(clamp(pct, 0, 1) * 100);
+    const shown = round(provided);
+    return (
+      '<button type="button" class="calc-micro tap' +
+      (selected ? " is-open" : "") +
+      '" data-dial="' +
+      key +
+      '" aria-pressed="' +
+      (selected ? "true" : "false") +
+      '" aria-label="' +
+      escapeHtml(label) +
+      ", " +
+      shown +
+      "% of daily value\">" +
+      '<span class="calc-micro-name">' +
+      escapeHtml(label) +
+      "</span>" +
+      '<span class="calc-micro-track" aria-hidden="true">' +
+      '<span class="calc-micro-fill ' +
+      tone +
+      '" style="width:' +
+      fillPct +
+      '%"></span></span>' +
+      '<span class="calc-micro-val">' +
+      shown +
+      "%</span></button>"
+    );
+  }
+
+  function renderMicroBars(host, provided, goals, selectedKey) {
     if (!host) return;
-    host.innerHTML = MICRO_META.map((m) =>
-      dialButton(m.key, m.label, providedOf(provided, m.key), goalOf(goals, m.key), "% DV", selectedKey === m.key)
-    ).join("");
+    host.innerHTML =
+      '<div class="calc-micro-head" aria-hidden="true"><span>Nutrient</span><span></span><span>% DV</span></div>' +
+      MICRO_META.map((m) =>
+        microBarRow(m.key, m.label, providedOf(provided, m.key), goalOf(goals, m.key), selectedKey === m.key)
+      ).join("");
   }
 
   function detailHtml(key, provided, goal, unit, items, mode) {
@@ -616,7 +650,7 @@
     );
 
     renderDials(out.querySelector("[data-calc-macros]"), perDay, goals, openDialKey);
-    renderMicroDials(out.querySelector("[data-calc-micros]"), perDay, goals, openDialKey);
+    renderMicroBars(out.querySelector("[data-calc-micros]"), perDay, goals, openDialKey);
     renderDialDetail(out.querySelector("[data-calc-detail]"), openDialKey, perDay, goals, box.items, "box7");
 
     if (openDishId) fillSheet(openDishId, goals);
@@ -661,7 +695,7 @@
       dv: dish.dv,
     };
     renderDials(sheet.querySelector("[data-sheet-macros]"), provided, goals, openDialKey);
-    renderMicroDials(sheet.querySelector("[data-sheet-micros]"), provided, goals, openDialKey);
+    renderMicroBars(sheet.querySelector("[data-sheet-micros]"), provided, goals, openDialKey);
     renderDialDetail(sheet.querySelector("[data-sheet-detail]"), openDialKey, provided, goals, null, "dish");
     const proPct = goals.protein > 0 ? dish.protein / goals.protein : 0;
     sheet.querySelector("[data-sheet-stat]").textContent =
