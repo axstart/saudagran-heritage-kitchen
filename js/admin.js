@@ -275,34 +275,44 @@
   }
 
   function renderCosting() {
-    const cards = K.dishCosting()
+    const rows = K.dishCosting();
+    const thinCount = rows.filter((d) => d.thin).length;
+    const promoCount = rows.filter((d) => d.promo).length;
+    const body = rows
       .map((dish) => {
-        const lines = dish.lines
-          .map(
-            (line) =>
-              `<tr><td>${escapeHtml(line.name)}</td><td>${K.fmtQty(line.qty)} ${escapeHtml(line.unit)}</td><td>${rm(line.lineCost)}</td></tr>`
-          )
-          .join("");
-        return `<article class="panel dish-cost">
-          <h3>${escapeHtml(dish.name)}</h3>
-          <p class="margin-line">Retail ${rm(dish.retail)} · recipe cost ${rm(dish.cogs)} · gross ${rm(dish.profit)} · margin ${dish.margin.toFixed(0)}%</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Ingredient</th><th>Per serving</th><th>Cost</th></tr></thead>
-              <tbody>${lines}</tbody>
-            </table>
-          </div>
-        </article>`;
+        const cls = [dish.promo ? "is-promo" : "", dish.thin ? "is-thin" : ""].filter(Boolean).join(" ");
+        let flag = "—";
+        if (dish.promo) flag = `Promo (was RM ${dish.promoWas})`;
+        else if (dish.thin) flag = "Thin (&lt;30%)";
+        const title = dish.klNote ? ` title="${escapeHtml(dish.klNote)}"` : "";
+        return `<tr class="${cls}"${title}>
+          <td data-label="Item">${escapeHtml(dish.name)}</td>
+          <td data-label="List">${rm(dish.retail)}</td>
+          <td data-label="Est. COGS">${rm(dish.cogs)}</td>
+          <td data-label="Profit">${rm(dish.profit)}</td>
+          <td data-label="Margin">${dish.margin.toFixed(0)}%</td>
+          <td data-label="Flag">${flag}</td>
+        </tr>`;
       })
       .join("");
     return `
       <div class="page-head">
         <div>
           <h1>Dish costing</h1>
-          <p>Recipe cost = ingredient qty × unit cost. Not shown on the public menu.</p>
+          <p>Kitchen estimates only — recipe qty × unit cost. No labour, gas, or delivery. ${thinCount} thin · ${promoCount} promo.</p>
         </div>
       </div>
-      <div class="cost-grid">${cards}</div>`;
+      <div class="panel">
+        <div class="table-wrap">
+          <table class="cost-table">
+            <thead>
+              <tr><th>Item</th><th>List</th><th>Est. COGS</th><th>Profit</th><th>Margin</th><th>Flag</th></tr>
+            </thead>
+            <tbody>${body}</tbody>
+          </table>
+        </div>
+        <p class="cost-note">Hover a row for the KL retail note. Panjiri list is RM 40. Biryani RM 15 is the public promo (was RM 32).</p>
+      </div>`;
   }
 
   function renderPnl() {

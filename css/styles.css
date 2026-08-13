@@ -1150,16 +1150,17 @@ h1 .logo-wordmark {
   overflow: hidden;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--cream);
 }
 
 .gift-hero img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  max-height: 52svh;
-  object-fit: cover;
-  object-position: center 42%;
+  max-height: min(68svh, 40rem);
+  object-fit: contain;
+  object-position: center;
+  background: var(--cream);
 }
 
 .gift-hero-cap {
@@ -1233,13 +1234,15 @@ h1 .logo-wordmark {
 .gift-visual {
   position: relative;
   min-height: 11.5rem;
-  background: var(--earth);
+  background: var(--cream);
 }
 
 .gift-visual img {
   width: 100%;
   height: 11.5rem;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: var(--cream);
 }
 
 .gift-actions {

@@ -341,12 +341,17 @@
 
   function dishCosting() {
     const inv = getInventory();
+    const metaAll = data.COSTING_META || {};
     return Object.keys(data.MENU).map((id) => {
       const dish = data.MENU[id];
+      const meta = metaAll[id] || {};
       const cogs = recipeCost(id, inv);
       const retail = dish.price;
       const profit = retail - cogs;
       const margin = retail > 0 ? (profit / retail) * 100 : 0;
+      const thin = margin < 30;
+      const promoWas = Number(meta.promoWas) || 0;
+      const promo = promoWas > retail;
       const lines = recipeLines(id).map((line) => {
         const ing = inv[line.ingredientId];
         const lineCost = ing ? line.qty * ing.unitCost : 0;
@@ -359,7 +364,21 @@
           lineCost,
         };
       });
-      return { id, name: dish.name, retail, cogs, profit, margin, lines, unit: dish.unit };
+      return {
+        id,
+        name: dish.name,
+        retail,
+        cogs,
+        profit,
+        margin,
+        thin,
+        promo,
+        promoWas,
+        klNote: meta.klNote || "",
+        lines,
+        unit: dish.unit,
+        kind: dish.kind || "",
+      };
     });
   }
 
