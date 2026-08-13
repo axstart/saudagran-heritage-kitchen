@@ -201,10 +201,13 @@
     const lines = order.items
       .map((item) => {
           const extra = [
+          item.period
+            ? "subscription: " +
+              (window.LazzatGifts ? window.LazzatGifts.periodLabel(item.id, item.period) : item.period)
+            : "",
           item.occasion
             ? "occasion: " + (window.LazzatGifts ? window.LazzatGifts.occasionLabel(item.occasion) : item.occasion)
             : "",
-          item.crocherish ? "Crocherish: " + item.crocherish : "",
         ]
           .filter(Boolean)
           .join(" · ");

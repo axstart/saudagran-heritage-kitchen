@@ -39,37 +39,43 @@
     }
   }
 
-  function lineKey(id, occasion) {
+  function productKind(id) {
     const product = MENU[id];
-    if (product && product.kind === "gift") {
-      return id + "::" + (occasion || "unspecified");
-    }
+    return (product && product.kind) || "";
+  }
+
+  function isAddon(item) {
+    return productKind(item.id) === "addon";
+  }
+
+  function isPlan(item) {
+    return productKind(item.id) === "plan";
+  }
+
+  function lineKey(id, extra) {
+    extra = extra || {};
+    const kind = productKind(id);
+    if (kind === "addon") return id + "::" + (extra.occasion || "unspecified");
+    if (kind === "plan") return id + "::" + (extra.period || "weekly");
     return id;
   }
 
-  function isGift(item) {
-    const product = MENU[item.id];
-    return !!(product && product.kind === "gift");
-  }
-
-  function crochetName(item) {
-    if (item.crocherish) return item.crocherish;
-    if (!Gifts) return "";
-    const piece = Gifts.crocherishFor(item.id, item.occasion);
-    return piece ? piece.name : "";
+  function addonName(item) {
+    if (!isAddon(item)) return "";
+    const meta = Gifts && Gifts.addonMeta(item.id);
+    return (meta && meta.name) || item.name || "";
   }
 
   function packagingCopy(item) {
     if (item.packaging) return item.packaging;
-    if (!Gifts) return "";
-    const pack = Gifts.packMeta(item.id);
-    return pack ? pack.packaging : "";
+    if (isAddon(item) && Gifts) return Gifts.PACKAGING;
+    return "";
   }
 
   function syncCartFromMenu() {
     Object.keys(cart).forEach((key) => {
       const line = cart[key];
-      const id = line && line.id ? line.id : key;
+      const id = line && line.id ? line.id : key.split("::")[0];
       const product = MENU[id];
       if (!product) {
         delete cart[key];
@@ -77,15 +83,17 @@
       }
       line.id = product.id;
       line.name = product.name;
-      line.price = product.price;
       line.key = key;
-      if (product.kind === "gift") {
-        const occ = line.occasion || (Gifts && Gifts.packMeta(id) && Gifts.packMeta(id).defaultOccasion) || "";
-        line.occasion = occ;
-        const piece = Gifts && Gifts.crocherishFor(id, occ);
-        line.crocherish = piece ? piece.name : line.crocherish || "";
-        const pack = Gifts && Gifts.packMeta(id);
-        line.packaging = pack ? pack.packaging : line.packaging || "";
+      if (product.kind === "plan") {
+        const period = line.period || (Gifts && Gifts.planMeta(id) && Gifts.planMeta(id).defaultPeriod) || "weekly";
+        line.period = period;
+        line.price = Gifts ? Gifts.planPrice(id, period) : product.price;
+      } else {
+        line.price = product.price;
+      }
+      if (product.kind === "addon") {
+        line.occasion = line.occasion || "";
+        line.packaging = (Gifts && Gifts.PACKAGING) || line.packaging || "";
       }
     });
   }
@@ -120,60 +128,70 @@
     lastPlaced = null;
     extra = extra || {};
     const occasion = extra.occasion || "";
-    const key = lineKey(id, occasion);
-    const piece = Gifts && Gifts.crocherishFor(id, occasion);
-    const pack = Gifts && Gifts.packMeta(id);
-    const crocherish = extra.crocherish || (piece && piece.name) || "";
-    const packaging = extra.packaging || (pack && pack.packaging) || "";
+    const period = extra.period || "";
+    const key = lineKey(id, { occasion: occasion, period: period });
+    const packaging = extra.packaging || (product.kind === "addon" && Gifts ? Gifts.PACKAGING : "");
+    const price =
+      product.kind === "plan" && Gifts ? Gifts.planPrice(id, period || "weekly") : product.price;
     if (cart[key]) {
       cart[key].qty += 1;
-      cart[key].price = product.price;
+      cart[key].price = price;
       cart[key].name = product.name;
       cart[key].occasion = occasion;
-      cart[key].crocherish = crocherish;
+      cart[key].period = period;
       cart[key].packaging = packaging;
     } else {
       cart[key] = {
         id: product.id,
         key: key,
         name: product.name,
-        price: product.price,
+        price: price,
         qty: 1,
         occasion: occasion,
-        crocherish: crocherish,
+        period: period,
         packaging: packaging,
       };
     }
     saveCart();
     renderCart();
-    const occBit =
-      product.kind === "gift" && occasion && Gifts
-        ? " · " + Gifts.occasionLabel(occasion)
-        : "";
-    toast(product.name + occBit + " added to cart" + (product.note ? " — " + product.note : ""));
+    const bits = [product.name];
+    if (product.kind === "plan" && period && Gifts) bits.push(Gifts.periodLabel(id, period));
+    if (product.kind === "addon" && occasion && Gifts) bits.push(Gifts.occasionLabel(occasion));
+    toast(bits.join(" · ") + " added to cart" + (product.note ? " — " + product.note : ""));
   }
 
   function setOccasion(key, occasion) {
     const line = cart[key];
     if (!line) return;
-    const nextKey = lineKey(line.id, occasion);
-    const piece = Gifts && Gifts.crocherishFor(line.id, occasion);
-    const pack = Gifts && Gifts.packMeta(line.id);
+    const nextKey = lineKey(line.id, { occasion: occasion, period: line.period });
     line.occasion = occasion;
-    line.crocherish = piece ? piece.name : line.crocherish || "";
-    line.packaging = pack ? pack.packaging : line.packaging || "";
-    if (nextKey !== key) {
-      if (cart[nextKey]) {
-        cart[nextKey].qty += line.qty;
-        delete cart[key];
-      } else {
-        line.key = nextKey;
-        cart[nextKey] = line;
-        delete cart[key];
-      }
-    }
+    line.packaging = Gifts ? Gifts.PACKAGING : line.packaging || "";
+    rekeyLine(key, nextKey, line);
     saveCart();
     renderCart();
+  }
+
+  function setPeriod(key, period) {
+    const line = cart[key];
+    if (!line) return;
+    const nextKey = lineKey(line.id, { occasion: line.occasion, period: period });
+    line.period = period;
+    line.price = Gifts ? Gifts.planPrice(line.id, period) : line.price;
+    rekeyLine(key, nextKey, line);
+    saveCart();
+    renderCart();
+  }
+
+  function rekeyLine(key, nextKey, line) {
+    if (nextKey === key) return;
+    if (cart[nextKey]) {
+      cart[nextKey].qty += line.qty;
+      delete cart[key];
+    } else {
+      line.key = nextKey;
+      cart[nextKey] = line;
+      delete cart[key];
+    }
   }
 
   function setQty(id, qty) {
@@ -215,18 +233,27 @@
       .replace(/"/g, "&quot;");
   }
 
-  function giftNotes(list) {
+  function extraNotes(list) {
     return list
-      .filter((item) => isGift(item) || item.occasion || item.crocherish)
+      .filter((item) => isAddon(item) || isPlan(item) || item.occasion)
       .map((item) => {
         const bits = [item.name];
+        if (isPlan(item) && item.period) {
+          bits.push("subscription: " + (Gifts ? Gifts.periodLabel(item.id, item.period) : item.period));
+        }
         if (item.occasion && Gifts) bits.push("occasion: " + Gifts.occasionLabel(item.occasion));
         else if (item.occasion) bits.push("occasion: " + item.occasion);
-        const crochet = crochetName(item);
-        if (crochet) bits.push("Crocherish: " + crochet + " (yarn keepsake, not food)");
         return bits.join(" — ");
       })
       .join(" | ");
+  }
+
+  function comboLine(list) {
+    const biryani = list.find((item) => item.id === "biryani");
+    const addons = list.filter(isAddon);
+    if (!biryani || !addons.length) return "";
+    const names = [biryani.name].concat(addons.map((a) => addonName(a) || a.name));
+    return names.join(" + ");
   }
 
   function waTextFor(order) {
@@ -235,25 +262,32 @@
       .map((item) => {
         const extra = item.id === "biryani" ? " (includes free raita)" : "";
         let block = `• ${item.name} ×${item.qty} — ${money(item.price * item.qty)}${extra}`;
-        if (isGift(item) || item.occasion || item.crocherish) {
+        if (isPlan(item)) {
+          const period = Gifts ? Gifts.periodLabel(item.id, item.period) : item.period;
+          if (period) block += `\n  Subscription: ${period}`;
+          const plan = Gifts && Gifts.planMeta(item.id);
+          if (plan) block += `\n  ${plan.serving}`;
+        }
+        if (isAddon(item) || item.occasion) {
           const occ =
             item.occasion && Gifts ? Gifts.occasionLabel(item.occasion) : item.occasion || "";
-          const crochet = crochetName(item);
           if (occ) block += `\n  Occasion: ${occ}`;
-          if (crochet) block += `\n  Crocherish: ${crochet} (handmade crochet — not edible)`;
           const pack = packagingCopy(item);
           if (pack) block += `\n  Packaging: ${pack}`;
         }
         return block;
       })
       .join("\n");
-    const collab = list.some((item) => isGift(item))
-      ? `\nThis is a Rasa-e-Lazzat × Crocherish Biryani is Love order. Food is halal. Crochet pieces are yarn keepsakes from https://www.crocherish.com/ — not food.\n`
+    const combo = comboLine(list);
+    const comboBit = combo ? `\nSpecial order: ${combo}\n` : "";
+    const planBit = list.some(isPlan)
+      ? `\nThis is a Rasa-e-Lazzat meal-plan subscription. Dishes may vary with the week’s cooking. No bread or roti in the box.\n`
       : "";
     return (
       `Assalamualaikum! I'd like to order from ${BRAND}:\n\n` +
       `Order ${order.id}\n${lines}\n` +
-      collab +
+      comboBit +
+      planBit +
       `\nSubtotal: ${money(order.subtotal)}\n\n` +
       `I have paid / will pay via DuitNow to Jabeen Iffat.\n\n` +
       `Kindly confirm delivery across KL / Klang Valley. Shukria!`
@@ -280,7 +314,7 @@
       paymentMethod: "duitnow",
       status: status,
       source: "web",
-      notes: giftNotes(list),
+      notes: extraNotes(list),
     });
     if (order.error) {
       toast(order.error);
@@ -357,32 +391,59 @@
     els.items.hidden = false;
     els.footer.hidden = false;
     els.subtotal.textContent = money(subtotal());
+    const combo = comboLine(list);
+    const comboBanner = combo
+      ? `<p class="mb-4 rounded-md border border-[#6B3E26]/15 bg-white px-3 py-2 text-xs text-[#6B5E54]">Special order: <strong class="text-[#2D1B10]">${escapeHtml(combo)}</strong></p>`
+      : "";
     const rows = list
       .map((item) => {
-        const key = item.key || lineKey(item.id, item.occasion);
-        const gift = isGift(item);
+        const key = item.key || lineKey(item.id, { occasion: item.occasion, period: item.period });
+        const addon = isAddon(item);
+        const plan = isPlan(item);
         const occOptions =
-          gift && Gifts
-            ? Gifts.allowedOccasions(item.id)
+          addon && Gifts
+            ? Gifts.allowedOccasions()
                 .map((o) => {
                   const sel = o.id === item.occasion ? " selected" : "";
                   return `<option value="${escapeHtml(o.id)}"${sel}>${escapeHtml(o.label)}</option>`;
                 })
                 .join("")
             : "";
-        const crochet = crochetName(item);
-        const giftMeta = gift
-          ? `<label class="mt-2 block text-xs font-medium text-[#6B3E26]">Occasion
+        const periodOptions =
+          plan && Gifts
+            ? (Gifts.planMeta(item.id).periods || [])
+                .map((p) => {
+                  const sel = p.id === item.period ? " selected" : "";
+                  return `<option value="${escapeHtml(p.id)}"${sel}>${escapeHtml(p.label)} — RM ${p.price}</option>`;
+                })
+                .join("")
+            : "";
+        let meta = "";
+        if (addon) {
+          meta = `<label class="mt-2 block text-xs font-medium text-[#6B3E26]">Occasion
               <select class="gift-cart-occasion mt-1 w-full" data-cart-occasion="${escapeHtml(key)}" aria-label="Occasion for ${escapeHtml(item.name)}">${occOptions}</select>
             </label>
-            <p class="mt-1.5 text-xs text-[#6B5E54]">Crocherish: ${escapeHtml(crochet || "handmade keepsake")} — yarn, not food.</p>`
-          : "";
+            <p class="mt-1.5 text-xs text-[#6B5E54]">Add-on for biryani · Rasa-e-Lazzat wrap only</p>`;
+        } else if (plan) {
+          meta = `<label class="mt-2 block text-xs font-medium text-[#6B3E26]">Subscription
+              <select class="gift-cart-occasion mt-1 w-full" data-cart-period="${escapeHtml(key)}" aria-label="Period for ${escapeHtml(item.name)}">${periodOptions}</select>
+            </label>
+            <p class="mt-1.5 text-xs text-[#6B5E54]">Meal plan · dishes may vary · no bread or roti</p>`;
+        }
+        const sub =
+          item.id === "biryani"
+            ? " · includes free raita"
+            : addon
+              ? " · special-order extra"
+              : plan
+                ? " · subscription"
+                : "";
         return `
       <div class="flex items-start justify-between gap-3 border-b border-[#6B3E26]/10 pb-4">
         <div class="min-w-0">
           <p class="font-semibold text-[#2D1B10]">${escapeHtml(item.name)}</p>
-          <p class="mt-0.5 text-xs text-[#6B5E54]">${money(item.price)} each${item.id === "biryani" ? " · includes free raita" : gift ? " · Biryani is Love pack" : ""}</p>
-          ${giftMeta}
+          <p class="mt-0.5 text-xs text-[#6B5E54]">${money(item.price)} each${sub}</p>
+          ${meta}
           <div class="mt-3 flex items-center gap-2">
             <button type="button" class="tap grid place-items-center rounded-md border border-[#6B3E26]/25 text-[#6B3E26]" data-qty-delta="${escapeHtml(key)}" data-delta="-1" aria-label="Decrease quantity">−</button>
             <span class="min-w-[1.5rem] text-center text-sm font-semibold">${item.qty}</span>
@@ -396,7 +457,7 @@
       </div>`;
       })
       .join("");
-    els.items.innerHTML = rows + payQrBlock(subtotal());
+    els.items.innerHTML = comboBanner + rows + payQrBlock(subtotal());
   }
 
   function openCart() {
@@ -445,23 +506,46 @@
     });
   }
 
+  function occasionFromCard(card) {
+    const select = card && card.querySelector("[data-gift-occasion]");
+    return select ? select.value : "";
+  }
+
+  function periodFromCard(card) {
+    const select = card && card.querySelector("[data-plan-period]");
+    return select ? select.value : "";
+  }
+
   document.addEventListener("click", (e) => {
+    const withBiryani = e.target.closest("[data-add-with-biryani]");
+    if (withBiryani) {
+      const id = withBiryani.dataset.addWithBiryani;
+      const card = withBiryani.closest("[data-addon-card]");
+      const occasion = occasionFromCard(card);
+      if (!occasion) {
+        toast("Pick an occasion first");
+        return;
+      }
+      addToCart("biryani");
+      addToCart(id, { occasion: occasion, packaging: Gifts ? Gifts.PACKAGING : "" });
+      return;
+    }
+
     const add = e.target.closest("[data-add]");
     if (add) {
       const id = add.dataset.add;
-      const card = add.closest("[data-gift-pack]");
-      if (card) {
-        const select = card.querySelector("[data-gift-occasion]");
-        const occasion = select ? select.value : "";
+      const addonCard = add.closest("[data-addon-card]");
+      const planCard = add.closest("[data-plan-card]");
+      if (addonCard) {
+        const occasion = occasionFromCard(addonCard);
         if (!occasion) {
           toast("Pick an occasion first");
           return;
         }
-        const piece = Gifts && Gifts.crocherishFor(id, occasion);
-        addToCart(id, {
-          occasion: occasion,
-          crocherish: piece ? piece.name : "",
-        });
+        addToCart(id, { occasion: occasion, packaging: Gifts ? Gifts.PACKAGING : "" });
+      } else if (planCard) {
+        const period = periodFromCard(planCard) || "weekly";
+        addToCart(id, { period: period });
       } else {
         addToCart(id);
       }
@@ -514,6 +598,11 @@
     const occ = e.target.closest("[data-cart-occasion]");
     if (occ) {
       setOccasion(occ.dataset.cartOccasion, occ.value);
+      return;
+    }
+    const period = e.target.closest("[data-cart-period]");
+    if (period) {
+      setPeriod(period.dataset.cartPeriod, period.value);
     }
   });
 

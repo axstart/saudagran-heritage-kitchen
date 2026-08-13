@@ -179,10 +179,6 @@ h1 .logo-wordmark {
   display: block;
 }
 
-.hero-plate {
-  isolation: isolate;
-}
-
 .hero-seal {
   z-index: 2;
 }
@@ -272,13 +268,13 @@ h1 .logo-wordmark {
 
 .hero-flyer {
   position: relative;
-}
-
-.hero-flyer--cinema {
-  min-height: min(100svh, 58rem);
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  padding: 6.5rem 1.25rem 4.5rem;
 }
 
 .hero-media {
@@ -286,98 +282,81 @@ h1 .logo-wordmark {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: #1a1008 url("../assets/rasa-biryani.png") center / cover no-repeat;
+  background: #1a1008;
 }
 
 .hero-video {
-  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
-  filter: contrast(1.14) saturate(1.28) sepia(0.14) brightness(0.88);
-  transform: scale(1.08);
-  animation: hero-kenburns 22s ease-in-out infinite alternate;
+  object-position: center;
 }
 
-.hero-media-grade,
-.hero-media-vignette,
-.hero-media-rays,
-.hero-media-steam {
+.hero-scrim {
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
-}
-
-.hero-media-grade {
   background:
-    linear-gradient(180deg, rgba(18, 10, 5, 0.62) 0%, rgba(45, 27, 16, 0.28) 42%, rgba(18, 10, 5, 0.7) 100%),
-    linear-gradient(90deg, rgba(18, 10, 5, 0.38), transparent 28%, transparent 72%, rgba(18, 10, 5, 0.38));
+    linear-gradient(180deg, rgba(12, 7, 4, 0.62) 0%, rgba(12, 7, 4, 0.38) 42%, rgba(12, 7, 4, 0.78) 100%),
+    linear-gradient(90deg, rgba(12, 7, 4, 0.28), transparent 32%, transparent 68%, rgba(12, 7, 4, 0.28));
 }
 
-.hero-media-vignette {
-  box-shadow: inset 0 0 140px 48px rgba(8, 4, 2, 0.58);
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(42rem, 100%);
+  text-align: center;
 }
 
-.hero-media-rays {
-  inset: -12%;
-  background:
-    radial-gradient(ellipse 48% 36% at 72% 18%, rgba(232, 162, 61, 0.26), transparent 58%),
-    radial-gradient(ellipse 36% 28% at 28% 78%, rgba(232, 162, 61, 0.1), transparent 52%);
-  mix-blend-mode: screen;
-  animation: hero-rays 14s ease-in-out infinite alternate;
-}
-
-.hero-media-steam {
-  background: radial-gradient(ellipse 62% 38% at 50% 72%, rgba(255, 246, 228, 0.14), transparent 62%);
-  mix-blend-mode: soft-light;
-  animation: hero-steam 9s ease-in-out infinite alternate;
-}
-
-.hero-flyer--cinema .logo-wordmark,
-.hero-flyer--cinema .promo-line {
+.hero-flyer .logo-wordmark {
   color: var(--cream);
-  text-shadow: 0 2px 22px rgba(8, 4, 2, 0.5);
+  text-shadow: 0 2px 28px rgba(8, 4, 2, 0.55);
 }
 
-.hero-flyer--cinema .logo-tagline {
-  color: rgba(250, 250, 246, 0.9);
-  text-shadow: 0 1px 14px rgba(8, 4, 2, 0.45);
+.hero-tagline {
+  margin-top: 0.75rem;
+  color: rgba(250, 250, 246, 0.88);
+  white-space: normal;
+  text-shadow: 0 1px 16px rgba(8, 4, 2, 0.45);
 }
 
-.hero-flyer--cinema .hero-content .text-cocoa {
-  color: #f3e6c8;
+.hero-sub {
+  margin: 1.75rem auto 0;
+  max-width: 22rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--cream);
+  text-shadow: 0 1px 18px rgba(8, 4, 2, 0.5);
 }
 
-.hero-flyer--cinema .hero-content .text-earth {
-  color: #efc56a;
+.hero-ctas {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
-.hero-flyer--cinema .hero-content a:not(.btn-gold) {
-  color: inherit;
+.btn-hero-ghost {
+  border: 1px solid rgba(250, 250, 246, 0.45);
+  color: var(--cream);
+  background: transparent;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-.hero-flyer--cinema .price-was {
-  color: rgba(250, 250, 246, 0.55);
-}
-
-.hero-flyer--cinema .hero-food {
-  box-shadow: 0 18px 56px rgba(8, 4, 2, 0.48);
-}
-
-@keyframes hero-kenburns {
-  from { transform: scale(1.06); }
-  to { transform: scale(1.18); }
-}
-
-@keyframes hero-rays {
-  from { opacity: 0.72; transform: translate3d(0, 0, 0); }
-  to { opacity: 1; transform: translate3d(-2%, 1.5%, 0); }
-}
-
-@keyframes hero-steam {
-  from { opacity: 0.55; transform: translateY(6px) scale(1); }
-  to { opacity: 0.95; transform: translateY(-8px) scale(1.06); }
+.btn-hero-ghost:hover {
+  background: rgba(250, 250, 246, 0.1);
+  border-color: var(--saffron);
 }
 
 .hero-food {
@@ -886,7 +865,7 @@ h1 .logo-wordmark {
   gap: 0.55rem;
 }
 
-/* ——— Biryani is Love / Crocherish gifts ——— */
+/* ——— Biryani is Love extras + meal plans ——— */
 
 .gifts-band {
   background:
@@ -895,6 +874,29 @@ h1 .logo-wordmark {
     var(--cream);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+
+.gift-hero {
+  margin: 2rem 0 0;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.gift-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.gift-hero-cap {
+  padding: 0.85rem 1.1rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 .gift-chips {
@@ -960,25 +962,82 @@ h1 .logo-wordmark {
 
 .gift-visual {
   position: relative;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
   min-height: 11.5rem;
   background: var(--earth);
 }
 
 .gift-visual img {
   width: 100%;
-  height: 100%;
+  height: 11.5rem;
   object-fit: cover;
 }
 
-.gift-food {
-  object-position: 48% 42%;
+.gift-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: flex-end;
 }
 
-.gift-crochet {
-  object-position: 50% 40%;
-  border-left: 3px solid #fff;
+.gift-actions .btn-gold,
+.gift-actions .btn-outline {
+  min-height: 44px;
+}
+
+.plan-band {
+  background:
+    radial-gradient(ellipse 60% 45% at 92% 0%, rgba(232, 162, 61, 0.14), transparent 55%),
+    var(--marble);
+  border-top: 1px solid var(--line);
+}
+
+.plan-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .plan-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.2rem 1.2rem 1.3rem;
+}
+
+.plan-card.featured {
+  border-color: rgba(232, 162, 61, 0.55);
+  box-shadow: 0 12px 28px rgba(45, 27, 16, 0.06);
+}
+
+.plan-days {
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.plan-days li {
+  display: flex;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  color: var(--cocoa);
+}
+
+.plan-days span {
+  flex: 0 0 1.6rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
 }
 
 .gift-badge {
@@ -1046,6 +1105,81 @@ h1 .logo-wordmark {
   line-height: 1.45;
 }
 
+.reviews-band {
+  background: var(--marble);
+  border-top: 1px solid var(--line);
+}
+
+.review-card {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.35rem 1.35rem 1.5rem;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+@media (min-width: 640px) {
+  .review-card {
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+}
+
+.review-photo {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 2px solid rgba(232, 162, 61, 0.55);
+}
+
+.review-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.review-name {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--cocoa);
+}
+
+.review-card blockquote {
+  margin: 0.9rem 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--cocoa);
+}
+
+.review-card blockquote p {
+  margin: 0;
+}
+
+.review-en {
+  margin: 0.65rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.review-card audio {
+  display: block;
+  width: 100%;
+  margin-top: 1.1rem;
+  min-height: 48px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1060,9 +1194,7 @@ h1 .logo-wordmark {
   .hero-video {
     display: none;
   }
-  .hero-media-rays,
-  .hero-media-steam,
-  .hero-video {
-    animation: none;
+  .hero-media {
+    background: #1a1008 url("../assets/rasa-biryani.png") center / cover no-repeat;
   }
 }

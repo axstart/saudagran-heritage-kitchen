@@ -14,29 +14,60 @@
     },
     "dahi-baray": { id: "dahi-baray", name: "Royal Shahi Dahi Baray", price: 18, unit: "bowl" },
     "shahi-tukray": { id: "shahi-tukray", name: "Shahi Tukray", price: 16, unit: "portion" },
-    "gift-classic": {
-      id: "gift-classic",
-      name: "Biryani is Love Classic Keepsake",
-      price: 55,
-      unit: "pack",
-      kind: "gift",
-      note: "biryani, raita, Crocherish Powder Blue Bow Keychain",
+    dumplings: {
+      id: "dumplings",
+      name: "Chicken Dumplings (12 pieces)",
+      price: 22,
+      note: "steamed, mint-chilli chutney",
+      unit: "tray",
     },
-    "gift-festive": {
-      id: "gift-festive",
-      name: "Biryani is Love Festive Hamper",
-      price: 95,
-      unit: "pack",
-      kind: "gift",
-      note: "biryani, pickle, shahi tukray, Crocherish charm",
+    "addon-charm": {
+      id: "addon-charm",
+      name: "Charm",
+      price: 18,
+      unit: "piece",
+      kind: "addon",
+      note: "special-order extra with biryani",
     },
-    "gift-celebrate": {
-      id: "gift-celebrate",
-      name: "Biryani is Love Keep & Celebrate",
+    "addon-rose": {
+      id: "addon-rose",
+      name: "Single rose",
+      price: 10,
+      unit: "stem",
+      kind: "addon",
+      note: "special-order extra with biryani",
+    },
+    "addon-flowers": {
+      id: "addon-flowers",
+      name: "Small bouquet",
+      price: 30,
+      unit: "bouquet",
+      kind: "addon",
+      note: "special-order extra with biryani",
+    },
+    "plan-salan": {
+      id: "plan-salan",
+      name: "Weekly Salan Box",
+      price: 110,
+      unit: "week",
+      kind: "plan",
+      note: "subscription · 7 single-serve salan",
+    },
+    "plan-lunch": {
+      id: "plan-lunch",
+      name: "Lunch Plan",
+      price: 70,
+      unit: "subscription",
+      kind: "plan",
+      note: "subscription · Mon–Fri lunch",
+    },
+    "plan-dinner": {
+      id: "plan-dinner",
+      name: "Dinner Plan",
       price: 85,
-      unit: "pack",
-      kind: "gift",
-      note: "biryani, dahi baray, Crocherish Bea the Chick Plush",
+      unit: "subscription",
+      kind: "plan",
+      note: "subscription · Mon–Fri dinner",
     },
   };
 
@@ -59,6 +90,7 @@
     "mustard-seed": { id: "mustard-seed", name: "Mustard seed", unit: "g", onHand: 300, unitCost: 0.03, reorderLevel: 50 },
     "pickle-spices": { id: "pickle-spices", name: "Pickle spices (fennel, nigella, fenugreek, turmeric)", unit: "g", onHand: 220, unitCost: 0.045, reorderLevel: 40 },
     "gram-flour": { id: "gram-flour", name: "Urad / gram flour (besan)", unit: "g", onHand: 1500, unitCost: 0.012, reorderLevel: 300 },
+    flour: { id: "flour", name: "Wheat flour (dumpling wrappers)", unit: "g", onHand: 2000, unitCost: 0.006, reorderLevel: 400 },
     tamarind: { id: "tamarind", name: "Tamarind", unit: "g", onHand: 300, unitCost: 0.02, reorderLevel: 60 },
     "chaat-masala": { id: "chaat-masala", name: "Chaat masala / dahi spices", unit: "g", onHand: 150, unitCost: 0.05, reorderLevel: 30 },
     bread: { id: "bread", name: "Bread", unit: "pcs", onHand: 24, unitCost: 0.4, reorderLevel: 6 },
@@ -110,11 +142,16 @@
       { ingredientId: "saffron", qty: 0.03 },
       { ingredientId: "cardamom", qty: 1 },
     ],
+    dumplings: [
+      { ingredientId: "chicken", qty: 280 },
+      { ingredientId: "flour", qty: 180 },
+      { ingredientId: "onion", qty: 40 },
+      { ingredientId: "cilantro", qty: 12 },
+      { ingredientId: "green-chilli", qty: 12 },
+      { ingredientId: "ghee", qty: 12 },
+      { ingredientId: "salt", qty: 3 },
+    ],
   };
-
-  RECIPES["gift-classic"] = RECIPES.biryani.slice();
-  RECIPES["gift-festive"] = RECIPES.biryani.concat(RECIPES.pickle, RECIPES["shahi-tukray"]);
-  RECIPES["gift-celebrate"] = RECIPES.biryani.concat(RECIPES["dahi-baray"]);
 
   root.LazzatData = { MENU, INGREDIENTS, RECIPES };
 })(window);

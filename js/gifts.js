@@ -1,41 +1,10 @@
 /**
- * Rasa-e-Lazzat × Crocherish — Biryani is Love packs.
- * Crocherish names, prices, and photos match https://www.crocherish.com/shop (Aug 2026).
+ * Special-order extras (charms, roses, flowers) and weekly meal-plan subscriptions.
+ * Rasa-e-Lazzat only — no partner brands.
  */
 (function (root) {
-  const SHOP = "https://www.crocherish.com/shop";
-  const SITE = "https://www.crocherish.com/";
-
-  const CROCHET = {
-    bow: {
-      name: "Powder Blue Bow Keychain",
-      price: 18,
-      category: "Charms",
-      image: "assets/crocherish-bow-keychain.jpg",
-      alt: "Crocherish Powder Blue Bow Keychain, handmade crochet charm",
-    },
-    sunflower: {
-      name: "Sunflower Keychain",
-      price: 18,
-      category: "Charms",
-      image: "assets/crocherish-sunflower-keychain.jpg",
-      alt: "Crocherish Sunflower Keychain, handmade crochet charm",
-    },
-    bloom: {
-      name: "Bloom Flower Charm",
-      price: 22,
-      category: "Charms",
-      image: "assets/crocherish-bloom-charm.jpg",
-      alt: "Crocherish Bloom Flower Charm, handmade crochet flower",
-    },
-    bea: {
-      name: "Bea the Chick Plush",
-      price: 38,
-      category: "Plushies",
-      image: "assets/crocherish-bea-chick.jpg",
-      alt: "Crocherish Bea the Chick Plush, handmade crochet plush",
-    },
-  };
+  const PACKAGING =
+    "Kraft wrap, saffron ribbon, occasion sticker. Rasa-e-Lazzat festive wrap — no partner card.";
 
   const OCCASIONS = [
     { id: "hari-raya", label: "Hari Raya" },
@@ -45,79 +14,157 @@
     { id: "thank-you", label: "Thank-you" },
   ];
 
-  const PACKS = {
-    "gift-classic": {
-      id: "gift-classic",
-      shortName: "Classic Keepsake",
-      occasions: ["thank-you", "birthday", "anniversary", "hari-raya", "cny"],
-      defaultOccasion: "thank-you",
-      packaging:
-        "Kraft wrap, saffron ribbon, occasion sticker, card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”.",
-      crocherishByOccasion: {
-        "*": CROCHET.bow,
-      },
+  const ADDONS = {
+    "addon-charm": {
+      id: "addon-charm",
+      name: "Charm",
+      shortName: "Charm",
+      price: 18,
+      unit: "piece",
+      blurb: "A small keepsake charm to tuck with the biryani. Not food.",
+      image: "assets/special-biryani-love.png",
+      alt: "Packed Biryani is Love special with charm, roses, and biryani",
     },
-    "gift-festive": {
-      id: "gift-festive",
-      shortName: "Festive Hamper",
-      occasions: ["hari-raya", "cny"],
-      defaultOccasion: "hari-raya",
-      packaging:
-        "Festive box (green-and-gold sticker for Hari Raya, red-and-gold for Chinese New Year), ribbon, card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”.",
-      crocherishByOccasion: {
-        "hari-raya": CROCHET.bloom,
-        cny: CROCHET.sunflower,
-      },
+    "addon-rose": {
+      id: "addon-rose",
+      name: "Single rose",
+      shortName: "Rose",
+      price: 10,
+      unit: "stem",
+      blurb: "One rose beside the plate. For a birthday, an anniversary, a thank-you.",
+      image: "assets/special-biryani-love.png",
+      alt: "Packed Biryani is Love special with charm, roses, and biryani",
     },
-    "gift-celebrate": {
-      id: "gift-celebrate",
-      shortName: "Keep & Celebrate",
-      occasions: ["anniversary", "birthday"],
-      defaultOccasion: "birthday",
-      packaging:
-        "Kraft gift box, ribbon, occasion sticker, card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”. Names on the card if you tell us on WhatsApp.",
-      crocherishByOccasion: {
-        "*": CROCHET.bea,
-      },
+    "addon-flowers": {
+      id: "addon-flowers",
+      name: "Small bouquet",
+      shortName: "Flowers",
+      price: 30,
+      unit: "bouquet",
+      blurb: "A small mixed bunch. Enough to dress the box, not a florist shop.",
+      image: "assets/special-biryani-love.png",
+      alt: "Packed Biryani is Love special with charm, roses, and biryani",
     },
   };
 
-  function packMeta(id) {
-    return PACKS[id] || null;
-  }
-
-  function crocherishFor(packId, occasion) {
-    const pack = PACKS[packId];
-    if (!pack) return null;
-    const map = pack.crocherishByOccasion;
-    return map[occasion] || map["*"] || null;
-  }
+  const PLANS = {
+    "plan-salan": {
+      id: "plan-salan",
+      name: "Weekly Salan Box",
+      kicker: "7 days · one box a day",
+      defaultPeriod: "weekly",
+      periods: [{ id: "weekly", label: "Weekly", price: 110 }],
+      serving: "7 single-serve salan in disposable boxes. Lunch or dinner — you pick when you eat.",
+      dishes: [
+        "Chicken Aloo",
+        "Chana Masala",
+        "Chicken White Karahi",
+        "Bhindi Salan",
+        "Tadka Daal",
+        "Chicken Nihari",
+        "Chicken Qorma",
+      ],
+      notes: [
+        "The whole week, covered — family table or a student fridge.",
+        "Each salan is one serving.",
+        "Homemade, packed fresh, disposable boxes.",
+        "The week’s cooking decides the exact pots; this list is a sample.",
+        "No bread, roti, or naan in the box. Rice on the side if you ask.",
+      ],
+    },
+    "plan-lunch": {
+      id: "plan-lunch",
+      name: "Lunch Plan",
+      kicker: "Monday to Friday",
+      defaultPeriod: "weekly",
+      periods: [
+        { id: "weekly", label: "Weekly", price: 70 },
+        { id: "monthly", label: "Monthly", price: 280 },
+      ],
+      serving: "Five weekday lunches. Pickup or delivery across KL and Klang Valley.",
+      dishes: [
+        "Qeema Aloo",
+        "Qeema Matar",
+        "Palak Chicken",
+        "Aloo Ghosht",
+        "Rice with chicken or beef",
+        "Mix sabzi",
+        "Daal",
+      ],
+      notes: [
+        "Monday to Friday.",
+        "Pickup or delivery — say which on WhatsApp.",
+        "Dishes may vary with the week’s cooking.",
+        "Rice with a salan is fine. No bread or roti in the plan.",
+      ],
+    },
+    "plan-dinner": {
+      id: "plan-dinner",
+      name: "Dinner Plan",
+      kicker: "Monday to Friday",
+      defaultPeriod: "weekly",
+      periods: [
+        { id: "weekly", label: "Weekly", price: 85 },
+        { id: "monthly", label: "Monthly", price: 340 },
+      ],
+      serving: "Five weekday dinners. A heavier plate than lunch. Pickup or delivery.",
+      dishes: [
+        "Chicken sizzling",
+        "Aloo Ghosht",
+        "Beef salan",
+        "Palak chicken",
+        "Chicken karahi",
+        "Mix sabzi",
+        "Daal with rice",
+      ],
+      notes: [
+        "Monday to Friday.",
+        "Pickup or delivery — say which on WhatsApp.",
+        "Dishes may vary with the week’s cooking.",
+        "No bread, roti, or baked items. Rice is included on rice days.",
+      ],
+    },
+  };
 
   function occasionLabel(id) {
     const row = OCCASIONS.find((o) => o.id === id);
     return row ? row.label : id;
   }
 
-  function allowedOccasions(packId) {
-    const pack = PACKS[packId];
-    if (!pack) return OCCASIONS;
-    return OCCASIONS.filter((o) => pack.occasions.indexOf(o.id) !== -1);
+  function addonMeta(id) {
+    return ADDONS[id] || null;
   }
 
-  function syncFestivePhoto(card) {
-    const packId = card.getAttribute("data-gift-pack");
-    const select = card.querySelector("[data-gift-occasion]");
-    const piece = crocherishFor(packId, select && select.value);
-    if (!piece) return;
-    const img = card.querySelector("[data-crochet-img]");
-    const name = card.querySelector("[data-crochet-name]");
-    const price = card.querySelector("[data-crochet-price]");
-    if (img) {
-      img.src = piece.image;
-      img.alt = piece.alt;
-    }
-    if (name) name.textContent = piece.name;
-    if (price) price.textContent = "RM " + piece.price + " on Crocherish";
+  function planMeta(id) {
+    return PLANS[id] || null;
+  }
+
+  function isAddon(id) {
+    return !!ADDONS[id];
+  }
+
+  function isPlan(id) {
+    return !!PLANS[id];
+  }
+
+  function periodOf(planId, periodId) {
+    const plan = PLANS[planId];
+    if (!plan) return null;
+    return plan.periods.find((p) => p.id === periodId) || plan.periods[0] || null;
+  }
+
+  function planPrice(planId, periodId) {
+    const row = periodOf(planId, periodId);
+    return row ? row.price : 0;
+  }
+
+  function periodLabel(planId, periodId) {
+    const row = periodOf(planId, periodId);
+    return row ? row.label : periodId || "";
+  }
+
+  function allowedOccasions() {
+    return OCCASIONS.slice();
   }
 
   function setChipFilter(occasionId) {
@@ -126,33 +173,35 @@
       chip.classList.toggle("is-on", on);
       chip.setAttribute("aria-pressed", on ? "true" : "false");
     });
-    document.querySelectorAll("[data-gift-pack]").forEach((card) => {
-      const pack = PACKS[card.getAttribute("data-gift-pack")];
-      const match = !occasionId || (pack && pack.occasions.indexOf(occasionId) !== -1);
-      card.classList.toggle("is-dim", !match);
+    document.querySelectorAll("[data-addon-card]").forEach((card) => {
       const select = card.querySelector("[data-gift-occasion]");
-      if (select && occasionId && pack && pack.occasions.indexOf(occasionId) !== -1) {
-        select.value = occasionId;
-        syncFestivePhoto(card);
-      }
+      if (select && occasionId) select.value = occasionId;
     });
   }
 
-  function init() {
-    document.querySelectorAll("[data-gift-pack]").forEach((card) => {
-      const select = card.querySelector("[data-gift-occasion]");
-      if (select) {
-        select.addEventListener("change", () => syncFestivePhoto(card));
-        syncFestivePhoto(card);
-      }
-    });
+  function syncPlanPrice(card) {
+    const planId = card.getAttribute("data-plan-card");
+    const select = card.querySelector("[data-plan-period]");
+    const period = select ? select.value : "";
+    const priceEl = card.querySelector("[data-plan-price]");
+    if (priceEl) priceEl.textContent = "RM " + planPrice(planId, period);
+  }
 
+  function init() {
     document.querySelectorAll("[data-gift-chip]").forEach((chip) => {
       chip.addEventListener("click", () => {
         const id = chip.getAttribute("data-gift-chip");
         const already = chip.classList.contains("is-on");
         setChipFilter(already ? "" : id);
       });
+    });
+
+    document.querySelectorAll("[data-plan-card]").forEach((card) => {
+      const select = card.querySelector("[data-plan-period]");
+      if (select) {
+        select.addEventListener("change", () => syncPlanPrice(card));
+        syncPlanPrice(card);
+      }
     });
   }
 
@@ -163,14 +212,18 @@
   }
 
   root.LazzatGifts = {
-    SHOP,
-    SITE,
-    CROCHET,
+    PACKAGING,
     OCCASIONS,
-    PACKS,
-    packMeta,
-    crocherishFor,
+    ADDONS,
+    PLANS,
     occasionLabel,
+    addonMeta,
+    planMeta,
+    isAddon,
+    isPlan,
+    periodOf,
+    planPrice,
+    periodLabel,
     allowedOccasions,
   };
 })(window);

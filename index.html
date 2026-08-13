@@ -6,7 +6,7 @@
     <title>Rasa-e-Lazzat | Halal Pakistani Home Kitchen, KL</title>
     <meta
       name="description"
-      content="Halal Pakistani home cooking in Kuala Lumpur. Chicken biryani RM 15 with free raita, Shahi Tukray, Dahi Baray, Sophie's chilli pickle. WhatsApp +60 176020325."
+      content="Halal Pakistani home cooking in Kuala Lumpur. Chicken biryani RM 15 with free raita, chicken dumplings RM 22, Shahi Tukray, Dahi Baray, chilli pickle. Weekly meal plans. WhatsApp +60 176020325."
     />
     <meta name="author" content="Sophie, Rasa-e-Lazzat" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,7 +20,7 @@
     <meta property="og:title" content="Rasa-e-Lazzat | Halal Pakistani Home Kitchen, KL" />
     <meta
       property="og:description"
-      content="Sophie's halal kitchen in KL. Chicken biryani RM 15 with free raita. Shahi Tukray, Dahi Baray, chilli pickle. WhatsApp +60 176020325."
+      content="Sophie's halal kitchen in KL. Chicken biryani RM 15 with free raita. Chicken dumplings RM 22. Weekly meal plans. WhatsApp +60 176020325."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://razzat.vercel.app/" />
@@ -110,8 +110,8 @@
               "Shahi Tukra",
               "Shahi Dahi Baray",
               "Halal home cooking",
-              "Crocherish",
-              "Gift hampers"
+              "Weekly meal plan",
+              "Chicken dumplings"
             ]
           },
           {
@@ -120,10 +120,10 @@
             "name": "Rasa-e-Lazzat",
             "url": "https://razzat.vercel.app/",
             "image": "https://razzat.vercel.app/assets/rasa-biryani.png",
-            "description": "Halal Pakistani home kitchen in Kuala Lumpur, led by Sophie. Chicken biryani RM 15 with complimentary yogurt raita, Shahi Tukray RM 16, Royal Shahi Dahi Baray RM 18, Sophie's Chilli Pickle RM 28. Family recipes from the 1920s; KL kitchen 2026. WhatsApp +60 176020325.",
+            "description": "Halal Pakistani home kitchen in Kuala Lumpur, led by Sophie. Chicken biryani RM 15 with complimentary yogurt raita, Chicken Dumplings (12 pieces) RM 22, Shahi Tukray RM 16, Royal Shahi Dahi Baray RM 18, Sophie's Chilli Pickle RM 28. Weekly meal plans from RM 70. Family recipes from the 1920s; KL kitchen 2026. WhatsApp +60 176020325.",
             "slogan": "The Taste of Home in Every Bite",
             "servesCuisine": ["Pakistani", "South Asian", "Mughlai"],
-            "priceRange": "RM15–RM95",
+            "priceRange": "RM15–RM340",
             "currenciesAccepted": "MYR",
             "telephone": "+60176020325",
             "foundingDate": "2026",
@@ -147,8 +147,8 @@
               "Chicken biryani",
               "Mirch Ka Achar",
               "Halal cooking",
-              "Crocherish collaboration",
-              "Gift hampers"
+              "Weekly meal plan",
+              "Chicken dumplings"
             ],
             "additionalProperty": [
               {
@@ -192,7 +192,7 @@
             "dateModified": "2026-08-13",
             "speakable": {
               "@type": "SpeakableSpecification",
-              "cssSelector": ["#press-facts", "#faq", "#gifts", ".promo-line"]
+              "cssSelector": ["#press-facts", "#faq", "#gifts", "#reviews", "#meal-plan"]
             },
             "mainEntity": { "@id": "https://razzat.vercel.app/#restaurant" },
             "breadcrumb": { "@id": "https://razzat.vercel.app/#breadcrumb" },
@@ -202,9 +202,14 @@
               { "@id": "https://razzat.vercel.app/#pickle" },
               { "@id": "https://razzat.vercel.app/#dahi-baray" },
               { "@id": "https://razzat.vercel.app/#shahi-tukray" },
-              { "@id": "https://razzat.vercel.app/#gift-classic" },
-              { "@id": "https://razzat.vercel.app/#gift-festive" },
-              { "@id": "https://razzat.vercel.app/#gift-celebrate" }
+              { "@id": "https://razzat.vercel.app/#dumplings" },
+              { "@id": "https://razzat.vercel.app/#addon-charm" },
+              { "@id": "https://razzat.vercel.app/#addon-rose" },
+              { "@id": "https://razzat.vercel.app/#addon-flowers" },
+              { "@id": "https://razzat.vercel.app/#plan-salan" },
+              { "@id": "https://razzat.vercel.app/#plan-lunch" },
+              { "@id": "https://razzat.vercel.app/#plan-dinner" },
+              { "@id": "https://razzat.vercel.app/#review-zaaviyar-ali" }
             ]
           },
           {
@@ -228,6 +233,12 @@
                 "position": 3,
                 "name": "Gifts",
                 "item": "https://razzat.vercel.app/#gifts"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Meal plan",
+                "item": "https://razzat.vercel.app/#meal-plan"
               }
             ]
           },
@@ -278,6 +289,18 @@
             "fatContent": "22 g",
             "fiberContent": "2 g",
             "description": "Approximate values per serving; home-style portions may vary."
+          },
+          {
+            "@type": "NutritionInformation",
+            "@id": "https://razzat.vercel.app/#dumplings-nutrition",
+            "name": "Chicken Dumplings, 12 pieces",
+            "servingSize": "12 pieces with chutney",
+            "calories": "520 kcal",
+            "proteinContent": "28 g",
+            "carbohydrateContent": "52 g",
+            "fatContent": "18 g",
+            "fiberContent": "3 g",
+            "description": "Approximate values for 12 steamed dumplings with a spoon of mint-chilli chutney; home-style portions may vary."
           },
           {
             "@type": "Product",
@@ -382,6 +405,29 @@
             }
           },
           {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#dumplings",
+            "name": "Chicken Dumplings (12 pieces)",
+            "alternateName": "Chicken momo",
+            "description": "Steamed chicken dumplings, twelve to a tray, with mint-chilli chutney. Halal. Not vegan. Wheat wrappers. Allergens: gluten; may contain soy or sesame in the chutney. No dairy in the dumpling. About 520 kcal for 12 pieces. Approximate values per serving; home-style portions may vary.",
+            "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80",
+            "category": "Starter",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "nutrition": { "@id": "https://razzat.vercel.app/#dumplings-nutrition" },
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Diet", "value": "Halal; contains meat; not vegan" },
+              { "@type": "PropertyValue", "name": "Allergens", "value": "Gluten (wheat wrappers); may contain soy or sesame (chutney); no dairy in the dumpling" }
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "22.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#product-dumplings",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          },
+          {
             "@type": "MenuItem",
             "@id": "https://razzat.vercel.app/#menuitem-biryani",
             "name": "Authentic Chicken Biryani",
@@ -447,6 +493,20 @@
             }
           },
           {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-dumplings",
+            "name": "Chicken Dumplings (12 pieces)",
+            "url": "https://razzat.vercel.app/#product-dumplings",
+            "suitableForDiet": "https://schema.org/HalalDiet",
+            "nutrition": { "@id": "https://razzat.vercel.app/#dumplings-nutrition" },
+            "offers": {
+              "@type": "Offer",
+              "price": "22.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
             "@type": "Menu",
             "@id": "https://razzat.vercel.app/#foodmenu",
             "name": "Rasa-e-Lazzat menu",
@@ -465,7 +525,10 @@
               {
                 "@type": "MenuSection",
                 "name": "Starters",
-                "hasMenuItem": { "@id": "https://razzat.vercel.app/#menuitem-dahi" }
+                "hasMenuItem": [
+                  { "@id": "https://razzat.vercel.app/#menuitem-dahi" },
+                  { "@id": "https://razzat.vercel.app/#menuitem-dumplings" }
+                ]
               },
               {
                 "@type": "MenuSection",
@@ -478,129 +541,131 @@
               "priceCurrency": "MYR",
               "lowPrice": "15.00",
               "highPrice": "28.00",
-              "offerCount": 4
+              "offerCount": 5
             }
           },
           {
-            "@type": "Brand",
-            "@id": "https://razzat.vercel.app/#crocherish-brand",
-            "name": "Crocherish",
-            "url": "https://www.crocherish.com/",
-            "description": "Handmade crochet wearables, charms and plushies by Mehrish. Small-batch studio. Yarn keepsakes — not food."
-          },
-          {
             "@type": "Product",
-            "@id": "https://razzat.vercel.app/#gift-classic",
-            "name": "Biryani is Love Classic Keepsake",
-            "description": "Rasa-e-Lazzat × Crocherish gift pack. Halal chicken biryani with complimentary yogurt raita, plus a Crocherish Powder Blue Bow Keychain (handmade crochet charm, RM 18 on crocherish.com — not edible). Kraft wrap, saffron ribbon, occasion sticker, card: Biryani is Love — Rasa-e-Lazzat × Crocherish. Occasions: thank-you, birthday, anniversary, Hari Raya, Chinese New Year.",
-            "image": [
-              "https://razzat.vercel.app/assets/heritage-biryani.png",
-              "https://razzat.vercel.app/assets/crocherish-bow-keychain.jpg"
-            ],
-            "category": "Gift pack",
-            "brand": [
-              { "@id": "https://razzat.vercel.app/#brand" },
-              { "@id": "https://razzat.vercel.app/#crocherish-brand" }
-            ],
-            "isRelatedTo": {
-              "@type": "Product",
-              "name": "Powder Blue Bow Keychain",
-              "url": "https://www.crocherish.com/shop",
-              "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
-            },
+            "@id": "https://razzat.vercel.app/#addon-charm",
+            "name": "Charm",
+            "description": "Special-order extra with biryani. A small keepsake charm. Not food. Kraft wrap, saffron ribbon, occasion sticker. Rasa-e-Lazzat festive wrap only. RM 18.",
+            "image": "https://razzat.vercel.app/assets/special-biryani-love.png",
+            "category": "Gift add-on",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
             "additionalProperty": [
-              { "@type": "PropertyValue", "name": "Diet (food)", "value": "Halal chicken biryani; raita contains milk" },
-              { "@type": "PropertyValue", "name": "Crocherish piece", "value": "Powder Blue Bow Keychain — crochet, not food" },
-              { "@type": "PropertyValue", "name": "Packaging", "value": "Kraft wrap, saffron ribbon, occasion sticker, collaboration card" }
+              { "@type": "PropertyValue", "name": "Edible", "value": "No" },
+              { "@type": "PropertyValue", "name": "Packaging", "value": "Kraft wrap, saffron ribbon, occasion sticker. Rasa-e-Lazzat festive wrap only." }
             ],
             "offers": {
               "@type": "Offer",
-              "name": "Biryani is Love Classic Keepsake",
-              "price": "55.00",
+              "name": "Charm",
+              "price": "18.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock",
-              "url": "https://razzat.vercel.app/#product-gift-classic",
-              "itemCondition": "https://schema.org/NewCondition"
+              "url": "https://razzat.vercel.app/#product-addon-charm"
             }
           },
           {
             "@type": "Product",
-            "@id": "https://razzat.vercel.app/#gift-festive",
-            "name": "Biryani is Love Festive Hamper",
-            "description": "Rasa-e-Lazzat × Crocherish festive hamper. Halal chicken biryani with raita, Sophie's Chilli Pickle, Shahi Tukray, plus a Crocherish charm: Bloom Flower Charm (RM 22) for Hari Raya or Sunflower Keychain (RM 18) for Chinese New Year. Crochet is yarn, not food. Festive box, ribbon, occasion sticker, collaboration card.",
-            "image": [
-              "https://razzat.vercel.app/assets/sophie-chilli-pickle.png",
-              "https://razzat.vercel.app/assets/crocherish-bloom-charm.jpg",
-              "https://razzat.vercel.app/assets/crocherish-sunflower-keychain.jpg"
-            ],
-            "category": "Gift pack",
-            "brand": [
-              { "@id": "https://razzat.vercel.app/#brand" },
-              { "@id": "https://razzat.vercel.app/#crocherish-brand" }
-            ],
-            "isRelatedTo": [
+            "@id": "https://razzat.vercel.app/#addon-rose",
+            "name": "Single rose",
+            "description": "Special-order extra with biryani. One rose. RM 10. Occasions: Hari Raya, Chinese New Year, birthday, anniversary, thank-you.",
+            "image": "https://razzat.vercel.app/assets/special-biryani-love.png",
+            "category": "Gift add-on",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": {
+              "@type": "Offer",
+              "name": "Single rose",
+              "price": "10.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#product-addon-rose"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#addon-flowers",
+            "name": "Small bouquet",
+            "description": "Special-order extra with biryani. A small mixed bunch. RM 30. Rasa-e-Lazzat festive wrap only.",
+            "image": "https://razzat.vercel.app/assets/special-biryani-love.png",
+            "category": "Gift add-on",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": {
+              "@type": "Offer",
+              "name": "Small bouquet",
+              "price": "30.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#product-addon-flowers"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#plan-salan",
+            "name": "Weekly Salan Box",
+            "description": "Rasa-e-Lazzat meal-plan subscription. Seven single-serve homemade salan in disposable boxes. Sample week: Chicken Aloo, Chana Masala, Chicken White Karahi, Bhindi Salan, Tadka Daal, Chicken Nihari, Chicken Qorma. Dishes may vary. No bread or roti. RM 110 per week.",
+            "category": "Meal plan subscription",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": {
+              "@type": "Offer",
+              "name": "Weekly Salan Box",
+              "price": "110.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://razzat.vercel.app/#meal-plan"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#plan-lunch",
+            "name": "Lunch Plan",
+            "description": "Rasa-e-Lazzat weekday lunch subscription, Monday to Friday. Pickup or delivery in KL and Klang Valley. Sample: Qeema Aloo, Qeema Matar, Palak Chicken, Aloo Ghosht, rice with chicken or beef, mix sabzi, daal. Dishes may vary. No bread or roti. Weekly RM 70. Monthly RM 280.",
+            "category": "Meal plan subscription",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": [
               {
-                "@type": "Product",
-                "name": "Bloom Flower Charm",
-                "url": "https://www.crocherish.com/shop",
-                "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+                "@type": "Offer",
+                "name": "Lunch Plan weekly",
+                "price": "70.00",
+                "priceCurrency": "MYR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://razzat.vercel.app/#product-plan-lunch"
               },
               {
-                "@type": "Product",
-                "name": "Sunflower Keychain",
-                "url": "https://www.crocherish.com/shop",
-                "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
+                "@type": "Offer",
+                "name": "Lunch Plan monthly",
+                "price": "280.00",
+                "priceCurrency": "MYR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://razzat.vercel.app/#product-plan-lunch"
               }
-            ],
-            "additionalProperty": [
-              { "@type": "PropertyValue", "name": "Diet (food)", "value": "Halal; pickle vegan; shahi tukray vegetarian (dairy, gluten, possible nuts)" },
-              { "@type": "PropertyValue", "name": "Crocherish piece", "value": "Hari Raya: Bloom Flower Charm. Chinese New Year: Sunflower Keychain. Crochet, not food." },
-              { "@type": "PropertyValue", "name": "Packaging", "value": "Festive box, ribbon, Raya or CNY sticker, collaboration card" }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "name": "Biryani is Love Festive Hamper",
-              "price": "95.00",
-              "priceCurrency": "MYR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://razzat.vercel.app/#product-gift-festive",
-              "itemCondition": "https://schema.org/NewCondition"
-            }
+            ]
           },
           {
             "@type": "Product",
-            "@id": "https://razzat.vercel.app/#gift-celebrate",
-            "name": "Biryani is Love Keep & Celebrate",
-            "description": "Rasa-e-Lazzat × Crocherish anniversary or birthday pack. Halal chicken biryani with raita, Royal Shahi Dahi Baray, plus Crocherish Bea the Chick Plush (handmade crochet, RM 38 on crocherish.com — not edible). Kraft gift box, ribbon, occasion sticker, collaboration card.",
-            "image": [
-              "https://razzat.vercel.app/assets/rasa-biryani.png",
-              "https://razzat.vercel.app/assets/crocherish-bea-chick.jpg"
-            ],
-            "category": "Gift pack",
-            "brand": [
-              { "@id": "https://razzat.vercel.app/#brand" },
-              { "@id": "https://razzat.vercel.app/#crocherish-brand" }
-            ],
-            "isRelatedTo": {
-              "@type": "Product",
-              "name": "Bea the Chick Plush",
-              "url": "https://www.crocherish.com/shop",
-              "brand": { "@id": "https://razzat.vercel.app/#crocherish-brand" }
-            },
-            "additionalProperty": [
-              { "@type": "PropertyValue", "name": "Diet (food)", "value": "Halal; dahi baray vegetarian (dairy)" },
-              { "@type": "PropertyValue", "name": "Crocherish piece", "value": "Bea the Chick Plush — crochet, not food" },
-              { "@type": "PropertyValue", "name": "Packaging", "value": "Kraft gift box, ribbon, occasion sticker, collaboration card" }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "name": "Biryani is Love Keep & Celebrate",
-              "price": "85.00",
-              "priceCurrency": "MYR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://razzat.vercel.app/#product-gift-celebrate",
-              "itemCondition": "https://schema.org/NewCondition"
-            }
+            "@id": "https://razzat.vercel.app/#plan-dinner",
+            "name": "Dinner Plan",
+            "description": "Rasa-e-Lazzat weekday dinner subscription, Monday to Friday. Pickup or delivery. Sample: Chicken sizzling, Aloo Ghosht, beef salan, Palak chicken, Chicken karahi, mix sabzi, daal with rice. Dishes may vary. No bread, roti, or baked items. Weekly RM 85. Monthly RM 340.",
+            "category": "Meal plan subscription",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Dinner Plan weekly",
+                "price": "85.00",
+                "priceCurrency": "MYR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://razzat.vercel.app/#product-plan-dinner"
+              },
+              {
+                "@type": "Offer",
+                "name": "Dinner Plan monthly",
+                "price": "340.00",
+                "priceCurrency": "MYR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://razzat.vercel.app/#product-plan-dinner"
+              }
+            ]
           },
           {
             "@type": "FAQPage",
@@ -659,7 +724,7 @@
                 "name": "What are the top sellers and prices?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Shahi Tukray RM 16 (best seller). Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit."
+                  "text": "Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Chicken Dumplings (12 pieces) RM 22. Shahi Tukray RM 16 (best seller). Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit."
                 }
               },
               {
@@ -680,13 +745,29 @@
               },
               {
                 "@type": "Question",
-                "name": "What is the Biryani is Love gift with Crocherish?",
+                "name": "Can I add a charm, rose, or flowers with biryani?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A Rasa-e-Lazzat × Crocherish collaboration. Three packs: Classic Keepsake RM 55 (biryani, raita, Crocherish Powder Blue Bow Keychain), Festive Hamper RM 95 (biryani, Sophie's pickle, shahi tukray, plus Bloom Flower Charm for Hari Raya or Sunflower Keychain for Chinese New Year), Keep & Celebrate RM 85 (biryani, dahi baray, Bea the Chick Plush). Food is halal. Crochet pieces are handmade yarn keepsakes from https://www.crocherish.com/ — not edible. Kraft or festive box, ribbon, occasion sticker, card. Order on the Gifts section and WhatsApp."
+                  "text": "Yes. Special-order extras from this kitchen: Charm RM 18, Single rose RM 10, Small bouquet RM 30. Add them on their own or with Authentic Chicken Biryani. Pick an occasion (Hari Raya, Chinese New Year, birthday, anniversary, thank-you). Kraft wrap, saffron ribbon, occasion sticker — Rasa-e-Lazzat festive wrap only. See the Gifts section."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer a weekly meal plan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Weekly Salan Box RM 110 (seven single-serve homemade salan in disposable boxes). Lunch Plan Monday–Friday: weekly RM 70 or monthly RM 280. Dinner Plan Monday–Friday: weekly RM 85 or monthly RM 340. Pickup or delivery in KL and Klang Valley. Dishes may vary. No bread or roti in the plans. Subscribe on the Meal plan section and WhatsApp +60 176020325."
                 }
               }
             ]
+          },
+          {
+            "@type": "Review",
+            "@id": "https://razzat.vercel.app/#review-zaaviyar-ali",
+            "itemReviewed": { "@id": "https://razzat.vercel.app/#restaurant" },
+            "author": { "@type": "Person", "name": "Zaaviyar Ali" },
+            "reviewBody": "بہت زبردست بنائی تھی انہوں نے پرانی بریانی مطلب بہت amazing تھی world best بریانی آپ نے یہی کہا تھا نا شام کو مزہ آیا آپ کو کھا کے کیسے کیا کیا تھا بولو نہ",
+            "inLanguage": "ur"
           }
         ]
       }
@@ -703,9 +784,10 @@
         </a>
         <div class="hidden items-center gap-7 md:flex">
           <a href="#story" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Story</a>
-          <a href="#timeline" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Lineage</a>
           <a href="#menu" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Menu</a>
           <a href="#gifts" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Gifts</a>
+          <a href="#reviews" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Reviews</a>
+          <a href="#meal-plan" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Meal plan</a>
           <a href="#faq" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">FAQ</a>
         </div>
         <div class="flex items-center gap-2">
@@ -728,16 +810,17 @@
       <div id="mobile-menu" class="hidden border-t border-earth/10 px-4 py-3 md:hidden">
         <div class="flex flex-col">
           <a href="#story" class="tap flex items-center text-sm font-medium text-cocoa">The Story</a>
-          <a href="#timeline" class="tap flex items-center text-sm font-medium text-cocoa">Century Lineage</a>
           <a href="#menu" class="tap flex items-center text-sm font-medium text-cocoa">Signature Menu</a>
           <a href="#gifts" class="tap flex items-center text-sm font-medium text-cocoa">Gifts</a>
+          <a href="#reviews" class="tap flex items-center text-sm font-medium text-cocoa">Reviews</a>
+          <a href="#meal-plan" class="tap flex items-center text-sm font-medium text-cocoa">Meal plan</a>
           <a href="#faq" class="tap flex items-center text-sm font-medium text-cocoa">FAQ</a>
         </div>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero-flyer hero-flyer--cinema relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+      <section class="hero-flyer" aria-label="Rasa-e-Lazzat">
         <div class="hero-media" aria-hidden="true">
           <video
             class="hero-video"
@@ -751,59 +834,17 @@
           >
             <source src="assets/hero-biryani.mp4" type="video/mp4" />
           </video>
-          <div class="hero-media-grade"></div>
-          <div class="hero-media-vignette"></div>
-          <div class="hero-media-rays"></div>
-          <div class="hero-media-steam"></div>
+          <div class="hero-scrim"></div>
         </div>
-        <div class="hero-content relative z-10 mx-auto max-w-3xl text-center">
+        <div class="hero-content">
           <h1>
             <logo-wordmark size="hero"></logo-wordmark>
           </h1>
-          <p class="logo-tagline mx-auto mt-2">The Taste of Home in Every Bite</p>
-
-          <figure class="hero-plate relative mx-auto mt-8 max-w-lg overflow-visible pb-10 sm:pb-12">
-            <img
-              src="assets/rasa-biryani.png"
-              alt="Authentic chicken biryani with saffron rice, roasted drumsticks, potato, coriander, raita, and whole spices"
-              class="hero-food mx-auto"
-              width="555"
-              height="528"
-              fetchpriority="high"
-            />
-            <logo-seal size="hero" class="hero-seal pointer-events-none absolute bottom-4 right-0 sm:bottom-2 sm:-right-2 lg:-right-6"></logo-seal>
-          </figure>
-
-          <p class="promo-line mx-auto mt-10 max-w-xl text-[1.35rem] sm:text-2xl lg:text-[1.75rem]">
-            Chicken biryani is on. Order today.
-          </p>
-          <p class="mt-3 flex flex-wrap items-baseline justify-center gap-x-2.5 gap-y-1 text-cocoa">
-            <span class="price-was">RM 32</span>
-            <span class="text-2xl font-bold text-earth sm:text-3xl">RM 15</span>
-            <span class="rounded bg-saffron px-2 py-0.5 text-[0.68rem] font-bold tracking-wide text-cocoa">Promo · Save RM 17</span>
-          </p>
-          <p class="mt-2 text-sm font-medium text-earth">Complimentary yogurt raita with every plate</p>
-          <p class="mt-4 text-sm font-normal text-cocoa sm:text-base">
-            Order via WhatsApp:
-            <a class="font-medium hover:underline" href="https://wa.me/60176020325">+60 176020325</a>
-          </p>
-          <p class="mt-1 text-sm font-normal text-cocoa sm:text-base">
-            Follow us
-            <a class="font-medium hover:underline" href="https://www.facebook.com/search/top?q=Rasa-e-Lazzat" target="_blank" rel="noopener noreferrer">Rasa-e-Lazzat</a>
-            on Facebook
-          </p>
-
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="#menu" class="btn-gold tap inline-flex items-center px-8 text-sm">Order now</a>
-            <a
-              id="wa-direct"
-              href="https://wa.me/60176020325"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="tap inline-flex items-center gap-2 rounded-md bg-[#25d366] px-8 text-sm font-bold text-white"
-            >
-              WhatsApp order
-            </a>
+          <p class="logo-tagline hero-tagline">The Taste of Home in Every Bite</p>
+          <p class="hero-sub">Chicken biryani is on. RM 15, raita included.</p>
+          <div class="hero-ctas">
+            <a href="#menu" class="btn-gold tap inline-flex items-center justify-center px-8 text-sm">Order now</a>
+            <a href="#meal-plan" class="btn-hero-ghost tap inline-flex items-center justify-center px-8 text-sm">Meal plan</a>
           </div>
         </div>
       </section>
@@ -934,17 +975,17 @@
         <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
           <div>
             <p class="section-kicker">From our kitchen</p>
-            <h2 class="section-title mt-2 text-3xl sm:text-4xl">Four dishes. WhatsApp when you're ready.</h2>
+            <h2 class="section-title mt-2 text-3xl sm:text-4xl">From the pot. WhatsApp when you're ready.</h2>
           </div>
           <p class="body-copy max-w-xs text-sm">Prices in Malaysian Ringgit. Halal kitchen. Approximate nutrition on each card. Shared home kitchen: dairy, gluten, nuts, sesame, mustard — traces possible.</p>
         </div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <article class="card-lux featured flex flex-col" id="product-biryani">
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
-                src="assets/heritage-biryani.png"
-                alt="Chicken biryani with saffron rice, roasted chicken, potato, coriander, and lime"
+                src="assets/rasa-biryani.png"
+                alt="Authentic chicken biryani with saffron rice, roasted drumsticks, potato, coriander, raita, and whole spices"
                 class="food-crop h-full w-full"
                 width="800"
                 height="600"
@@ -1169,18 +1210,83 @@
               </div>
             </div>
           </article>
+
+          <article class="card-lux flex flex-col" id="product-dumplings">
+            <div class="relative h-56 overflow-hidden bg-earth/10">
+              <img
+                src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80"
+                alt="Steamed chicken dumplings in a bamboo basket"
+                class="h-full w-full object-cover"
+                width="800"
+                height="600"
+                loading="lazy"
+              />
+              <span class="absolute left-4 top-4 rounded bg-herb px-2 py-1 text-[0.62rem] font-bold text-white">New</span>
+              <span class="absolute bottom-4 left-4 text-[0.68rem] font-medium text-cream">Starters</span>
+            </div>
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="section-title text-xl sm:text-2xl">Chicken Dumplings</h3>
+              <p class="mt-1 text-xs font-medium text-earth">12 pieces · steamed · mint-chilli chutney</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">May contain soy</span>
+                <span class="chip chip-allergen">May contain sesame</span>
+              </div>
+              <p class="body-copy mt-3 flex-1 text-sm">Chicken mince, ginger, green chilli, folded into wheat skins and steamed until the pleats go translucent. Twelve on a tray. A sharp mint-chilli chutney on the side — not soy-drowned, not fried.</p>
+              <details class="nutrition-panel">
+                <summary class="tap">
+                  <span>Ingredients, nutrition &amp; allergens</span>
+                  <span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span>
+                </summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Halal chicken, wheat-flour wrappers, onion, ginger, garlic, green chilli, coriander, salt, a little oil. Chutney: mint, green chilli, lime. No dairy in the dumpling.</p>
+                  <h4>Per 12 pieces</h4>
+                  <p class="kcal-line"><strong>520 kcal</strong> <span>with a spoon of chutney</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>28 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>52 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>18 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>3 g</dd></div>
+                  </dl>
+                  <p class="mt-3">Key nutrients: protein from the chicken; starch from the wheat wrappers.</p>
+                  <h4>Allergens</h4>
+                  <p>Gluten from the wheat wrappers. Chutney may pick up soy or sesame in a shared kitchen. No milk in the dumpling itself.</p>
+                  <h4>Why these ingredients</h4>
+                  <p>Steam keeps the skin soft and the filling juicy. Mint-chilli chutney cuts the richness. These are steamed — not pan-fried, not a bread basket.</p>
+                  <p class="nutrition-note">Approximate values per serving; home-style portions may vary.</p>
+                </div>
+              </details>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 22.00</p>
+                <button data-add="dumplings" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="gifts" class="gifts-band py-20" aria-labelledby="gifts-title">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p class="section-kicker">Rasa-e-Lazzat × Crocherish</p>
+          <p class="section-kicker">Special-order extras</p>
           <h2 id="gifts-title" class="section-title mt-2 max-w-2xl text-3xl sm:text-4xl">Biryani is Love</h2>
           <p class="body-copy mt-4 max-w-2xl text-base">
-            Sophie’s plate and Mehrish’s yarn in one box. Halal Pakistani food from this kitchen; a handmade Crocherish keepsake from
-            <a class="font-medium text-earth underline-offset-2 hover:underline" href="https://www.crocherish.com/" target="_blank" rel="noopener noreferrer">crocherish.com</a>
-            — clip it to keys, sit it on a shelf. Do not eat the crochet.
+            A charm, a rose, or a small bouquet with the biryani — for Hari Raya, Chinese New Year, a birthday, an anniversary. Extras from this kitchen. Not a second brand.
           </p>
+
+          <figure class="gift-hero">
+            <img
+              src="assets/special-biryani-love.png"
+              alt="Packed Biryani is Love special: chicken biryani in a bowl, red roses, a small flower bunch, and a charm in kraft wrap with saffron ribbon"
+              width="1600"
+              height="1200"
+            />
+            <figcaption class="gift-hero-cap">One pack: biryani, roses, a small bunch, and a charm — kraft wrap, saffron ribbon.</figcaption>
+          </figure>
 
           <div class="mt-8" role="group" aria-label="Occasion">
             <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-earth">What’s the occasion?</p>
@@ -1194,44 +1300,19 @@
           </div>
 
           <div class="gift-grid mt-10">
-            <article class="gift-pack" id="product-gift-classic" data-gift-pack="gift-classic">
-              <div class="gift-visual">
-                <img
-                  class="gift-food"
-                  src="assets/heritage-biryani.png"
-                  alt="Chicken biryani with saffron rice and roasted chicken"
-                  width="640"
-                  height="480"
-                />
-                <img
-                  class="gift-crochet"
-                  data-crochet-img
-                  src="assets/crocherish-bow-keychain.jpg"
-                  alt="Crocherish Powder Blue Bow Keychain, handmade crochet charm"
-                  width="480"
-                  height="600"
-                />
-                <span class="gift-badge">Classic · RM 55</span>
-              </div>
+            <article class="gift-pack" id="product-addon-charm" data-addon-card>
               <div class="gift-body">
-                <h3 class="section-title text-xl sm:text-2xl">Classic Keepsake</h3>
-                <p class="mt-1 text-xs font-medium text-earth">Biryani is Love · one plate, one bow</p>
-                <p class="body-copy mt-3 flex-1 text-sm">
-                  Chicken biryani with the free yogurt raita — rice still smelling of saffron when you lift the lid. Beside it, Crocherish’s
-                  <span data-crochet-name>Powder Blue Bow Keychain</span>
-                  (RM 18 on their shop): a small crochet bow for keys or a bag. Yarn. Not a garnish.
-                </p>
-                <ul class="mt-3 space-y-1 text-sm text-muted">
-                  <li>Authentic Chicken Biryani + raita — RM 15 on the menu</li>
-                  <li>Crocherish Powder Blue Bow Keychain — <span data-crochet-price>RM 18 on Crocherish</span></li>
-                </ul>
+                <p class="section-kicker">Charm · RM 18</p>
+                <h3 class="section-title text-xl sm:text-2xl">Charm</h3>
+                <p class="mt-1 text-xs font-medium text-earth">Keepsake · not food</p>
+                <p class="body-copy mt-3 flex-1 text-sm">A small charm to tuck in with the biryani. Clip it later. Do not eat it.</p>
                 <div class="gift-packaging">
                   <h4>Packaging</h4>
-                  <p>Kraft wrap, saffron ribbon, occasion sticker, handwritten-style card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”.</p>
+                  <p>Kraft wrap, saffron ribbon, occasion sticker. Rasa-e-Lazzat festive wrap only — no partner card.</p>
                 </div>
                 <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
                   Occasion
-                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Classic Keepsake">
+                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Charm">
                     <option value="thank-you" selected>Thank-you</option>
                     <option value="birthday">Birthday</option>
                     <option value="anniversary">Anniversary</option>
@@ -1239,120 +1320,202 @@
                     <option value="cny">Chinese New Year</option>
                   </select>
                 </label>
-                <p class="gift-note mt-2">Priced above a plain plate. Food is halal. Crochet is a keepsake.</p>
+                <p class="gift-note mt-2">Add it on its own, or with a plate of biryani.</p>
                 <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
-                  <p class="text-2xl font-bold text-earth">RM 55</p>
-                  <button data-add="gift-classic" class="btn-gold tap px-4 text-sm">Add to cart</button>
+                  <p class="text-2xl font-bold text-earth">RM 18</p>
+                  <div class="gift-actions">
+                    <button type="button" data-add="addon-charm" class="btn-outline tap px-3 text-sm">Add extra</button>
+                    <button type="button" data-add-with-biryani="addon-charm" class="btn-gold tap px-3 text-sm">Add with biryani</button>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="gift-pack featured card-lux" id="product-gift-festive" data-gift-pack="gift-festive">
-              <div class="gift-visual">
-                <img
-                  class="gift-food"
-                  src="assets/sophie-chilli-pickle.png"
-                  alt="Sophie's chilli pickle in mustard oil"
-                  width="640"
-                  height="480"
-                />
-                <img
-                  class="gift-crochet"
-                  data-crochet-img
-                  src="assets/crocherish-bloom-charm.jpg"
-                  alt="Crocherish Bloom Flower Charm, handmade crochet flower"
-                  width="480"
-                  height="600"
-                />
-                <span class="gift-badge">Hamper · RM 95</span>
-              </div>
+            <article class="gift-pack featured card-lux" id="product-addon-rose" data-addon-card>
               <div class="gift-body">
-                <h3 class="section-title text-xl sm:text-2xl">Festive Hamper</h3>
-                <p class="mt-1 text-xs font-medium text-earth">Hari Raya or Chinese New Year — you pick</p>
-                <p class="body-copy mt-3 flex-1 text-sm">
-                  The spread: biryani and raita, a jar of Sophie’s chilli pickle, shahi tukray after. In the same festive box, a Crocherish charm —
-                  <span data-crochet-name>Bloom Flower Charm</span>
-                  for Raya, or their Sunflower Keychain for CNY. Flower and sunflower are yarn. The pickle is the heat.
-                </p>
-                <ul class="mt-3 space-y-1 text-sm text-muted">
-                  <li>Biryani + raita, Sophie’s Pickle (RM 28), Shahi Tukray (RM 16)</li>
-                  <li>Raya: Bloom Flower Charm (RM 22) · CNY: Sunflower Keychain (RM 18)</li>
-                </ul>
+                <p class="section-kicker">Rose · RM 10</p>
+                <h3 class="section-title text-xl sm:text-2xl">Single rose</h3>
+                <p class="mt-1 text-xs font-medium text-earth">One stem beside the plate</p>
+                <p class="body-copy mt-3 flex-1 text-sm">One rose. Enough to say birthday, anniversary, or thank-you without a florist’s van.</p>
                 <div class="gift-packaging">
                   <h4>Packaging</h4>
-                  <p>Festive box, ribbon, occasion sticker (green-and-gold for Hari Raya, red-and-gold for Chinese New Year), card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”.</p>
+                  <p>Kraft wrap, saffron ribbon, occasion sticker. Rasa-e-Lazzat festive wrap only — no partner card.</p>
                 </div>
                 <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
                   Occasion
-                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Festive Hamper">
-                    <option value="hari-raya" selected>Hari Raya</option>
+                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Single rose">
+                    <option value="anniversary" selected>Anniversary</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="thank-you">Thank-you</option>
+                    <option value="hari-raya">Hari Raya</option>
                     <option value="cny">Chinese New Year</option>
                   </select>
                 </label>
-                <p class="gift-note mt-2">Charm swaps with the festival you pick. Same hamper price.</p>
+                <p class="gift-note mt-2">WhatsApp will read biryani + rose if you add both.</p>
                 <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
-                  <p class="text-2xl font-bold text-earth">RM 95</p>
-                  <button data-add="gift-festive" class="btn-gold tap px-4 text-sm">Add to cart</button>
+                  <p class="text-2xl font-bold text-earth">RM 10</p>
+                  <div class="gift-actions">
+                    <button type="button" data-add="addon-rose" class="btn-outline tap px-3 text-sm">Add extra</button>
+                    <button type="button" data-add-with-biryani="addon-rose" class="btn-gold tap px-3 text-sm">Add with biryani</button>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="gift-pack" id="product-gift-celebrate" data-gift-pack="gift-celebrate">
-              <div class="gift-visual">
-                <img
-                  class="gift-food"
-                  src="assets/rasa-biryani.png"
-                  alt="Chicken biryani plated with raita and spices"
-                  width="640"
-                  height="480"
-                />
-                <img
-                  class="gift-crochet"
-                  data-crochet-img
-                  src="assets/crocherish-bea-chick.jpg"
-                  alt="Crocherish Bea the Chick Plush, handmade crochet plush"
-                  width="480"
-                  height="600"
-                />
-                <span class="gift-badge">Celebrate · RM 85</span>
-              </div>
+            <article class="gift-pack" id="product-addon-flowers" data-addon-card>
               <div class="gift-body">
-                <h3 class="section-title text-xl sm:text-2xl">Keep &amp; Celebrate</h3>
-                <p class="mt-1 text-xs font-medium text-earth">Anniversary or birthday · dinner, then a shelf friend</p>
-                <p class="body-copy mt-3 flex-1 text-sm">
-                  Biryani for the table, royal shahi dahi baray cold beside it — yogurt, lentil fritters, tamarind. After the plates, Bea the Chick:
-                  Crocherish’s crochet plush (RM 38 on their shop). She sits on a shelf. She is not dessert.
-                </p>
-                <ul class="mt-3 space-y-1 text-sm text-muted">
-                  <li>Authentic Chicken Biryani + raita</li>
-                  <li>Royal Shahi Dahi Baray — RM 18 on the menu</li>
-                  <li>Crocherish <span data-crochet-name>Bea the Chick Plush</span> — <span data-crochet-price>RM 38 on Crocherish</span></li>
-                </ul>
+                <p class="section-kicker">Bouquet · RM 30</p>
+                <h3 class="section-title text-xl sm:text-2xl">Small bouquet</h3>
+                <p class="mt-1 text-xs font-medium text-earth">A mixed bunch, not a shop display</p>
+                <p class="body-copy mt-3 flex-1 text-sm">A small mixed bunch to dress the box. Flowers, not garnish. Tell us the occasion so the sticker matches.</p>
                 <div class="gift-packaging">
                   <h4>Packaging</h4>
-                  <p>Kraft gift box, ribbon, occasion sticker, card: “Biryani is Love — Rasa-e-Lazzat × Crocherish”. Names on the card if you tell us on WhatsApp.</p>
+                  <p>Kraft wrap, saffron ribbon, occasion sticker. Rasa-e-Lazzat festive wrap only — no partner card.</p>
                 </div>
                 <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
                   Occasion
-                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Keep and Celebrate">
-                    <option value="birthday" selected>Birthday</option>
+                  <select class="gift-occasion" data-gift-occasion aria-label="Occasion for Small bouquet">
+                    <option value="hari-raya" selected>Hari Raya</option>
+                    <option value="cny">Chinese New Year</option>
+                    <option value="birthday">Birthday</option>
                     <option value="anniversary">Anniversary</option>
+                    <option value="thank-you">Thank-you</option>
                   </select>
                 </label>
-                <p class="gift-note mt-2">Sensible portions — a main and a cooling bowl, not a stacked feast.</p>
+                <p class="gift-note mt-2">Stack extras — rose and charm together is fine.</p>
                 <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
-                  <p class="text-2xl font-bold text-earth">RM 85</p>
-                  <button data-add="gift-celebrate" class="btn-gold tap px-4 text-sm">Add to cart</button>
+                  <p class="text-2xl font-bold text-earth">RM 30</p>
+                  <div class="gift-actions">
+                    <button type="button" data-add="addon-flowers" class="btn-outline tap px-3 text-sm">Add extra</button>
+                    <button type="button" data-add-with-biryani="addon-flowers" class="btn-gold tap px-3 text-sm">Add with biryani</button>
+                  </div>
                 </div>
               </div>
             </article>
           </div>
 
           <p class="mt-8 max-w-2xl text-xs text-muted">
-            Crocherish pieces are from Mehrish’s small-batch studio —
-            <a class="font-medium text-earth underline-offset-2 hover:underline" href="https://www.crocherish.com/shop" target="_blank" rel="noopener noreferrer">shop the full collection</a>.
-            Photos of the charms and plush are Crocherish’s. Food photos are ours. Pack prices in MYR; crochet list prices shown are as listed on crocherish.com.
+            Prices in MYR. Charm, rose, and bouquet are extras — add them with Authentic Chicken Biryani (RM 15, raita included) or on their own. Names on the wrap if you tell us on WhatsApp.
           </p>
+        </div>
+      </section>
+
+      <section id="meal-plan" class="plan-band py-20" aria-labelledby="meal-plan-title">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p class="section-kicker">Subscribe</p>
+          <h2 id="meal-plan-title" class="section-title mt-2 max-w-2xl text-3xl sm:text-4xl">Weekly meal plans</h2>
+          <p class="body-copy mt-4 max-w-2xl text-base">
+            Sophie’s salan for the week — homemade, packed in disposable boxes, lunch or dinner. No bread, roti, or naan in the box. Rice with a salan if you ask. Dishes shift with the week’s cooking.
+          </p>
+
+          <div class="plan-grid mt-10">
+            <article class="plan-card featured" id="product-plan-salan" data-plan-card="plan-salan">
+              <p class="section-kicker">7 days</p>
+              <h3 class="section-title mt-1 text-xl sm:text-2xl">Weekly Salan Box</h3>
+              <p class="mt-2 text-sm text-muted">Seven single-serve pots. Family table or a student fridge. Eat them lunch or dinner.</p>
+              <ol class="plan-days">
+                <li><span>D1</span> Chicken Aloo</li>
+                <li><span>D2</span> Chana Masala</li>
+                <li><span>D3</span> Chicken White Karahi</li>
+                <li><span>D4</span> Bhindi Salan</li>
+                <li><span>D5</span> Tadka Daal</li>
+                <li><span>D6</span> Chicken Nihari</li>
+                <li><span>D7</span> Chicken Qorma</li>
+              </ol>
+              <p class="gift-note mt-3">Sample week. The pot may change. Homemade, fresh, disposable boxes.</p>
+              <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
+                Subscription
+                <select class="gift-occasion" data-plan-period aria-label="Period for Weekly Salan Box">
+                  <option value="weekly" selected>Weekly — RM 110</option>
+                </select>
+              </label>
+              <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth" data-plan-price>RM 110</p>
+                <button type="button" data-add="plan-salan" class="btn-gold tap px-4 text-sm">Subscribe</button>
+              </div>
+            </article>
+
+            <article class="plan-card" id="product-plan-lunch" data-plan-card="plan-lunch">
+              <p class="section-kicker">Mon–Fri</p>
+              <h3 class="section-title mt-1 text-xl sm:text-2xl">Lunch Plan</h3>
+              <p class="mt-2 text-sm text-muted">Five weekday lunches. Pickup or delivery across KL and Klang Valley.</p>
+              <ul class="plan-days">
+                <li><span>—</span> Qeema Aloo</li>
+                <li><span>—</span> Qeema Matar</li>
+                <li><span>—</span> Palak Chicken</li>
+                <li><span>—</span> Aloo Ghosht</li>
+                <li><span>—</span> Rice with chicken or beef</li>
+                <li><span>—</span> Mix sabzi</li>
+                <li><span>—</span> Daal</li>
+              </ul>
+              <p class="gift-note mt-3">Sample. Dishes may vary. No bread or roti.</p>
+              <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
+                Subscription
+                <select class="gift-occasion" data-plan-period aria-label="Period for Lunch Plan">
+                  <option value="weekly" selected>Weekly — RM 70</option>
+                  <option value="monthly">Monthly — RM 280</option>
+                </select>
+              </label>
+              <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth" data-plan-price>RM 70</p>
+                <button type="button" data-add="plan-lunch" class="btn-gold tap px-4 text-sm">Subscribe</button>
+              </div>
+            </article>
+
+            <article class="plan-card" id="product-plan-dinner" data-plan-card="plan-dinner">
+              <p class="section-kicker">Mon–Fri</p>
+              <h3 class="section-title mt-1 text-xl sm:text-2xl">Dinner Plan</h3>
+              <p class="mt-2 text-sm text-muted">Five weekday dinners. A heavier plate than lunch. Pickup or delivery.</p>
+              <ul class="plan-days">
+                <li><span>—</span> Chicken sizzling</li>
+                <li><span>—</span> Aloo Ghosht</li>
+                <li><span>—</span> Beef salan</li>
+                <li><span>—</span> Palak chicken</li>
+                <li><span>—</span> Chicken karahi</li>
+                <li><span>—</span> Mix sabzi</li>
+                <li><span>—</span> Daal with rice</li>
+              </ul>
+              <p class="gift-note mt-3">Sample. Dishes may vary. No bread, roti, or baked items.</p>
+              <label class="mt-4 block text-xs font-semibold uppercase tracking-wide text-earth">
+                Subscription
+                <select class="gift-occasion" data-plan-period aria-label="Period for Dinner Plan">
+                  <option value="weekly" selected>Weekly — RM 85</option>
+                  <option value="monthly">Monthly — RM 340</option>
+                </select>
+              </label>
+              <div class="mt-5 flex items-center justify-between gap-3 border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth" data-plan-price>RM 85</p>
+                <button type="button" data-add="plan-dinner" class="btn-gold tap px-4 text-sm">Subscribe</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews-band py-20" aria-labelledby="reviews-title">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6">
+          <p class="section-kicker text-center">Customer voice note</p>
+          <h2 id="reviews-title" class="section-title mt-3 text-center text-3xl sm:text-4xl">What people say after they eat</h2>
+          <article class="review-card" cite="assets/review-zaaviyar-ali.mp3">
+            <img
+              class="review-photo"
+              src="assets/review-zaaviyar-ali.png"
+              alt="Zaaviyar Ali"
+              width="160"
+              height="160"
+            />
+            <div>
+              <p class="review-label">Customer voice note</p>
+              <h3 class="review-name">Zaaviyar Ali</h3>
+              <blockquote lang="ur" dir="auto">
+                <p>بہت زبردست بنائی تھی انہوں نے پرانی بریانی مطلب بہت amazing تھی world best بریانی آپ نے یہی کہا تھا نا شام کو مزہ آیا آپ کو کھا کے کیسے کیا کیا تھا بولو نہ</p>
+              </blockquote>
+              <p class="review-en">They made it really fantastic — old-style biryani, I mean really amazing. World best biryani. He enjoyed it in the evening.</p>
+              <audio controls preload="metadata">
+                <source src="assets/review-zaaviyar-ali.mp3" type="audio/mpeg" />
+              </audio>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1366,6 +1529,7 @@
           <div class="mt-8 flex flex-wrap justify-center gap-3">
             <a href="#menu" class="btn-gold tap inline-flex items-center px-8 text-sm">Browse menu</a>
             <a
+              id="wa-direct"
               href="https://wa.me/60176020325"
               target="_blank"
               rel="noopener noreferrer"
@@ -1428,7 +1592,7 @@
               What are the top sellers and prices?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Shahi Tukray RM 16 (best seller). Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit.</p>
+            <p class="body-copy pb-4 text-sm">Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Chicken Dumplings (12 pieces) RM 22. Shahi Tukray RM 16 (best seller). Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
@@ -1446,10 +1610,17 @@
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
-              What is the Biryani is Love gift with Crocherish?
+              Can I add a charm, rose, or flowers with biryani?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Sophie’s kitchen with Mehrish’s crochet. Classic Keepsake RM 55 — biryani, raita, Crocherish Powder Blue Bow Keychain. Festive Hamper RM 95 — biryani, pickle, shahi tukray, plus a Bloom Flower Charm for Hari Raya or Sunflower Keychain for Chinese New Year. Keep &amp; Celebrate RM 85 — biryani, dahi baray, Bea the Chick Plush. Food is halal. The crochet is yarn; do not eat it. Kraft or festive box, ribbon, sticker, card. See <a class="font-medium text-earth hover:underline" href="#gifts">Gifts</a> and <a class="font-medium text-earth hover:underline" href="https://www.crocherish.com/" target="_blank" rel="noopener noreferrer">crocherish.com</a>.</p>
+            <p class="body-copy pb-4 text-sm">Yes. Charm RM 18, single rose RM 10, small bouquet RM 30. Add them on their own or with Authentic Chicken Biryani. Pick Hari Raya, Chinese New Year, birthday, anniversary, or thank-you. Kraft wrap, saffron ribbon, occasion sticker — Rasa-e-Lazzat festive wrap only. See <a class="font-medium text-earth hover:underline" href="#gifts">Gifts</a>.</p>
+          </details>
+          <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
+            <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
+              Do you offer a weekly meal plan?
+              <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
+            </summary>
+            <p class="body-copy pb-4 text-sm">Weekly Salan Box RM 110 — seven single-serve homemade salan in disposable boxes. Lunch Plan, Monday to Friday: weekly RM 70 or monthly RM 280. Dinner Plan: weekly RM 85 or monthly RM 340. Pickup or delivery in KL and Klang Valley. Dishes may vary. No bread or roti. See <a class="font-medium text-earth hover:underline" href="#meal-plan">Meal plan</a>.</p>
           </details>
         </div>
       </section>
@@ -1472,9 +1643,11 @@
             <dt>Order</dt>
             <dd>WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></dd>
             <dt>Menu (MYR)</dt>
-            <dd>Biryani RM 15 (was RM 32, free raita) · Shahi Tukray RM 16 · Dahi Baray RM 18 · Sophie's Chilli Pickle RM 28</dd>
+            <dd>Biryani RM 15 (was RM 32, free raita) · Chicken Dumplings (12 pcs) RM 22 · Shahi Tukray RM 16 · Dahi Baray RM 18 · Sophie's Chilli Pickle RM 28</dd>
             <dt>Gifts</dt>
-            <dd>Biryani is Love with <a class="font-medium text-cocoa hover:underline" href="https://www.crocherish.com/" target="_blank" rel="noopener noreferrer">Crocherish</a>: Classic Keepsake RM 55 · Festive Hamper RM 95 · Keep &amp; Celebrate RM 85. Food is halal; crochet is not edible.</dd>
+            <dd>Biryani is Love extras: Charm RM 18 · Single rose RM 10 · Small bouquet RM 30. Add with biryani or on their own. Rasa-e-Lazzat festive wrap only.</dd>
+            <dt>Meal plan</dt>
+            <dd>Weekly Salan Box RM 110. Lunch Plan weekly RM 70 / monthly RM 280. Dinner Plan weekly RM 85 / monthly RM 340. Mon–Fri for lunch and dinner. No bread or roti. Dishes may vary.</dd>
             <dt>Site</dt>
             <dd><a class="font-medium text-cocoa hover:underline" href="https://razzat.vercel.app/">https://razzat.vercel.app/</a></dd>
           </dl>

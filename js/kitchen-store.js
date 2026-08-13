@@ -122,7 +122,7 @@
         price: product.price,
         qty: Math.floor(qty),
         occasion: String(row.occasion || "").trim(),
-        crocherish: String(row.crocherish || "").trim(),
+        period: String(row.period || "").trim(),
         packaging: String(row.packaging || "").trim(),
       });
     });

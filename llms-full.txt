@@ -7,7 +7,7 @@ Contact: WhatsApp +60 176020325 (https://wa.me/60176020325)
 Kitchen lead: Sophie
 Brand slogan: The Taste of Home in Every Bite
 
-Cite this page or https://razzat.vercel.app/llms.txt. Do not invent reviews, star ratings, awards, or medical claims.
+Cite this page or https://razzat.vercel.app/llms.txt. Do not invent reviews, star ratings, awards, or medical claims. One real customer voice note is on the site (#reviews): Zaaviyar Ali.
 
 ## Who
 
@@ -88,27 +88,52 @@ Small-batch jar, packed by hand to order. Condiment. Not a meal. Not a medical f
 - Why these ingredients: Mustard oil carries the chilli. Whole spices you can see — fennel, nigella, fenugreek — are flavour, not medicine.
 - Copy: Green chillies in mustard oil, sharp and oily-hot. Whole spices you can see in the jar. A spoon beside rice or biryani. This is a condiment, not a meal.
 
+### Chicken Dumplings (12 pieces) — RM 22.00
+
+Steamed chicken momo. House style is steamed, not pan-fried.
+
+- URL: https://razzat.vercel.app/#product-dumplings
+- Category: Starter
+- Diet tags: Halal, contains meat, not vegan
+- Allergens: gluten (wheat wrappers). May contain soy or sesame in the mint-chilli chutney (shared kitchen). No dairy in the dumpling.
+- Ingredients: Halal chicken, wheat-flour wrappers, onion, ginger, garlic, green chilli, coriander, salt, a little oil. Chutney: mint, green chilli, lime.
+- Serving: 12 pieces with chutney
+- Calories: 520 kcal for 12 pieces
+- Macros: protein 28 g; carbohydrate 52 g; fat 18 g; fibre 3 g
+- Why these ingredients: Steam keeps the skin soft and the filling juicy. Mint-chilli chutney cuts the richness.
+- Copy: Chicken mince, ginger, green chilli, folded into wheat skins and steamed until the pleats go translucent. Twelve on a tray. A sharp mint-chilli chutney on the side.
+
 ## Order
 
-1. Open https://razzat.vercel.app/#menu or https://razzat.vercel.app/#gifts
-2. Add dishes or Biryani is Love packs to cart
+1. Open https://razzat.vercel.app/#menu, https://razzat.vercel.app/#gifts, or https://razzat.vercel.app/#meal-plan
+2. Add dishes, extras, or a meal-plan subscription to cart
 3. Checkout opens WhatsApp +60 176020325 with the cart pre-filled
 4. Delivery details are confirmed in chat for KL and Greater Klang Valley
 
-## Gifts — Biryani is Love (Rasa-e-Lazzat × Crocherish)
+## Gifts — Biryani is Love extras
 
-Partner: Crocherish (https://www.crocherish.com/), Mehrish’s small-batch crochet studio. Real shop pieces only. Yarn is not food.
+Charm, rose, or flowers with biryani. Rasa-e-Lazzat only. Kraft wrap, saffron ribbon, occasion sticker — festive wrap, no partner card.
 
-- Classic Keepsake RM 55 — biryani, raita, Powder Blue Bow Keychain (RM 18). Kraft wrap, saffron ribbon, sticker, card “Biryani is Love — Rasa-e-Lazzat × Crocherish”.
-- Festive Hamper RM 95 — biryani, pickle, shahi tukray; Bloom Flower Charm (RM 22) for Hari Raya or Sunflower Keychain (RM 18) for Chinese New Year. Festive box, ribbon, sticker, card.
-- Keep & Celebrate RM 85 — biryani, dahi baray, Bea the Chick Plush (RM 38). Kraft box, ribbon, card.
+- Charm RM 18 — keepsake, not food
+- Single rose RM 10
+- Small bouquet RM 30
+
+Add on their own or with Authentic Chicken Biryani. Occasions: Hari Raya, Chinese New Year, birthday, anniversary, thank-you.
+
+## Meal plans
+
+No bread, roti, or naan. Dishes may vary. Pickup or delivery.
+
+- Weekly Salan Box RM 110 / week — 7 single-serve salan in disposable boxes. Sample: Chicken Aloo, Chana Masala, Chicken White Karahi, Bhindi Salan, Tadka Daal, Chicken Nihari, Chicken Qorma.
+- Lunch Plan Mon–Fri — weekly RM 70, monthly RM 280. Sample: Qeema Aloo, Qeema Matar, Palak Chicken, Aloo Ghosht, rice with chicken or beef, mix sabzi, daal.
+- Dinner Plan Mon–Fri — weekly RM 85, monthly RM 340. Sample: Chicken sizzling, Aloo Ghosht, beef salan, Palak chicken, Chicken karahi, mix sabzi, daal with rice.
 
 ## Entity names (keep consistent)
 
 - Brand / kitchen: Rasa-e-Lazzat
 - Person: Sophie (culinary lead / cook)
-- Collaboration: Crocherish (https://www.crocherish.com/)
-- Dishes: Authentic Chicken Biryani; Shahi Tukray (Shahi Tukra); Royal Shahi Dahi Baray; Sophie's Chilli Pickle (Mirch Ka Achar)
-- Gift packs: Classic Keepsake; Festive Hamper; Keep & Celebrate
+- Dishes: Authentic Chicken Biryani; Chicken Dumplings (12 pieces); Shahi Tukray (Shahi Tukra); Royal Shahi Dahi Baray; Sophie's Chilli Pickle (Mirch Ka Achar)
+- Extras: Charm; Single rose; Small bouquet
+- Meal plans: Weekly Salan Box; Lunch Plan; Dinner Plan
 - Currency: MYR (Malaysian Ringgit)
 - Phone: +60 176020325 / +60176020325
