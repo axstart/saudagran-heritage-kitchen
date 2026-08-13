@@ -1,11 +1,13 @@
 (function () {
   const WA_NUMBER = "60176020325";
-  const STORAGE_KEY = "saudagran-cart";
+  const STORAGE_KEY = "rasa-cart";
+  const BRAND = "Rasa-e-Lazzat";
 
   const MENU = {
-    pickle: { id: "pickle", name: "Nanny's Chilli Pickle", price: 28 },
-    biryani: { id: "biryani", name: "Heritage Dum Biryani", price: 32 },
+    pickle: { id: "pickle", name: "Sophie's Chilli Pickle", price: 28 },
+    biryani: { id: "biryani", name: "Authentic Chicken Biryani", price: 32 },
     "dahi-baray": { id: "dahi-baray", name: "Royal Shahi Dahi Baray", price: 18 },
+    "shahi-tukray": { id: "shahi-tukray", name: "Shahi Tukray", price: 16 },
   };
 
   const els = {
@@ -80,7 +82,7 @@
   function toast(msg) {
     const node = document.createElement("div");
     node.className =
-      "toast pointer-events-auto rounded-[3px] border border-amber-600/45 bg-[#064e3b] px-5 py-3 text-sm font-medium text-[#f5f0e8] shadow-lg";
+      "toast pointer-events-auto rounded-md border border-[#6B3E26]/15 bg-white px-5 py-3 text-sm font-medium text-[#2D1B10] shadow-lg";
     node.setAttribute("role", "status");
     node.textContent = "✓ " + msg;
     els.toasts.appendChild(node);
@@ -120,19 +122,19 @@
     els.items.innerHTML = list
       .map(
         (item) => `
-      <div class="flex items-start justify-between gap-3 border-b border-amber-600/10 pb-4">
+      <div class="flex items-start justify-between gap-3 border-b border-[#6B3E26]/10 pb-4">
         <div class="min-w-0">
-          <p class="font-semibold text-[#f5f0e8]">${escapeHtml(item.name)}</p>
-          <p class="mt-0.5 text-xs text-[#6b9e7a]">${money(item.price)} each</p>
+          <p class="font-semibold text-[#2D1B10]">${escapeHtml(item.name)}</p>
+          <p class="mt-0.5 text-xs text-[#6B5E54]">${money(item.price)} each</p>
           <div class="mt-3 flex items-center gap-2">
-            <button type="button" class="tap grid place-items-center rounded-[2px] border border-amber-600/30 text-amber-500" data-qty-delta="${item.id}" data-delta="-1" aria-label="Decrease quantity">−</button>
+            <button type="button" class="tap grid place-items-center rounded-md border border-[#6B3E26]/25 text-[#6B3E26]" data-qty-delta="${item.id}" data-delta="-1" aria-label="Decrease quantity">−</button>
             <span class="min-w-[1.5rem] text-center text-sm font-semibold">${item.qty}</span>
-            <button type="button" class="tap grid place-items-center rounded-[2px] border border-amber-600/30 text-amber-500" data-qty-delta="${item.id}" data-delta="1" aria-label="Increase quantity">+</button>
+            <button type="button" class="tap grid place-items-center rounded-md border border-[#6B3E26]/25 text-[#6B3E26]" data-qty-delta="${item.id}" data-delta="1" aria-label="Increase quantity">+</button>
           </div>
         </div>
         <div class="text-right">
-          <p class="font-display text-lg text-amber-500">${money(item.price * item.qty)}</p>
-          <button type="button" class="mt-2 text-xs text-[#4e8060] underline-offset-2 hover:text-amber-500" data-remove="${item.id}">Remove</button>
+          <p class="text-lg font-bold text-[#6B3E26]">${money(item.price * item.qty)}</p>
+          <button type="button" class="mt-2 text-xs text-[#6B5E54] underline-offset-2 hover:text-[#2D1B10]" data-remove="${item.id}">Remove</button>
         </div>
       </div>`
       )
@@ -168,7 +170,7 @@
     const lines = list
       .map((item) => `• ${item.name} ×${item.qty} — ${money(item.price * item.qty)}`)
       .join("\n");
-    const text = `Assalamualaikum! I'd like to order from Saudagran Heritage Kitchen:\n\n${lines}\n\nSubtotal: ${money(subtotal())}\n\nKindly confirm delivery across KL / Klang Valley. Shukria!`;
+    const text = `Assalamualaikum! I'd like to order from ${BRAND}:\n\n${lines}\n\nSubtotal: ${money(subtotal())}\n\nKindly confirm delivery across KL / Klang Valley. Shukria!`;
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
   }
 

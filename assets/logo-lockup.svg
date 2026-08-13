@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" role="img" aria-labelledby="lockup-title">
+  <title id="lockup-title">Rasa-e-Lazzat  The Taste of Home in Every Bite</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&amp;family=Playball&amp;display=swap");
+  </style>
+  <text
+    x="380"
+    y="92"
+    text-anchor="middle"
+    fill="#2d1b10"
+    font-family="Playball, cursive"
+    font-size="88"
+  >Rasa-e-Lazzat</text>
+  <text
+    x="380"
+    y="148"
+    text-anchor="middle"
+    fill="#2d1b10"
+    font-family="Montserrat, system-ui, sans-serif"
+    font-size="18"
+    font-weight="500"
+    letter-spacing="0.6"
+  >The Taste of Home in Every Bite</text>
+</svg>

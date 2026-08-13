@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" role="img" aria-labelledby="seal-title">
+  <title id="seal-title">Rasa-e-Lazzat</title>
+  <defs>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&amp;family=Playball&amp;display=swap");
+      .seal-name {
+        font-family: Playball, cursive;
+        font-size: 14.5px;
+        letter-spacing: 0.35px;
+        fill: #2d1b10;
+      }
+      .seal-tagline {
+        font-family: Montserrat, system-ui, sans-serif;
+        font-size: 7.2px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        fill: #2d1b10;
+      }
+    </style>
+    <path id="seal-arc-top" d="M22,100 A78,78 0 0 0 178,100" fill="none"/>
+    <path id="seal-arc-bot" d="M178,100 A78,78 0 0 1 22,100" fill="none"/>
+  </defs>
+  <circle cx="100" cy="100" r="99" fill="#ffffff"/>
+  <circle cx="100" cy="100" r="96.5" fill="none" stroke="#E8A23D" stroke-width="3.4"/>
+  <circle cx="100" cy="100" r="91.5" fill="none" stroke="#E8A23D" stroke-width="0.9" opacity="0.55"/>
+  <circle cx="100" cy="100" r="73" fill="none" stroke="#2d1b10" stroke-width="0.7" opacity="0.35"/>
+  <text class="seal-name">
+    <textPath href="#seal-arc-top" xlink:href="#seal-arc-top" startOffset="50%" text-anchor="middle">Rasa-e-Lazzat</textPath>
+  </text>
+  <text class="seal-tagline">
+    <textPath href="#seal-arc-bot" xlink:href="#seal-arc-bot" startOffset="50%" text-anchor="middle">The Taste of Home in Every Bite</textPath>
+  </text>
+  <g transform="translate(100 102)">
+    <circle r="36" fill="#6b3e26"/>
+    <circle r="32.2" fill="#8a5330"/>
+    <circle r="29.4" fill="#f3e2a6"/>
+    <ellipse cx="-6" cy="-4" rx="10" ry="6" fill="#e8a23d" opacity="0.55"/>
+    <ellipse cx="8" cy="3" rx="9" ry="5.5" fill="#f0b445" opacity="0.5"/>
+    <ellipse cx="2" cy="-8" rx="7" ry="4" fill="#e8a23d" opacity="0.4"/>
+    <ellipse cx="-10" cy="6" rx="6" ry="3.5" fill="#f6c85a" opacity="0.45"/>
+    <ellipse cx="-12" cy="4" rx="5.5" ry="4" fill="#e8c97a" stroke="#c4a05a" stroke-width="0.4"/>
+    <ellipse cx="11" cy="8" rx="5" ry="3.6" fill="#e0c070" stroke="#c4a05a" stroke-width="0.4"/>
+    <g transform="rotate(-28) translate(-8 -6)">
+      <ellipse cx="0" cy="4" rx="5.5" ry="9" fill="#c17a3a"/>
+      <ellipse cx="0" cy="-5" rx="3.2" ry="3.8" fill="#e8c9a0"/>
+      <ellipse cx="0" cy="-5" rx="1.6" ry="2.2" fill="#f5e6d0"/>
+    </g>
+    <g transform="rotate(22) translate(9 -3)">
+      <ellipse cx="0" cy="4" rx="5" ry="8.5" fill="#b56b32"/>
+      <ellipse cx="0" cy="-5" rx="3" ry="3.6" fill="#e8c9a0"/>
+      <ellipse cx="0" cy="-5" rx="1.5" ry="2" fill="#f5e6d0"/>
+    </g>
+    <g fill="#77a047">
+      <ellipse cx="-3" cy="-10" rx="2.2" ry="1.3" transform="rotate(-20)"/>
+      <ellipse cx="1" cy="-11" rx="2" ry="1.2" transform="rotate(25)"/>
+      <ellipse cx="8" cy="-6" rx="2.1" ry="1.2" transform="rotate(10)"/>
+      <ellipse cx="-8" cy="10" rx="1.8" ry="1.1"/>
+      <ellipse cx="4" cy="11" rx="1.7" ry="1"/>
+    </g>
+    <g fill="#5b8a32">
+      <ellipse cx="6" cy="-9" rx="1.6" ry="1"/>
+      <ellipse cx="-6" cy="-8" rx="1.5" ry="0.9"/>
+    </g>
+    <g transform="translate(22 12) rotate(40)">
+      <path d="M0 0 A8 8 0 0 1 8 8 L0 8 Z" fill="#d4e05a"/>
+      <path d="M1 7 L7 7 M1 7 Q4 3 7 7" stroke="#eef6c8" stroke-width="0.45" fill="none"/>
+    </g>
+  </g>
+</svg>

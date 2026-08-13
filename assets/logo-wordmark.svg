@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 140" role="img" aria-labelledby="wordmark-title">
+  <title id="wordmark-title">Rasa-e-Lazzat</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playball&amp;display=swap");
+  </style>
+  <text
+    x="380"
+    y="98"
+    text-anchor="middle"
+    fill="#2d1b10"
+    font-family="Playball, cursive"
+    font-size="92"
+  >Rasa-e-Lazzat</text>
+</svg>
