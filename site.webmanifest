@@ -1,0 +1,56 @@
+{
+  "id": "/",
+  "name": "Rasa-e-Lazzat",
+  "short_name": "Lazzat",
+  "description": "Sophie's halal Pakistani home kitchen in Kuala Lumpur. Order biryani, dumplings, and weekly meals on WhatsApp.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "en-MY",
+  "dir": "ltr",
+  "background_color": "#F5F5F0",
+  "theme_color": "#F5F5F0",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kitchen",
+      "short_name": "Admin",
+      "description": "Kitchen board — orders, stock, costing, and P&L",
+      "url": "/admin.html",
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

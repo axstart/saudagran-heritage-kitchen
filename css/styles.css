@@ -17,11 +17,19 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
+  touch-action: manipulation;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   margin: 0;
   color: var(--cocoa);
+  touch-action: manipulation;
   font-family: var(--font-sans);
   font-weight: 400;
   background-color: var(--marble);
@@ -46,6 +54,12 @@ body::before {
 body > * {
   position: relative;
   z-index: 1;
+}
+
+input,
+select,
+textarea {
+  font-size: 16px;
 }
 
 ::selection {
@@ -434,18 +448,7 @@ h1 .logo-wordmark {
 }
 
 .era-panel {
-  display: none;
-}
-
-.era-btn[aria-expanded="true"] + .era-panel,
-.era-panel.is-open {
   display: block;
-}
-
-@media (min-width: 768px) {
-  .era-panel {
-    display: block;
-  }
 }
 
 .story-pickle {
@@ -463,14 +466,47 @@ h1 .logo-wordmark {
 
 .story-pickle-caption {
   margin: 0;
-  padding: 0.9rem 1.15rem 1.15rem;
+  padding: 0.7rem 1.15rem 0.9rem;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--muted);
   background: var(--cream);
+}
+
+.trust-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.8rem 0.4rem;
+  background: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--cocoa);
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .trust-cell {
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .story-copy {
+    order: -1;
+  }
 }
 
 .card-lux {
@@ -479,6 +515,55 @@ h1 .logo-wordmark {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.heat-chip {
+  border: 1px solid rgba(107, 62, 38, 0.22);
+  background: #fff;
+  color: var(--cocoa);
+  border-radius: 999px;
+  padding: 0 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.heat-chip:hover {
+  border-color: var(--saffron);
+  background: rgba(232, 162, 61, 0.1);
+}
+
+.heat-chip.is-on {
+  background: var(--saffron);
+  border-color: var(--saffron-deep);
+}
+
+.heat-opt,
+.spice-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cocoa);
+  cursor: pointer;
+}
+
+.heat-opt input,
+.spice-opt input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--earth);
 }
 
 .card-lux:hover {
@@ -495,7 +580,7 @@ h1 .logo-wordmark {
 .section-kicker {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   color: var(--earth);
 }
@@ -528,8 +613,9 @@ h1 .logo-wordmark {
 .body-copy {
   font-family: var(--font-sans);
   font-weight: 400;
+  font-size: 0.875rem;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.55;
 }
 
 .toast {
@@ -573,12 +659,37 @@ h1 .logo-wordmark {
   transform: translateX(0);
 }
 
-.faq-item[open] .faq-chevron {
+.faq-item[open] > summary .faq-chevron,
+.faq-more[open] > summary .faq-chevron,
+.seo-fold[open] > summary .faq-chevron {
   transform: rotate(180deg);
 }
 
-.faq-item summary::-webkit-details-marker {
+.faq-item summary::-webkit-details-marker,
+.faq-more summary::-webkit-details-marker,
+.seo-fold summary::-webkit-details-marker {
   display: none;
+}
+
+.seo-fold {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--cream);
+  padding: 0.15rem 1rem;
+}
+
+.plan-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.plan-chips .chip {
+  color: var(--cocoa);
+  background: var(--marble);
+  border: 1px solid var(--line);
+  font-weight: 500;
 }
 
 .cart-badge {
@@ -644,8 +755,166 @@ h1 .logo-wordmark {
   border: 1px solid rgba(232, 162, 61, 0.4);
 }
 
-.nutrition-panel {
+.chip-fresh {
+  color: #3f5c24;
+  background: rgba(119, 160, 71, 0.16);
+  border: 1px solid rgba(119, 160, 71, 0.38);
+}
+
+.chip-frozen {
+  color: #2c4a6e;
+  background: rgba(70, 110, 150, 0.12);
+  border: 1px solid rgba(70, 110, 150, 0.32);
+}
+
+.menu-group {
+  margin-top: 2rem;
+}
+
+.menu-group:first-child {
+  margin-top: 0;
+}
+
+.menu-group-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.spice-opt,
+.heat-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cocoa);
+  cursor: pointer;
+}
+
+.spice-opt input,
+.heat-opt input {
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--earth);
+}
+
+.menu-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.heat-chip {
+  min-height: 2.25rem;
+  padding: 0.2rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--cocoa);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.heat-chip.is-on {
+  background: var(--earth);
+  color: #fff;
+  border-color: var(--earth);
+}
+
+.opt-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+}
+
+.opt-chip {
+  min-height: 2rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--cocoa);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.opt-chip:hover {
+  border-color: rgba(107, 62, 38, 0.4);
+}
+
+.opt-chip.is-on {
+  background: var(--earth);
+  color: #fff;
+  border-color: var(--earth);
+}
+
+.plan-picks {
+  display: grid;
+  gap: 0.55rem;
   margin-top: 0.85rem;
+}
+
+.plan-picks label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.plan-fixed {
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+.plan-nutri {
+  margin-top: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.plan-nutri summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+.plan-nutri summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan-nutri[open] summary .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.nutrition-panel {
+  margin-top: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.55);
@@ -877,7 +1146,7 @@ h1 .logo-wordmark {
 }
 
 .gift-hero {
-  margin: 2rem 0 0;
+  margin: 1.25rem 0 0;
   overflow: hidden;
   border-radius: 16px;
   border: 1px solid var(--line);
@@ -888,6 +1157,7 @@ h1 .logo-wordmark {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
+  max-height: 52svh;
   object-fit: cover;
   object-position: center 42%;
 }
@@ -998,7 +1268,7 @@ h1 .logo-wordmark {
 
 @media (min-width: 900px) {
   .plan-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 36rem);
   }
 }
 
@@ -1057,7 +1327,7 @@ h1 .logo-wordmark {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1.15rem 1.15rem 1.25rem;
+  padding: 1rem 1.1rem 1.1rem;
 }
 
 .gift-packaging {
@@ -1111,7 +1381,7 @@ h1 .logo-wordmark {
 }
 
 .review-card {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   display: grid;
   gap: 1.25rem;
   align-items: start;

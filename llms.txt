@@ -15,11 +15,14 @@
 
 Prices in Malaysian Ringgit. Approximate nutrition; home-style portions may vary.
 
-1. Authentic Chicken Biryani — RM 15 (was RM 32). Complimentary yogurt raita. Halal. Not vegan. Contains meat. Allergens: milk (raita); may contain gluten; mustard. About 750 kcal per plate; raita about 70 kcal extra.
-2. Chicken Dumplings (12 pieces) — RM 22. Steamed chicken momo with mint-chilli chutney. Halal. Not vegan. Allergens: gluten (wheat wrappers); may contain soy or sesame in the chutney. No dairy in the dumpling. About 520 kcal for 12 pieces.
-3. Shahi Tukray — RM 16. Best seller. Halal, vegetarian, not vegan. Allergens: gluten (bread), milk, possible nuts (pistachio/almond). About 480 kcal per portion.
-4. Royal Shahi Dahi Baray — RM 18. Halal, vegetarian, not vegan. Allergens: milk; may contain gluten (fritters often gram/chickpea flour). About 400 kcal per bowl.
-5. Sophie's Chilli Pickle (Mirch Ka Achar) — RM 28. Halal, vegan, vegetarian. Condiment, not a meal, not a medical food. Allergens: mustard; possible traces of sesame/nuts (shared home kitchen). About 50 kcal per 1 tablespoon.
+1. Authentic Chicken Biryani / Chicken Pulao — RM 15 (biryani was RM 32; raita free with biryani). Halal. Non-spicy on request.
+2. Chicken Salan / Karhai — RM 15. Fresh. Halal. Non-spicy on request.
+3. Chicken Dumplings (fresh, 12) — RM 20. Chilli oil sauce. Halal. Non-spicy on request. About 520 kcal / 12 pieces.
+4. Frozen chicken (12s): Shami RM 25 · Kofta RM 30 · Chapli RM 35 · Dumplings + chilli oil RM 20.
+5. Frozen beef: Shami (12) RM 35 · Kofta (12) RM 35 · Chapli (12) RM 45 · Dum qeema RM 45.
+6. Sauces: Mint RM 10 · Sweet & sour imli RM 10.
+7. Desserts: Kheer RM 14 · Zarda RM 14 · Panjiri RM 16 · Shahi Tukray RM 16.
+8. Royal Shahi Dahi Baray RM 18 · Sophie's Chilli Pickle RM 28.
 
 Shared kitchen: dairy, gluten, nuts, sesame, mustard. Traces possible.
 
@@ -33,13 +36,16 @@ Charm, rose, or flowers with biryani for Hari Raya, Chinese New Year, birthday, 
 
 Add extras on their own or with Authentic Chicken Biryani (RM 15, raita included). Section: https://razzat.vercel.app/#gifts
 
-## Meal plans
+## Weekly meal — RM 100, 6 items
 
-No bread, roti, or naan in the boxes. Dishes may vary with the week’s cooking. Pickup or delivery, KL and Greater Klang Valley. Section: https://razzat.vercel.app/#meal-plan
+No bread or roti. All non-spicy free. Nutrition is per item on the card (accordion); the box is six separate servings. Approximate; portions may vary. Section: https://razzat.vercel.app/#meal-plan
 
-1. Weekly Salan Box — RM 110 / week. Seven single-serve homemade salan in disposable boxes. Sample: Chicken Aloo, Chana Masala, Chicken White Karahi, Bhindi Salan, Tadka Daal, Chicken Nihari, Chicken Qorma.
-2. Lunch Plan — Monday to Friday. Weekly RM 70 · Monthly RM 280. Sample: Qeema Aloo, Qeema Matar, Palak Chicken, Aloo Ghosht, rice with chicken or beef, mix sabzi, daal.
-3. Dinner Plan — Monday to Friday. Weekly RM 85 · Monthly RM 340. Sample: Chicken sizzling, Aloo Ghosht, beef salan, Palak chicken, Chicken karahi, mix sabzi, daal with rice.
+1. Rice — chicken or beef biryani / chicken or beef pulao / shashlik rice / Afghani pulao. Example: chicken biryani ~380 g, 750 kcal, protein 38 g, carbs 80 g, fat 24 g, fibre 4 g.
+2. Vegetable — mix veg / aloo tarkari / bhindi / palak paneer.
+3. Daal tadka / karhi pakora / chana salan.
+4. Beef or chicken curry — qorma / nihari / karhai / handi.
+5. Beef or chicken aloo qeema.
+6. Zeera rice (~200 g, 280 kcal, protein 5 g, carbs 52 g, fat 6 g, fibre 1 g).
 
 ## How to order
 

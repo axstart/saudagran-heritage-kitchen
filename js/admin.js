@@ -208,6 +208,7 @@
           item.occasion
             ? "occasion: " + (window.LazzatGifts ? window.LazzatGifts.occasionLabel(item.occasion) : item.occasion)
             : "",
+          item.nonSpicy ? "non-spicy" : "",
         ]
           .filter(Boolean)
           .join(" · ");
@@ -246,12 +247,12 @@
       .map((ing) => {
         const low = ing.onHand <= ing.reorderLevel;
         return `<tr class="${low ? "is-low" : ""}">
-          <td>${escapeHtml(ing.name)}${low ? ' <span class="low">low</span>' : ""}</td>
-          <td><input class="cell" type="number" min="0" step="0.001" data-stock="${escapeHtml(ing.id)}" value="${ing.onHand}"></td>
-          <td>${escapeHtml(ing.unit)}</td>
-          <td><input class="cell" type="number" min="0" step="0.001" data-cost="${escapeHtml(ing.id)}" value="${ing.unitCost}"></td>
-          <td><input class="cell" type="number" min="0" step="0.001" data-reorder="${escapeHtml(ing.id)}" value="${ing.reorderLevel}"></td>
-          <td>${rm(ing.onHand * ing.unitCost)}</td>
+          <td data-label="Ingredient">${escapeHtml(ing.name)}${low ? ' <span class="low">low</span>' : ""}</td>
+          <td data-label="On hand"><input class="cell" type="number" min="0" step="0.001" data-stock="${escapeHtml(ing.id)}" value="${ing.onHand}"></td>
+          <td data-label="Unit">${escapeHtml(ing.unit)}</td>
+          <td data-label="RM / unit"><input class="cell" type="number" min="0" step="0.001" data-cost="${escapeHtml(ing.id)}" value="${ing.unitCost}"></td>
+          <td data-label="Reorder"><input class="cell" type="number" min="0" step="0.001" data-reorder="${escapeHtml(ing.id)}" value="${ing.reorderLevel}"></td>
+          <td data-label="Value">${rm(ing.onHand * ing.unitCost)}</td>
         </tr>`;
       })
       .join("");
@@ -264,7 +265,7 @@
         <button type="button" class="btn-outline tap" data-reset-stock>Reset seed stock</button>
       </div>
       <div class="panel table-wrap">
-        <table>
+        <table class="inventory-table">
           <thead>
             <tr><th>Ingredient</th><th>On hand</th><th>Unit</th><th>RM / unit</th><th>Reorder</th><th>Value</th></tr>
           </thead>

@@ -52,12 +52,32 @@
     return productKind(item.id) === "plan";
   }
 
+  function spicyBit(extra) {
+    return extra && extra.nonSpicy ? "ns" : "sp";
+  }
+
   function lineKey(id, extra) {
     extra = extra || {};
     const kind = productKind(id);
     if (kind === "addon") return id + "::" + (extra.occasion || "unspecified");
-    if (kind === "plan") return id + "::" + (extra.period || "weekly");
+    if (kind === "plan") {
+      const period = extra.period || "weekly";
+      const picks = Gifts ? Gifts.picksKey(extra.picks) : "";
+      return id + "::" + period + "::" + spicyBit(extra) + "::" + picks;
+    }
+    const variant = extra.variant || "";
+    const product = MENU[id];
+    if (product && product.spicy) {
+      return id + (variant ? "::" + variant : "") + "::" + spicyBit(extra);
+    }
+    if (variant) return id + "::" + variant;
     return id;
+  }
+
+  function lineName(item) {
+    let name = item.variantLabel || item.name || "";
+    if (item.nonSpicy) name += " (non-spicy)";
+    return name;
   }
 
   function addonName(item) {
@@ -95,6 +115,10 @@
         line.occasion = line.occasion || "";
         line.packaging = (Gifts && Gifts.PACKAGING) || line.packaging || "";
       }
+      if (product.kind === "plan") {
+        line.picks = Gifts ? Gifts.normalizePicks(line.picks) : line.picks || null;
+      }
+      if (!product.spicy) line.nonSpicy = false;
     });
   }
 
@@ -129,7 +153,17 @@
     extra = extra || {};
     const occasion = extra.occasion || "";
     const period = extra.period || "";
-    const key = lineKey(id, { occasion: occasion, period: period });
+    const nonSpicy = !!(product.spicy && extra.nonSpicy);
+    const variant = extra.variant || "";
+    const variantLabel = extra.variantLabel || "";
+    const picks = product.kind === "plan" && Gifts ? Gifts.normalizePicks(extra.picks) : extra.picks || null;
+    const key = lineKey(id, {
+      occasion: occasion,
+      period: period,
+      nonSpicy: nonSpicy,
+      variant: variant,
+      picks: picks,
+    });
     const packaging = extra.packaging || (product.kind === "addon" && Gifts ? Gifts.PACKAGING : "");
     const price =
       product.kind === "plan" && Gifts ? Gifts.planPrice(id, period || "weekly") : product.price;
@@ -140,6 +174,10 @@
       cart[key].occasion = occasion;
       cart[key].period = period;
       cart[key].packaging = packaging;
+      cart[key].nonSpicy = nonSpicy;
+      cart[key].variant = variant;
+      cart[key].variantLabel = variantLabel;
+      cart[key].picks = picks;
     } else {
       cart[key] = {
         id: product.id,
@@ -150,11 +188,15 @@
         occasion: occasion,
         period: period,
         packaging: packaging,
+        nonSpicy: nonSpicy,
+        variant: variant,
+        variantLabel: variantLabel,
+        picks: picks,
       };
     }
     saveCart();
     renderCart();
-    const bits = [product.name];
+    const bits = [lineName(cart[key])];
     if (product.kind === "plan" && period && Gifts) bits.push(Gifts.periodLabel(id, period));
     if (product.kind === "addon" && occasion && Gifts) bits.push(Gifts.occasionLabel(occasion));
     toast(bits.join(" · ") + " added to cart" + (product.note ? " — " + product.note : ""));
@@ -163,7 +205,13 @@
   function setOccasion(key, occasion) {
     const line = cart[key];
     if (!line) return;
-    const nextKey = lineKey(line.id, { occasion: occasion, period: line.period });
+    const nextKey = lineKey(line.id, {
+      occasion: occasion,
+      period: line.period,
+      nonSpicy: line.nonSpicy,
+      variant: line.variant,
+      picks: line.picks,
+    });
     line.occasion = occasion;
     line.packaging = Gifts ? Gifts.PACKAGING : line.packaging || "";
     rekeyLine(key, nextKey, line);
@@ -174,9 +222,33 @@
   function setPeriod(key, period) {
     const line = cart[key];
     if (!line) return;
-    const nextKey = lineKey(line.id, { occasion: line.occasion, period: period });
+    const nextKey = lineKey(line.id, {
+      occasion: line.occasion,
+      period: period,
+      nonSpicy: line.nonSpicy,
+      variant: line.variant,
+      picks: line.picks,
+    });
     line.period = period;
     line.price = Gifts ? Gifts.planPrice(line.id, period) : line.price;
+    rekeyLine(key, nextKey, line);
+    saveCart();
+    renderCart();
+  }
+
+  function setNonSpicy(key, on) {
+    const line = cart[key];
+    if (!line) return;
+    const product = MENU[line.id];
+    if (!product || !product.spicy) return;
+    line.nonSpicy = !!on;
+    const nextKey = lineKey(line.id, {
+      occasion: line.occasion,
+      period: line.period,
+      nonSpicy: line.nonSpicy,
+      variant: line.variant,
+      picks: line.picks,
+    });
     rekeyLine(key, nextKey, line);
     saveCart();
     renderCart();
@@ -235,12 +307,13 @@
 
   function extraNotes(list) {
     return list
-      .filter((item) => isAddon(item) || isPlan(item) || item.occasion)
+      .filter((item) => isAddon(item) || isPlan(item) || item.occasion || item.nonSpicy)
       .map((item) => {
-        const bits = [item.name];
+        const bits = [lineName(item)];
         if (isPlan(item) && item.period) {
           bits.push("subscription: " + (Gifts ? Gifts.periodLabel(item.id, item.period) : item.period));
         }
+        if (isPlan(item) && item.picks && Gifts) bits.push(Gifts.picksLines(item.picks).join("; "));
         if (item.occasion && Gifts) bits.push("occasion: " + Gifts.occasionLabel(item.occasion));
         else if (item.occasion) bits.push("occasion: " + item.occasion);
         return bits.join(" — ");
@@ -252,7 +325,7 @@
     const biryani = list.find((item) => item.id === "biryani");
     const addons = list.filter(isAddon);
     if (!biryani || !addons.length) return "";
-    const names = [biryani.name].concat(addons.map((a) => addonName(a) || a.name));
+    const names = [lineName(biryani)].concat(addons.map((a) => addonName(a) || a.name));
     return names.join(" + ");
   }
 
@@ -260,13 +333,22 @@
     const list = order.items;
     const lines = list
       .map((item) => {
-        const extra = item.id === "biryani" ? " (includes free raita)" : "";
-        let block = `• ${item.name} ×${item.qty} — ${money(item.price * item.qty)}${extra}`;
+        const extras = [];
+        if (item.id === "biryani") extras.push("includes free raita");
+        let block = `• ${lineName(item)} ×${item.qty} — ${money(item.price * item.qty)}`;
+        if (extras.length && !item.nonSpicy) block += ` (${extras.join(", ")})`;
+        else if (item.id === "biryani") block += ` (includes free raita)`;
         if (isPlan(item)) {
           const period = Gifts ? Gifts.periodLabel(item.id, item.period) : item.period;
           if (period) block += `\n  Subscription: ${period}`;
           const plan = Gifts && Gifts.planMeta(item.id);
           if (plan) block += `\n  ${plan.serving}`;
+          if (item.picks && Gifts) {
+            Gifts.picksLines(item.picks).forEach((row) => {
+              block += `\n  ${row}`;
+            });
+          }
+          if (item.nonSpicy) block += `\n  All non-spicy`;
         }
         if (isAddon(item) || item.occasion) {
           const occ =
@@ -397,9 +479,18 @@
       : "";
     const rows = list
       .map((item) => {
-        const key = item.key || lineKey(item.id, { occasion: item.occasion, period: item.period });
+        const key =
+          item.key ||
+          lineKey(item.id, {
+            occasion: item.occasion,
+            period: item.period,
+            nonSpicy: item.nonSpicy,
+            variant: item.variant,
+            picks: item.picks,
+          });
         const addon = isAddon(item);
         const plan = isPlan(item);
+        const product = MENU[item.id];
         const occOptions =
           addon && Gifts
             ? Gifts.allowedOccasions()
@@ -425,10 +516,24 @@
             </label>
             <p class="mt-1.5 text-xs text-[#6B5E54]">Add-on for biryani · Rasa-e-Lazzat wrap only</p>`;
         } else if (plan) {
+          const pickRows =
+            item.picks && Gifts
+              ? Gifts.picksLines(item.picks)
+                  .map((row) => `<li>${escapeHtml(row)}</li>`)
+                  .join("")
+              : "";
           meta = `<label class="mt-2 block text-xs font-medium text-[#6B3E26]">Subscription
               <select class="gift-cart-occasion mt-1 w-full" data-cart-period="${escapeHtml(key)}" aria-label="Period for ${escapeHtml(item.name)}">${periodOptions}</select>
             </label>
-            <p class="mt-1.5 text-xs text-[#6B5E54]">Meal plan · dishes may vary · no bread or roti</p>`;
+            <ul class="mt-1.5 space-y-0.5 text-xs text-[#6B5E54]">${pickRows}</ul>`;
+        }
+        if (product && product.spicy) {
+          const checked = item.nonSpicy ? " checked" : "";
+          const label = plan ? "All non-spicy" : "Non-spicy";
+          meta += `<label class="spice-opt mt-2">
+              <input type="checkbox" data-cart-spicy="${escapeHtml(key)}"${checked} />
+              ${label}
+            </label>`;
         }
         const sub =
           item.id === "biryani"
@@ -436,12 +541,12 @@
             : addon
               ? " · special-order extra"
               : plan
-                ? " · subscription"
+                ? " · 6 items · no bread"
                 : "";
         return `
       <div class="flex items-start justify-between gap-3 border-b border-[#6B3E26]/10 pb-4">
         <div class="min-w-0">
-          <p class="font-semibold text-[#2D1B10]">${escapeHtml(item.name)}</p>
+          <p class="font-semibold text-[#2D1B10]">${escapeHtml(lineName(item))}</p>
           <p class="mt-0.5 text-xs text-[#6B5E54]">${money(item.price)} each${sub}</p>
           ${meta}
           <div class="mt-3 flex items-center gap-2">
@@ -516,7 +621,84 @@
     return select ? select.value : "";
   }
 
+  function nonSpicyFromCard(card) {
+    const box = card && card.querySelector("[data-non-spicy]");
+    return !!(box && box.checked);
+  }
+
+  function variantFromCard(card) {
+    const on = card && card.querySelector("[data-variant].is-on");
+    if (!on) return { id: "", variant: "", label: "" };
+    return {
+      id: on.dataset.addId || "",
+      variant: on.dataset.variant || "",
+      label: on.dataset.variantLabel || on.textContent.trim(),
+    };
+  }
+
+  function picksFromCard(card) {
+    if (!Gifts) return null;
+    const picks = Gifts.defaultPicks();
+    if (!card) return picks;
+    card.querySelectorAll("[data-plan-pick]").forEach((el) => {
+      const key = el.getAttribute("data-plan-pick");
+      if (key && el.value) picks[key] = el.value;
+    });
+    return Gifts.normalizePicks(picks);
+  }
+
+  function extrasFromCard(card, id) {
+    const extra = {};
+    const product = MENU[id];
+    if (product && product.spicy) extra.nonSpicy = nonSpicyFromCard(card);
+    if (product && product.kind === "plan") {
+      extra.period = periodFromCard(card) || "weekly";
+      extra.picks = picksFromCard(card);
+    }
+    const chosen = variantFromCard(card);
+    if (chosen.variant) {
+      extra.variant = chosen.variant;
+      extra.variantLabel = chosen.label;
+    }
+    return extra;
+  }
+
+  function addIdFromCard(card, fallbackId) {
+    const chosen = variantFromCard(card);
+    return chosen.id && MENU[chosen.id] ? chosen.id : fallbackId;
+  }
+
+  function setHeatAll(on) {
+    const chip = document.querySelector("[data-heat-all]");
+    if (chip) {
+      chip.classList.toggle("is-on", on);
+      chip.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    document.querySelectorAll("[data-non-spicy]").forEach((box) => {
+      box.checked = on;
+    });
+  }
+
   document.addEventListener("click", (e) => {
+    const heatAll = e.target.closest("[data-heat-all]");
+    if (heatAll) {
+      setHeatAll(heatAll.getAttribute("aria-pressed") !== "true");
+      return;
+    }
+
+    const variantBtn = e.target.closest("[data-variant]");
+    if (variantBtn && variantBtn.closest("[data-variant-group]")) {
+      const group = variantBtn.closest("[data-variant-group]");
+      group.querySelectorAll("[data-variant]").forEach((btn) => {
+        const on = btn === variantBtn;
+        btn.classList.toggle("is-on", on);
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      const note = group.parentElement && group.parentElement.querySelector("[data-variant-note]");
+      if (note) note.hidden = variantBtn.dataset.variant !== "biryani";
+      return;
+    }
+
     const withBiryani = e.target.closest("[data-add-with-biryani]");
     if (withBiryani) {
       const id = withBiryani.dataset.addWithBiryani;
@@ -526,28 +708,30 @@
         toast("Pick an occasion first");
         return;
       }
-      addToCart("biryani");
+      const biryaniCard = document.getElementById("product-biryani");
+      addToCart("biryani", extrasFromCard(biryaniCard, "biryani"));
       addToCart(id, { occasion: occasion, packaging: Gifts ? Gifts.PACKAGING : "" });
       return;
     }
 
     const add = e.target.closest("[data-add]");
     if (add) {
-      const id = add.dataset.add;
+      const fallbackId = add.dataset.add;
       const addonCard = add.closest("[data-addon-card]");
       const planCard = add.closest("[data-plan-card]");
+      const menuCard = add.closest("article");
       if (addonCard) {
         const occasion = occasionFromCard(addonCard);
         if (!occasion) {
           toast("Pick an occasion first");
           return;
         }
-        addToCart(id, { occasion: occasion, packaging: Gifts ? Gifts.PACKAGING : "" });
+        addToCart(fallbackId, { occasion: occasion, packaging: Gifts ? Gifts.PACKAGING : "" });
       } else if (planCard) {
-        const period = periodFromCard(planCard) || "weekly";
-        addToCart(id, { period: period });
+        addToCart(fallbackId, extrasFromCard(planCard, fallbackId));
       } else {
-        addToCart(id);
+        const id = addIdFromCard(menuCard, fallbackId);
+        addToCart(id, extrasFromCard(menuCard, id));
       }
       return;
     }
@@ -603,6 +787,13 @@
     const period = e.target.closest("[data-cart-period]");
     if (period) {
       setPeriod(period.dataset.cartPeriod, period.value);
+      return;
+    }
+    const spicy =
+      e.target.closest("[data-cart-nonsicy]") || e.target.closest("[data-cart-spicy]");
+    if (spicy) {
+      const key = spicy.dataset.cartNonsicy || spicy.dataset.cartSpicy;
+      setNonSpicy(key, spicy.checked);
     }
   });
 

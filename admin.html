@@ -2,10 +2,16 @@
 <html lang="en-MY">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>Kitchen · Rasa-e-Lazzat</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#F5F5F0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Kitchen" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icon-192.png" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,6 +49,13 @@
         <button type="button" class="btn-ghost tap" id="logout">Logout</button>
       </header>
       <main class="main" id="view"></main>
+      <nav class="nav dock-nav" aria-label="Kitchen sections">
+        <button type="button" class="tap" data-view="dashboard" aria-current="page">Dash</button>
+        <button type="button" class="tap" data-view="orders">Orders</button>
+        <button type="button" class="tap" data-view="inventory">Stock</button>
+        <button type="button" class="tap" data-view="costing">Cost</button>
+        <button type="button" class="tap" data-view="pnl">P&amp;L</button>
+      </nav>
     </div>
 
     <div id="modal" class="modal" hidden>
@@ -56,5 +69,6 @@
     <script src="js/gifts.js"></script>
     <script src="js/kitchen-store.js"></script>
     <script src="js/admin.js"></script>
+    <script src="js/pwa.js"></script>
   </body>
 </html>

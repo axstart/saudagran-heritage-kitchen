@@ -124,6 +124,10 @@
         occasion: String(row.occasion || "").trim(),
         period: String(row.period || "").trim(),
         packaging: String(row.packaging || "").trim(),
+        nonSpicy: !!row.nonSpicy,
+        variant: String(row.variant || "").trim(),
+        variantLabel: String(row.variantLabel || "").trim(),
+        picks: row.picks && typeof row.picks === "object" ? row.picks : null,
       });
     });
     return out;

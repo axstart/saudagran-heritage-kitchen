@@ -88,7 +88,7 @@ Small-batch jar, packed by hand to order. Condiment. Not a meal. Not a medical f
 - Why these ingredients: Mustard oil carries the chilli. Whole spices you can see — fennel, nigella, fenugreek — are flavour, not medicine.
 - Copy: Green chillies in mustard oil, sharp and oily-hot. Whole spices you can see in the jar. A spoon beside rice or biryani. This is a condiment, not a meal.
 
-### Chicken Dumplings (12 pieces) — RM 22.00
+### Chicken Dumplings (12 pieces) — RM 20.00
 
 Steamed chicken momo. House style is steamed, not pan-fried.
 
@@ -120,20 +120,25 @@ Charm, rose, or flowers with biryani. Rasa-e-Lazzat only. Kraft wrap, saffron ri
 
 Add on their own or with Authentic Chicken Biryani. Occasions: Hari Raya, Chinese New Year, birthday, anniversary, thank-you.
 
-## Meal plans
+## Weekly meal — RM 100, 6 items
 
-No bread, roti, or naan. Dishes may vary. Pickup or delivery.
+No bread, roti, or naan. All non-spicy free. Nutrition is per item (accordion on the card). The box is six separate servings. Approximate; portions may vary.
 
-- Weekly Salan Box RM 110 / week — 7 single-serve salan in disposable boxes. Sample: Chicken Aloo, Chana Masala, Chicken White Karahi, Bhindi Salan, Tadka Daal, Chicken Nihari, Chicken Qorma.
-- Lunch Plan Mon–Fri — weekly RM 70, monthly RM 280. Sample: Qeema Aloo, Qeema Matar, Palak Chicken, Aloo Ghosht, rice with chicken or beef, mix sabzi, daal.
-- Dinner Plan Mon–Fri — weekly RM 85, monthly RM 340. Sample: Chicken sizzling, Aloo Ghosht, beef salan, Palak chicken, Chicken karahi, mix sabzi, daal with rice.
+1. Rice: chicken/beef biryani, chicken/beef pulao, shashlik rice, Afghani pulao
+2. Vegetable: mix veg, aloo tarkari, bhindi, palak paneer
+3. Daal tadka, karhi pakora, or chana salan
+4. Beef/chicken qorma, nihari, karhai, or handi
+5. Beef/chicken aloo qeema
+6. Zeera rice
+
+Example (chicken biryani): ~380 g, 750 kcal, protein 38 g, carbs 80 g, fat 24 g, fibre 4 g.
 
 ## Entity names (keep consistent)
 
 - Brand / kitchen: Rasa-e-Lazzat
 - Person: Sophie (culinary lead / cook)
-- Dishes: Authentic Chicken Biryani; Chicken Dumplings (12 pieces); Shahi Tukray (Shahi Tukra); Royal Shahi Dahi Baray; Sophie's Chilli Pickle (Mirch Ka Achar)
+- Dishes: Authentic Chicken Biryani; Chicken Pulao; Chicken Dumplings; Shahi Tukray; Royal Shahi Dahi Baray; Sophie's Chilli Pickle; Kheer; Zarda; Panjiri
 - Extras: Charm; Single rose; Small bouquet
-- Meal plans: Weekly Salan Box; Lunch Plan; Dinner Plan
+- Meal plan: Weekly meal (6 items, RM 100)
 - Currency: MYR (Malaysian Ringgit)
 - Phone: +60 176020325 / +60176020325
