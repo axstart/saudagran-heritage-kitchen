@@ -123,8 +123,10 @@
               "Weekly meal plan",
               "Chicken dumplings",
               "Kheer",
+              "Suji Halwa",
               "Zarda",
-              "Panjiri"
+              "Fruit Trifle",
+              "Panjeeri"
             ]
           },
           {
@@ -222,7 +224,9 @@
               { "@id": "https://razzat.vercel.app/#shahi-tukray" },
               { "@id": "https://razzat.vercel.app/#dumplings" },
               { "@id": "https://razzat.vercel.app/#kheer" },
+              { "@id": "https://razzat.vercel.app/#suji-halwa" },
               { "@id": "https://razzat.vercel.app/#zarda" },
+              { "@id": "https://razzat.vercel.app/#fruit-trifle" },
               { "@id": "https://razzat.vercel.app/#panjiri" },
               { "@id": "https://razzat.vercel.app/#addon-charm" },
               { "@id": "https://razzat.vercel.app/#addon-rose" },
@@ -355,8 +359,8 @@
           {
             "@type": "NutritionInformation",
             "@id": "https://razzat.vercel.app/#panjiri-nutrition",
-            "name": "Panjiri, per portion",
-            "servingSize": "1 portion",
+            "name": "Panjeeri, per 80 g scoop",
+            "servingSize": "80 g",
             "calories": "420 kcal",
             "proteinContent": "8 g",
             "carbohydrateContent": "44 g",
@@ -470,7 +474,7 @@
           {
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#dumplings",
-            "name": "Chicken Dumplings (fresh, 12 pieces)",
+            "name": "Fresh chicken dumplings (12 pieces)",
             "alternateName": "Chicken momo",
             "description": "Fresh steamed chicken dumplings, twelve to a tray, with chilli oil sauce. Halal. Non-spicy on request, no extra charge. Allergens: gluten; chilli oil may contain sesame. About 520 kcal for 12 pieces. RM 20.",
             "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80",
@@ -535,8 +539,8 @@
           {
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#panjiri",
-            "name": "Panjiri",
-            "description": "Roasted wheat flour, ghee, nuts, sugar. Halal, vegetarian. Allergens: gluten, dairy (ghee), nuts. About 420 kcal per portion. RM 40.",
+            "name": "Panjeeri",
+            "description": "Roasted wheat flour, ghee, nuts, sugar. Two sizes: 400 g RM 40, 200 g RM 20. Halal, vegetarian. Allergens: gluten, dairy (ghee), nuts. About 420 kcal per 80 g scoop.",
             "image": "https://razzat.vercel.app/assets/dessert-panjiri.png",
             "category": "Dessert",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
@@ -545,13 +549,24 @@
               { "@type": "PropertyValue", "name": "Diet", "value": "Halal; vegetarian" },
               { "@type": "PropertyValue", "name": "Allergens", "value": "Gluten (wheat); dairy (ghee); nuts" }
             ],
-            "offers": {
-              "@type": "Offer",
-              "price": "40.00",
-              "priceCurrency": "MYR",
-              "availability": "https://schema.org/InStock",
-              "url": "https://razzat.vercel.app/#product-panjiri"
-            }
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "400 g",
+                "price": "40.00",
+                "priceCurrency": "MYR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://razzat.vercel.app/#product-panjiri"
+              },
+              {
+                "@type": "Offer",
+                "name": "200 g",
+                "price": "20.00",
+                "priceCurrency": "MYR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://razzat.vercel.app/#product-panjiri"
+              }
+            ]
           },
           {
             "@type": "Product",
@@ -602,7 +617,7 @@
           {
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#dumplings-frozen",
-            "name": "Chicken Dumplings (frozen, 12)",
+            "name": "Frozen chicken dumplings (12)",
             "description": "Frozen chicken dumplings with chilli oil sauce. Halal. RM 20.",
             "category": "Frozen chicken",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
@@ -629,18 +644,18 @@
           {
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#beef-chapli",
-            "name": "Beef Chapli (12)",
-            "description": "Frozen pack of 12. Halal. RM 45.",
-            "category": "Frozen beef",
+            "name": "Fresh Beef Chapli (12)",
+            "description": "Fresh pack of 12. Halal. RM 45.",
+            "category": "Fresh beef",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
             "offers": { "@type": "Offer", "price": "45.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-beef-chapli" }
           },
           {
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#beef-dum-qeema",
-            "name": "Beef dum qeema",
-            "description": "Frozen beef dum qeema. Halal. RM 45. No bread.",
-            "category": "Frozen beef",
+            "name": "Fresh beef dum qeema",
+            "description": "Fresh beef dum qeema. Halal. RM 45. No bread.",
+            "category": "Fresh beef",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
             "offers": { "@type": "Offer", "price": "45.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-beef-dum-qeema" }
           },
@@ -677,7 +692,7 @@
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#chicken-pasta",
             "name": "Fresh chicken pasta",
-            "description": "Fresh chicken lasagne, spaghetti, or macaroni. Halal. RM 15.",
+            "description": "Fresh chicken lasagne, spaghetti, or cheese macaroni. Halal. RM 15.",
             "image": "https://razzat.vercel.app/assets/menu/lasagne.png",
             "category": "Fresh",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
@@ -697,8 +712,8 @@
           {
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#beef-pasta",
-            "name": "Fresh beef pasta",
-            "description": "Fresh beef lasagne, spaghetti, or macaroni. Halal. RM 20.",
+            "name": "Fresh beef qeema pasta",
+            "description": "Fresh beef qeema lasagne, spaghetti, or cheese macaroni. Halal. RM 20.",
             "image": "https://razzat.vercel.app/assets/menu/lasagne.png",
             "category": "Fresh",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
@@ -706,24 +721,43 @@
           },
           {
             "@type": "Product",
-            "@id": "https://razzat.vercel.app/#custard",
-            "name": "Custard",
-            "alternateName": "Custurd",
-            "description": "Chilled Pakistani fruit custard. Milk, cardamom, fruit. Halal, vegetarian. RM 14. Allergens: dairy; egg if used.",
-            "image": "https://razzat.vercel.app/assets/menu/custard.png",
-            "category": "Dessert",
+            "@id": "https://razzat.vercel.app/#beef-biryani",
+            "name": "Fresh Beef Biryani / Pulao",
+            "description": "Fresh beef biryani or pulao. Halal. RM 20. Non-spicy on request, no extra charge.",
+            "image": "https://razzat.vercel.app/assets/menu/beef-biryani.png",
+            "category": "Fresh",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
-            "offers": { "@type": "Offer", "price": "14.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-custard" }
+            "offers": { "@type": "Offer", "price": "20.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-beef-biryani" }
           },
           {
             "@type": "Product",
-            "@id": "https://razzat.vercel.app/#truffles",
-            "name": "Truffles",
-            "description": "Homemade chocolate milk-powder truffles, box of 6–8. Halal, vegetarian. RM 18. Allergens: dairy; possible nuts.",
-            "image": "https://razzat.vercel.app/assets/menu/truffles.png",
+            "@id": "https://razzat.vercel.app/#beef-salan",
+            "name": "Fresh Beef Salan / Karhai",
+            "description": "Fresh beef salan or karhai. Halal. RM 25. Non-spicy on request, no extra charge.",
+            "image": "https://razzat.vercel.app/assets/menu/beef-salan.png",
+            "category": "Fresh",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "25.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-beef-salan" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#suji-halwa",
+            "name": "Suji Halwa",
+            "description": "Semolina halwa with ghee and nuts. Halal, vegetarian. RM 14. Allergens: gluten, dairy, nuts.",
+            "image": "https://razzat.vercel.app/assets/menu/suji-halwa.png",
             "category": "Dessert",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
-            "offers": { "@type": "Offer", "price": "18.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-truffles" }
+            "offers": { "@type": "Offer", "price": "14.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-suji-halwa" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#fruit-trifle",
+            "name": "Fruit Trifle",
+            "description": "Layered fruit trifle with custard and sponge. Halal, vegetarian. RM 16. Allergens: gluten, dairy; possible nuts.",
+            "image": "https://razzat.vercel.app/assets/menu/fruit-trifle.png",
+            "category": "Dessert",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "16.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-fruit-trifle" }
           },
           {
             "@type": "MenuItem",
@@ -794,7 +828,7 @@
           {
             "@type": "MenuItem",
             "@id": "https://razzat.vercel.app/#menuitem-dumplings",
-            "name": "Chicken Dumplings (12 pieces)",
+            "name": "Fresh chicken dumplings (12 pieces)",
             "url": "https://razzat.vercel.app/#product-dumplings",
             "suitableForDiet": "https://schema.org/HalalDiet",
             "nutrition": { "@id": "https://razzat.vercel.app/#dumplings-nutrition" },
@@ -836,13 +870,37 @@
           {
             "@type": "MenuItem",
             "@id": "https://razzat.vercel.app/#menuitem-panjiri",
-            "name": "Panjiri",
+            "name": "Panjeeri",
             "url": "https://razzat.vercel.app/#product-panjiri",
             "suitableForDiet": ["https://schema.org/HalalDiet", "https://schema.org/VegetarianDiet"],
             "nutrition": { "@id": "https://razzat.vercel.app/#panjiri-nutrition" },
+            "offers": [
+              { "@type": "Offer", "name": "400 g", "price": "40.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock" },
+              { "@type": "Offer", "name": "200 g", "price": "20.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock" }
+            ]
+          },
+          {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-suji-halwa",
+            "name": "Suji Halwa",
+            "url": "https://razzat.vercel.app/#product-suji-halwa",
+            "suitableForDiet": ["https://schema.org/HalalDiet", "https://schema.org/VegetarianDiet"],
             "offers": {
               "@type": "Offer",
-              "price": "40.00",
+              "price": "14.00",
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@type": "MenuItem",
+            "@id": "https://razzat.vercel.app/#menuitem-fruit-trifle",
+            "name": "Fruit Trifle",
+            "url": "https://razzat.vercel.app/#product-fruit-trifle",
+            "suitableForDiet": ["https://schema.org/HalalDiet", "https://schema.org/VegetarianDiet"],
+            "offers": {
+              "@type": "Offer",
+              "price": "16.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock"
             }
@@ -864,7 +922,9 @@
                 "hasMenuItem": [
                   { "@id": "https://razzat.vercel.app/#menuitem-tukray" },
                   { "@id": "https://razzat.vercel.app/#menuitem-kheer" },
+                  { "@id": "https://razzat.vercel.app/#menuitem-suji-halwa" },
                   { "@id": "https://razzat.vercel.app/#menuitem-zarda" },
+                  { "@id": "https://razzat.vercel.app/#menuitem-fruit-trifle" },
                   { "@id": "https://razzat.vercel.app/#menuitem-panjiri" }
                 ]
               },
@@ -887,7 +947,7 @@
               "priceCurrency": "MYR",
               "lowPrice": "10.00",
               "highPrice": "100.00",
-              "offerCount": 20
+              "offerCount": 28
             }
           },
           {
@@ -1026,7 +1086,7 @@
                 "name": "What are the top sellers and prices?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Fresh dumplings RM 20. Weekly meal RM 100. Panjiri RM 40. Shahi Tukray RM 16. Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit."
+                  "text": "Authentic Chicken Biryani RM 15 (was RM 32, raita complimentary). Fresh dumplings RM 20. Weekly meal RM 100. Panjeeri 400 g RM 40 / 200 g RM 20. Shahi Tukray RM 16. Suji Halwa RM 14. Fruit Trifle RM 16. Royal Shahi Dahi Baray RM 18. Sophie's Chilli Pickle RM 28. All prices Malaysian Ringgit."
                 }
               },
               {
@@ -1074,7 +1134,7 @@
                 "name": "Can I order non-spicy food?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Tick Non-spicy on biryani, pulao, dumplings, salan, karhai, frozen packs, and the weekly meal. No extra charge. Sophie’s Chilli Pickle stays spicy. Kheer, zarda, and panjiri are desserts and are not spicy."
+                  "text": "Yes. Tick Non-spicy on biryani, pulao, dumplings, salan, karhai, frozen packs, and the weekly meal. No extra charge. Sophie’s Chilli Pickle stays spicy. Kheer, suji halwa, zarda, fruit trifle, and panjeeri are desserts and are not spicy."
                 }
               }
             ]
@@ -1272,12 +1332,15 @@
         </div>
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Fresh chicken</h3>
+
           <article class="card-lux featured flex flex-col" id="product-biryani">
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
                 src="assets/rasa-biryani.png"
                 alt="Authentic chicken dum biryani, Rasa-e-Lazzat"
                 class="food-crop h-full w-full"
+                data-variant-photo
                 width="800"
                 height="600"
               />
@@ -1292,8 +1355,8 @@
                 <span class="chip chip-meat">Contains meat</span>
               </div>
               <div class="opt-chips" data-variant-group role="radiogroup" aria-label="Rice">
-                <button type="button" class="opt-chip is-on tap" data-variant="biryani" data-add-id="biryani" data-variant-label="Authentic Chicken Biryani" aria-pressed="true">Biryani</button>
-                <button type="button" class="opt-chip tap" data-variant="pulao" data-add-id="pulao" data-variant-label="Chicken Pulao" aria-pressed="false">Pulao</button>
+                <button type="button" class="opt-chip is-on tap" data-variant="biryani" data-add-id="biryani" data-variant-label="Authentic Chicken Biryani" data-img="assets/rasa-biryani.png" data-img-alt="Authentic chicken dum biryani, Rasa-e-Lazzat" aria-pressed="true">Biryani</button>
+                <button type="button" class="opt-chip tap" data-variant="pulao" data-add-id="pulao" data-variant-label="Chicken Pulao" data-img="assets/menu/pulao.png" data-img-alt="Chicken pulao" aria-pressed="false">Pulao</button>
               </div>
               <p class="mt-1 text-[0.68rem] font-medium text-earth" data-variant-note>Includes free raita</p>
               <div class="allergen-chips mt-2" aria-label="Allergens">
@@ -1396,6 +1459,8 @@
               </div>
             </div>
           </article>
+
+          <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Desserts</h3>
 
           <article class="card-lux featured flex flex-col" id="product-shahi-tukray">
             <div class="relative h-56 overflow-hidden bg-earth/10">
@@ -1500,6 +1565,47 @@
             </div>
           </article>
 
+          <article class="card-lux card-compact flex flex-col" id="product-suji-halwa">
+            <div class="card-photo">
+              <img src="assets/menu/suji-halwa.png" alt="Suji halwa with pistachios" width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Suji Halwa</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Semolina · ghee · nuts</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">Contains nuts</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Suji (semolina), ghee, sugar, milk, cardamom, pistachio.</p>
+                  <h4>Per bowl</h4>
+                  <p class="kcal-line"><strong>380 kcal</strong> <span>~180 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>6 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>52 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>16 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>2 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Gluten (wheat semolina). Dairy (ghee, milk). Nuts.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 14</p>
+                <button data-add="suji-halwa" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
           <article class="card-lux flex flex-col" id="product-zarda">
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
@@ -1551,24 +1657,67 @@
             </div>
           </article>
 
-          <article class="card-lux flex flex-col" id="product-panjiri">
-            <div class="relative h-56 overflow-hidden bg-earth/10">
+          <article class="card-lux card-compact flex flex-col" id="product-fruit-trifle">
+            <div class="card-photo">
+              <img src="assets/menu/fruit-trifle.png" alt="Fruit trifle with custard and cream" width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Fruit Trifle</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fruit · custard · sponge</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">May contain nuts</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Sponge or bread, milk custard, mixed fruit, sugar, cardamom; pistachio when garnished.</p>
+                  <h4>Per bowl</h4>
+                  <p class="kcal-line"><strong>340 kcal</strong> <span>~250 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>8 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>48 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>12 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>2 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Gluten (sponge). Dairy (custard). Possible nuts. Not vegan.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 16</p>
+                <button data-add="fruit-trifle" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-lux card-compact flex flex-col" id="product-panjiri">
+            <div class="card-photo">
               <img
                 src="assets/dessert-panjiri.png"
-                alt="Panjiri roasted flour sweet with ghee and nuts"
-                class="h-full w-full object-cover"
+                alt="Panjeeri roasted flour sweet with ghee and nuts"
                 width="800"
-                height="600"
+                height="500"
                 loading="lazy"
               />
-              <span class="absolute bottom-4 left-4 text-[0.68rem] font-medium text-cream">Desserts</span>
             </div>
-            <div class="flex flex-1 flex-col p-5">
-              <h3 class="section-title text-xl">Panjiri</h3>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Panjeeri</h3>
               <p class="mt-1 text-xs font-medium text-earth">Roasted flour, ghee, nuts</p>
               <div class="diet-chips mt-3" aria-label="Diet">
                 <span class="chip chip-diet">Halal</span>
                 <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="opt-chips" data-variant-group role="radiogroup" aria-label="Size">
+                <button type="button" class="opt-chip is-on tap" data-variant="400" data-add-id="panjiri" data-variant-label="Panjeeri 400 g" data-price="RM 40" aria-pressed="true">400 g</button>
+                <button type="button" class="opt-chip tap" data-variant="200" data-add-id="panjiri-200" data-variant-label="Panjeeri 200 g" data-price="RM 20" aria-pressed="false">200 g</button>
               </div>
               <div class="allergen-chips mt-2" aria-label="Allergens">
                 <span class="chip chip-allergen">Contains gluten</span>
@@ -1583,7 +1732,7 @@
                 <div class="nutrition-body">
                   <h4>Ingredients</h4>
                   <p>Wheat flour, ghee, sugar, pistachio, cardamom.</p>
-                  <h4>Per portion</h4>
+                  <h4>Per 80 g scoop</h4>
                   <p class="kcal-line"><strong>420 kcal</strong></p>
                   <dl class="macro-grid">
                     <div class="macro-cell"><dt>Protein</dt><dd>8 g</dd></div>
@@ -1597,88 +1746,8 @@
                 </div>
               </details>
               <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
-                <p class="text-2xl font-bold text-earth">RM 40.00</p>
+                <p class="text-2xl font-bold text-earth" data-card-price>RM 40</p>
                 <button data-add="panjiri" class="btn-gold tap px-4 text-sm">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="card-lux card-compact flex flex-col" id="product-custard">
-            <div class="card-photo">
-              <img src="assets/menu/custard.png" alt="Chilled Pakistani fruit custard" width="800" height="500" loading="lazy" />
-            </div>
-            <div class="flex flex-1 flex-col p-4">
-              <h3 class="section-title text-xl">Custard</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Chilled milk custard · fruit</p>
-              <div class="diet-chips mt-3" aria-label="Diet">
-                <span class="chip chip-diet">Halal</span>
-                <span class="chip chip-diet">Vegetarian</span>
-              </div>
-              <div class="allergen-chips mt-2" aria-label="Allergens">
-                <span class="chip chip-allergen">Contains dairy</span>
-                <span class="chip chip-allergen">May contain egg</span>
-              </div>
-              <details class="nutrition-panel">
-                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
-                <div class="nutrition-body">
-                  <h4>Ingredients</h4>
-                  <p>Milk, custard powder (cornflour) or egg, sugar, cardamom, mixed fruit. Also written custurd.</p>
-                  <h4>Per bowl</h4>
-                  <p class="kcal-line"><strong>280 kcal</strong> <span>~250 g</span></p>
-                  <dl class="macro-grid">
-                    <div class="macro-cell"><dt>Protein</dt><dd>8 g</dd></div>
-                    <div class="macro-cell"><dt>Carbs</dt><dd>42 g</dd></div>
-                    <div class="macro-cell"><dt>Fat</dt><dd>8 g</dd></div>
-                    <div class="macro-cell"><dt>Fibre</dt><dd>1 g</dd></div>
-                  </dl>
-                  <h4>Allergens</h4>
-                  <p>Dairy. Egg if used in the pot. Not vegan. Fruit garnish varies.</p>
-                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
-                </div>
-              </details>
-              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
-                <p class="text-2xl font-bold text-earth">RM 14</p>
-                <button data-add="custard" class="btn-gold tap px-4 text-sm">Add to cart</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="card-lux card-compact flex flex-col" id="product-truffles">
-            <div class="card-photo">
-              <img src="assets/menu/truffles.png" alt="Homemade chocolate milk-powder truffles" width="800" height="500" loading="lazy" />
-            </div>
-            <div class="flex flex-1 flex-col p-4">
-              <h3 class="section-title text-xl">Truffles</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Homemade chocolate sweets · 6–8</p>
-              <div class="diet-chips mt-3" aria-label="Diet">
-                <span class="chip chip-diet">Halal</span>
-                <span class="chip chip-diet">Vegetarian</span>
-              </div>
-              <div class="allergen-chips mt-2" aria-label="Allergens">
-                <span class="chip chip-allergen">Contains dairy</span>
-                <span class="chip chip-allergen">May contain nuts</span>
-              </div>
-              <details class="nutrition-panel">
-                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
-                <div class="nutrition-body">
-                  <h4>Ingredients</h4>
-                  <p>Milk powder, cocoa, ghee or butter, sugar, cardamom; pistachio when garnished. Homemade festive sweets, not a restaurant plate.</p>
-                  <h4>Per box (6–8)</h4>
-                  <p class="kcal-line"><strong>480 kcal</strong> <span>~120 g</span></p>
-                  <dl class="macro-grid">
-                    <div class="macro-cell"><dt>Protein</dt><dd>10 g</dd></div>
-                    <div class="macro-cell"><dt>Carbs</dt><dd>42 g</dd></div>
-                    <div class="macro-cell"><dt>Fat</dt><dd>28 g</dd></div>
-                    <div class="macro-cell"><dt>Fibre</dt><dd>2 g</dd></div>
-                  </dl>
-                  <h4>Allergens</h4>
-                  <p>Dairy. Possible nuts (pistachio). Not vegan.</p>
-                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
-                </div>
-              </details>
-              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
-                <p class="text-2xl font-bold text-earth">RM 18</p>
-                <button data-add="truffles" class="btn-gold tap px-4 text-sm">Add to cart</button>
               </div>
             </div>
           </article>
@@ -1798,8 +1867,8 @@
               <span class="absolute bottom-4 left-4 text-[0.68rem] font-medium text-cream">Starters</span>
             </div>
             <div class="flex flex-1 flex-col p-5">
-              <h3 class="section-title text-xl">Chicken Dumplings</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Fresh · 12 pieces · chilli oil</p>
+              <h3 class="section-title text-xl">Fresh chicken dumplings</h3>
+              <p class="mt-1 text-xs font-medium text-earth">12 pieces · chilli oil</p>
               <div class="diet-chips mt-3" aria-label="Diet">
                 <span class="chip chip-fresh">Fresh</span>
                 <span class="chip chip-diet">Halal</span>
@@ -1890,8 +1959,8 @@
               <img src="assets/menu/lasagne.png" alt="Fresh chicken lasagne" data-variant-photo width="800" height="500" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-4">
-              <h3 class="section-title text-xl">Chicken pasta</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Fresh · pick a shape</p>
+              <h3 class="section-title text-xl">Chicken lasagne / spaghetti / cheese macaroni</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fresh · pick one</p>
               <div class="diet-chips mt-3" aria-label="Diet">
                 <span class="chip chip-fresh">Fresh</span>
                 <span class="chip chip-diet">Halal</span>
@@ -1902,7 +1971,7 @@
                 <select class="gift-occasion" data-variant-select aria-label="Chicken pasta shape">
                   <option value="lasagne" data-variant-label="Chicken lasagne" data-img="assets/menu/lasagne.png" selected>Lasagne</option>
                   <option value="spaghetti" data-variant-label="Chicken spaghetti" data-img="assets/menu/spaghetti.png">Spaghetti</option>
-                  <option value="macaroni" data-variant-label="Chicken macaroni" data-img="assets/menu/macaroni.png">Macaroni</option>
+                  <option value="macaroni" data-variant-label="Chicken cheese macaroni" data-img="assets/menu/macaroni.png">Cheese macaroni</option>
                 </select>
               </label>
               <div class="allergen-chips mt-2" aria-label="Allergens">
@@ -1913,7 +1982,7 @@
                 <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
                 <div class="nutrition-body">
                   <h4>Ingredients</h4>
-                  <p>Wheat pasta (lasagne, spaghetti, or macaroni), halal chicken, tomato, onion, cheese, milk, oil, spices.</p>
+                  <p>Wheat pasta (lasagne, spaghetti, or cheese macaroni), halal chicken, tomato, onion, cheese, milk, oil, spices.</p>
                   <h4>Per portion</h4>
                   <p class="kcal-line"><strong>520 kcal</strong> <span>~380 g</span></p>
                   <dl class="macro-grid">
@@ -2071,7 +2140,7 @@
                 <span class="chip chip-diet">Halal</span>
                 <span class="chip chip-meat">Contains meat</span>
               </div>
-              <h3 class="section-title mt-3 text-xl">Chicken Dumplings</h3>
+              <h3 class="section-title mt-3 text-xl">Frozen chicken dumplings</h3>
               <p class="mt-1 text-xs font-medium text-earth">12 pieces · chilli oil</p>
               <div class="allergen-chips mt-2" aria-label="Allergens">
                 <span class="chip chip-allergen">Contains gluten</span>
@@ -2103,7 +2172,97 @@
             </div>
           </article>
 
-          <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Frozen / fresh beef</h3>
+          <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Beef · fresh and frozen</h3>
+
+          <article class="card-lux card-compact flex flex-col" id="product-beef-biryani">
+            <div class="card-photo">
+              <img src="assets/menu/beef-biryani.png" alt="Fresh beef biryani" data-variant-photo width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Beef Biryani / Pulao</h3>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-fresh">Fresh</span>
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <div class="opt-chips" data-variant-group role="radiogroup" aria-label="Rice">
+                <button type="button" class="opt-chip is-on tap" data-variant="biryani" data-add-id="beef-biryani" data-variant-label="Fresh Beef Biryani" data-img="assets/menu/beef-biryani.png" data-img-alt="Fresh beef biryani" aria-pressed="true">Biryani</button>
+                <button type="button" class="opt-chip tap" data-variant="pulao" data-add-id="beef-pulao" data-variant-label="Fresh Beef Pulao" data-img="assets/menu/pulao.png" data-img-alt="Beef pulao" aria-pressed="false">Pulao</button>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">May contain dairy</span>
+                <span class="chip chip-allergen">May contain mustard</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Basmati rice, halal beef, potato, onion, spices, oil. Pulao is the lighter rice option.</p>
+                  <h4>Per plate</h4>
+                  <p class="kcal-line"><strong>820 kcal</strong></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>42 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>78 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>32 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>4 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>May contain milk or mustard in the masala. Contains beef.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <label class="heat-opt"><input type="checkbox" data-non-spicy /> Non-spicy</label>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 20</p>
+                <button data-add="beef-biryani" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-lux card-compact flex flex-col" id="product-beef-salan">
+            <div class="card-photo">
+              <img src="assets/menu/beef-salan.png" alt="Fresh beef salan in gravy" data-variant-photo width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Beef Salan / Karhai</h3>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-fresh">Fresh</span>
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <div class="opt-chips" data-variant-group role="radiogroup" aria-label="Style">
+                <button type="button" class="opt-chip is-on tap" data-variant="salan" data-add-id="beef-salan" data-variant-label="Fresh Beef Salan" data-img="assets/menu/beef-salan.png" data-img-alt="Fresh beef salan in gravy" aria-pressed="true">Salan</button>
+                <button type="button" class="opt-chip tap" data-variant="karhai" data-add-id="beef-karhai" data-variant-label="Fresh Beef Karhai" data-img="assets/menu/beef-karhai.png" data-img-alt="Fresh beef karhai in a wok gravy" aria-pressed="false">Karhai</button>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">May contain dairy</span>
+                <span class="chip chip-allergen">May contain mustard</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Halal beef, onion, tomato, ginger, garlic, spices, oil. Yogurt in salan.</p>
+                  <h4>Per portion</h4>
+                  <p class="kcal-line"><strong>520 kcal</strong></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>38 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>12 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>36 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>3 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>May contain milk (salan). Mustard possible in spice mix. Contains beef.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <label class="heat-opt"><input type="checkbox" data-non-spicy /> Non-spicy</label>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 25</p>
+                <button data-add="beef-salan" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-beef-shami">
             <div class="card-photo">
@@ -2194,11 +2353,11 @@
             </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
-                <span class="chip chip-frozen">Frozen</span>
+                <span class="chip chip-fresh">Fresh</span>
                 <span class="chip chip-diet">Halal</span>
                 <span class="chip chip-meat">Contains meat</span>
               </div>
-              <h3 class="section-title mt-3 text-xl">Beef Chapli</h3>
+              <h3 class="section-title mt-3 text-xl">Fresh beef Chapli</h3>
               <p class="mt-1 text-xs font-medium text-earth">12 pieces</p>
               <div class="allergen-chips mt-2" aria-label="Allergens">
                 <span class="chip chip-allergen">Contains gluten</span>
@@ -2207,7 +2366,7 @@
                 <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
                 <div class="nutrition-body">
                   <h4>Ingredients</h4>
-                  <p>Halal beef, onion, coriander, wheat flour, spices. Frozen pack of 12.</p>
+                  <p>Halal beef, onion, coriander, wheat flour, spices. Fresh pack of 12.</p>
                   <h4>Per 12 pieces</h4>
                   <p class="kcal-line"><strong>720 kcal</strong></p>
                   <dl class="macro-grid">
@@ -2235,11 +2394,11 @@
             </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
-                <span class="chip chip-frozen">Frozen</span>
+                <span class="chip chip-fresh">Fresh</span>
                 <span class="chip chip-diet">Halal</span>
                 <span class="chip chip-meat">Contains meat</span>
               </div>
-              <h3 class="section-title mt-3 text-xl">Beef dum qeema</h3>
+              <h3 class="section-title mt-3 text-xl">Fresh beef dum qeema</h3>
               <div class="allergen-chips mt-2" aria-label="Allergens">
                 <span class="chip chip-allergen">May contain mustard</span>
               </div>
@@ -2247,7 +2406,7 @@
                 <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
                 <div class="nutrition-body">
                   <h4>Ingredients</h4>
-                  <p>Halal beef mince, onion, ginger, garlic, spices, oil. Dum-cooked, then frozen.</p>
+                  <p>Halal beef mince, onion, ginger, garlic, spices, oil. Dum-cooked, served fresh.</p>
                   <h4>Per portion</h4>
                   <p class="kcal-line"><strong>580 kcal</strong></p>
                   <dl class="macro-grid">
@@ -2317,8 +2476,8 @@
               <img src="assets/menu/lasagne.png" alt="Fresh beef lasagne" data-variant-photo width="800" height="500" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-4">
-              <h3 class="section-title text-xl">Beef pasta</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Fresh · pick a shape</p>
+              <h3 class="section-title text-xl">Beef qeema lasagne / spaghetti / cheese macaroni</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fresh · pick one</p>
               <div class="diet-chips mt-3" aria-label="Diet">
                 <span class="chip chip-fresh">Fresh</span>
                 <span class="chip chip-diet">Halal</span>
@@ -2327,9 +2486,9 @@
               <label class="mt-2 block text-xs font-semibold uppercase tracking-wide text-earth">
                 Pasta
                 <select class="gift-occasion" data-variant-select aria-label="Beef pasta shape">
-                  <option value="lasagne" data-variant-label="Beef lasagne" data-img="assets/menu/lasagne.png" selected>Lasagne</option>
-                  <option value="spaghetti" data-variant-label="Beef spaghetti" data-img="assets/menu/spaghetti.png">Spaghetti</option>
-                  <option value="macaroni" data-variant-label="Beef macaroni" data-img="assets/menu/macaroni.png">Macaroni</option>
+                  <option value="lasagne" data-variant-label="Beef qeema lasagne" data-img="assets/menu/lasagne.png" selected>Lasagne</option>
+                  <option value="spaghetti" data-variant-label="Beef qeema spaghetti" data-img="assets/menu/spaghetti.png">Spaghetti</option>
+                  <option value="macaroni" data-variant-label="Beef qeema cheese macaroni" data-img="assets/menu/macaroni.png">Cheese macaroni</option>
                 </select>
               </label>
               <div class="allergen-chips mt-2" aria-label="Allergens">
@@ -2340,7 +2499,7 @@
                 <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
                 <div class="nutrition-body">
                   <h4>Ingredients</h4>
-                  <p>Wheat pasta (lasagne, spaghetti, or macaroni), halal beef, tomato, onion, cheese, milk, oil, spices.</p>
+                  <p>Wheat pasta (lasagne, spaghetti, or cheese macaroni), halal beef qeema, tomato, onion, cheese, milk, oil, spices.</p>
                   <h4>Per portion</h4>
                   <p class="kcal-line"><strong>580 kcal</strong> <span>~380 g</span></p>
                   <dl class="macro-grid">
@@ -2867,7 +3026,7 @@
                   Prices?
                   <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
                 </summary>
-                <p class="body-copy pb-3 text-sm">Biryani RM 15 · Dumplings RM 20 · Kheer RM 14 · Zarda RM 14 · Panjiri RM 40 · Shahi Tukray RM 16 · Dahi Baray RM 18 · Pickle RM 28. MYR.</p>
+                <p class="body-copy pb-3 text-sm">Biryani RM 15 · Dumplings RM 20 · Kheer RM 14 · Suji Halwa RM 14 · Zarda RM 14 · Fruit Trifle RM 16 · Panjeeri 400 g RM 40 / 200 g RM 20 · Shahi Tukray RM 16 · Dahi Baray RM 18 · Pickle RM 28. MYR.</p>
               </details>
               <details class="faq-item group px-0 py-1">
                 <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-cocoa">
@@ -2911,7 +3070,7 @@
               <dt>Authentic biryani</dt>
               <dd>Rasa-e-Lazzat authentic chicken dum biryani in KL. RM 15, free raita. Halal. WhatsApp +60 176020325.</dd>
               <dt>Menu (MYR)</dt>
-              <dd>Authentic chicken biryani RM 15 (was RM 32, free raita) · Dumplings RM 20 · Kheer RM 14 · Zarda RM 14 · Panjiri RM 40 · Shahi Tukray RM 16 · Dahi Baray RM 18 · Sophie's Chilli Pickle RM 28</dd>
+              <dd>Authentic chicken biryani RM 15 (was RM 32, free raita) · Dumplings RM 20 · Kheer RM 14 · Suji Halwa RM 14 · Zarda RM 14 · Fruit Trifle RM 16 · Panjeeri 400 g RM 40 / 200 g RM 20 · Shahi Tukray RM 16 · Dahi Baray RM 18 · Sophie's Chilli Pickle RM 28</dd>
               <dt>Gifts</dt>
               <dd>Biryani is Love extras: Charm RM 18 · Single rose RM 10 · Small bouquet RM 30. Add with biryani or on their own. Rasa-e-Lazzat festive wrap only.</dd>
               <dt>Meal plan</dt>

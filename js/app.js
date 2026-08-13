@@ -626,6 +626,20 @@
     return !!(box && box.checked);
   }
 
+  function applyVariantMedia(card, source) {
+    if (!card || !source) return;
+    const photo = card.querySelector("[data-variant-photo]");
+    if (photo && source.dataset && source.dataset.img) {
+      photo.src = source.dataset.img;
+      if (source.dataset.imgAlt) photo.alt = source.dataset.imgAlt;
+      else if (source.dataset.variantLabel) photo.alt = source.dataset.variantLabel;
+    }
+    const priceEl = card.querySelector("[data-card-price]");
+    if (priceEl && source.dataset && source.dataset.price) {
+      priceEl.textContent = source.dataset.price;
+    }
+  }
+
   function variantFromCard(card) {
     const select = card && card.querySelector("[data-variant-select]");
     if (select && select.value) {
@@ -706,11 +720,7 @@
       const note = group.parentElement && group.parentElement.querySelector("[data-variant-note]");
       if (note) note.hidden = variantBtn.dataset.variant !== "biryani";
       const card = variantBtn.closest("article");
-      const photo = card && card.querySelector("[data-variant-photo]");
-      if (photo && variantBtn.dataset.img) {
-        photo.src = variantBtn.dataset.img;
-        if (variantBtn.dataset.imgAlt) photo.alt = variantBtn.dataset.imgAlt;
-      }
+      applyVariantMedia(card, variantBtn);
       return;
     }
 
@@ -798,11 +808,7 @@
     if (variantSelect) {
       const card = variantSelect.closest("article");
       const opt = variantSelect.options[variantSelect.selectedIndex];
-      const photo = card && card.querySelector("[data-variant-photo]");
-      if (photo && opt && opt.dataset.img) {
-        photo.src = opt.dataset.img;
-        photo.alt = opt.dataset.variantLabel || photo.alt;
-      }
+      applyVariantMedia(card, opt);
       return;
     }
     const occ = e.target.closest("[data-cart-occasion]");
