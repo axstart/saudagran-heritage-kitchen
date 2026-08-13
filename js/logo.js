@@ -7,9 +7,10 @@
   const TAGLINE = "The Taste of Home in Every Bite";
   const BRAND = "Rasa-e-Lazzat";
 
-  function bowlMarkup() {
+  function bowlMarkup(scale) {
+    const t = scale && scale !== 1 ? `translate(100 102) scale(${scale})` : "translate(100 102)";
     return `
-      <g class="logo-bowl" transform="translate(100 102)">
+      <g class="logo-bowl" transform="${t}">
         <circle r="36" fill="#6B3E26"/>
         <circle r="32.2" fill="#8A5330"/>
         <circle r="29.4" fill="#F3E2A6"/>
@@ -47,26 +48,34 @@
       </g>`;
   }
 
-  function sealSvg(uid) {
+  function isPlainSeal(el, size) {
+    return el.hasAttribute("plain") || size === "nav" || size === "icon" || size === "plain";
+  }
+
+  function sealSvg(uid, plain) {
     const top = uid + "-top";
     const bot = uid + "-bot";
-    return `
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo-seal-svg" viewBox="0 0 200 200" role="img" aria-label="${BRAND}" fill="none">
+    const ringText = plain
+      ? ""
+      : `
         <defs>
           <path id="${top}" d="M22,100 A78,78 0 0 0 178,100" fill="none"/>
           <path id="${bot}" d="M178,100 A78,78 0 0 1 22,100" fill="none"/>
         </defs>
+        <text class="logo-seal-text" fill="currentColor" font-size="14.5">
+          <textPath href="#${top}" xlink:href="#${top}" startOffset="50%" text-anchor="middle">${BRAND}</textPath>
+        </text>
+        <text class="logo-seal-tagline" fill="currentColor" font-size="7.2">
+          <textPath href="#${bot}" xlink:href="#${bot}" startOffset="50%" text-anchor="middle">${TAGLINE}</textPath>
+        </text>`;
+    return `
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo-seal-svg" viewBox="0 0 200 200" role="img" aria-hidden="true" fill="none">
         <circle cx="100" cy="100" r="99" fill="#ffffff"/>
         <circle cx="100" cy="100" r="96.5" fill="none" stroke="#E8A23D" stroke-width="3.4"/>
         <circle cx="100" cy="100" r="91.5" fill="none" stroke="#E8A23D" stroke-width="0.9" opacity="0.55"/>
         <circle cx="100" cy="100" r="73" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.35"/>
-        <text class="logo-seal-text" fill="currentColor">
-          <textPath href="#${top}" xlink:href="#${top}" startOffset="50%" text-anchor="middle">${BRAND}</textPath>
-        </text>
-        <text class="logo-seal-tagline" fill="currentColor">
-          <textPath href="#${bot}" xlink:href="#${bot}" startOffset="50%" text-anchor="middle">${TAGLINE}</textPath>
-        </text>
-        ${bowlMarkup()}
+        ${ringText}
+        ${bowlMarkup(plain ? 1.28 : 1)}
       </svg>`;
   }
 
@@ -77,32 +86,55 @@
       if (this.dataset.ready) return;
       this.dataset.ready = "1";
       const size = this.getAttribute("size") || "md";
+      const plain = isPlainSeal(this, size);
       this.classList.add("logo-seal", "logo-seal--" + size);
-      this.setAttribute("aria-label", BRAND);
-      this.innerHTML = sealSvg("seal" + ++sealCount);
+      if (plain) this.classList.add("logo-seal--plain");
+      this.setAttribute("aria-hidden", "true");
+      this.innerHTML = sealSvg("seal" + ++sealCount, plain);
     }
   }
 
   class LogoWordmark extends HTMLElement {
     connectedCallback() {
-      if (this.dataset.ready) return;
-      this.dataset.ready = "1";
+      this.render();
+      queueMicrotask(() => this.render());
+    }
+
+    render() {
       const size = this.getAttribute("size") || "md";
       this.classList.add("logo-wordmark-wrap");
-      this.innerHTML = `<span class="logo-wordmark logo-wordmark--${size}" translate="no">${BRAND}</span>`;
+      const only = this.children.length === 1 && this.childNodes.length === 1 && this.firstElementChild;
+      if (only && this.firstElementChild.classList.contains("logo-wordmark")) return;
+      const span = document.createElement("span");
+      span.className = "logo-wordmark logo-wordmark--" + size;
+      span.setAttribute("translate", "no");
+      span.textContent = BRAND;
+      this.replaceChildren(span);
     }
   }
 
   class LogoLockup extends HTMLElement {
     connectedCallback() {
-      if (this.dataset.ready) return;
-      this.dataset.ready = "1";
+      this.render();
+      queueMicrotask(() => this.render());
+    }
+
+    render() {
       const size = this.getAttribute("size") || "hero";
       const align = this.getAttribute("align") || "center";
       this.classList.add("logo-lockup", "logo-lockup--" + size, "logo-lockup--" + align);
-      this.innerHTML = `
-        <span class="logo-wordmark logo-wordmark--${size}" translate="no">${BRAND}</span>
-        <span class="logo-tagline">${TAGLINE}</span>`;
+      const word = this.querySelector(":scope > .logo-wordmark");
+      const tag = this.querySelector(":scope > .logo-tagline");
+      if (word && tag && this.children.length === 2 && this.childNodes.length === 2) return;
+      this.replaceChildren();
+      const name = document.createElement("span");
+      name.className = "logo-wordmark logo-wordmark--" + size;
+      name.setAttribute("translate", "no");
+      name.textContent = BRAND;
+      const line = document.createElement("span");
+      line.className = "logo-tagline";
+      line.textContent = TAGLINE;
+      this.append(name, line);
     }
   }
 

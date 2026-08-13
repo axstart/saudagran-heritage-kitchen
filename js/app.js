@@ -5,7 +5,12 @@
 
   const MENU = {
     pickle: { id: "pickle", name: "Sophie's Chilli Pickle", price: 28 },
-    biryani: { id: "biryani", name: "Authentic Chicken Biryani", price: 32 },
+    biryani: {
+      id: "biryani",
+      name: "Authentic Chicken Biryani",
+      price: 15,
+      note: "includes free raita",
+    },
     "dahi-baray": { id: "dahi-baray", name: "Royal Shahi Dahi Baray", price: 18 },
     "shahi-tukray": { id: "shahi-tukray", name: "Shahi Tukray", price: 16 },
   };
@@ -25,6 +30,8 @@
   };
 
   let cart = loadCart();
+  syncCartFromMenu();
+  saveCart();
 
   function loadCart() {
     try {
@@ -33,6 +40,19 @@
     } catch {
       return {};
     }
+  }
+
+  function syncCartFromMenu() {
+    Object.keys(cart).forEach((id) => {
+      const product = MENU[id];
+      if (!product) {
+        delete cart[id];
+        return;
+      }
+      cart[id].id = product.id;
+      cart[id].name = product.name;
+      cart[id].price = product.price;
+    });
   }
 
   function saveCart() {
@@ -58,11 +78,16 @@
   function addToCart(id) {
     const product = MENU[id];
     if (!product) return;
-    if (cart[id]) cart[id].qty += 1;
-    else cart[id] = { ...product, qty: 1 };
+    if (cart[id]) {
+      cart[id].qty += 1;
+      cart[id].price = product.price;
+      cart[id].name = product.name;
+    } else {
+      cart[id] = { id: product.id, name: product.name, price: product.price, qty: 1 };
+    }
     saveCart();
     renderCart();
-    toast(product.name + " added to cart");
+    toast(product.name + " added to cart" + (product.note ? " — " + product.note : ""));
   }
 
   function setQty(id, qty) {
@@ -125,7 +150,7 @@
       <div class="flex items-start justify-between gap-3 border-b border-[#6B3E26]/10 pb-4">
         <div class="min-w-0">
           <p class="font-semibold text-[#2D1B10]">${escapeHtml(item.name)}</p>
-          <p class="mt-0.5 text-xs text-[#6B5E54]">${money(item.price)} each</p>
+          <p class="mt-0.5 text-xs text-[#6B5E54]">${money(item.price)} each${item.id === "biryani" ? " · includes free raita" : ""}</p>
           <div class="mt-3 flex items-center gap-2">
             <button type="button" class="tap grid place-items-center rounded-md border border-[#6B3E26]/25 text-[#6B3E26]" data-qty-delta="${item.id}" data-delta="-1" aria-label="Decrease quantity">−</button>
             <span class="min-w-[1.5rem] text-center text-sm font-semibold">${item.qty}</span>
@@ -168,7 +193,10 @@
     const list = items();
     if (!list.length) return;
     const lines = list
-      .map((item) => `• ${item.name} ×${item.qty} — ${money(item.price * item.qty)}`)
+      .map((item) => {
+        const extra = item.id === "biryani" ? " (includes free raita)" : "";
+        return `• ${item.name} ×${item.qty} — ${money(item.price * item.qty)}${extra}`;
+      })
       .join("\n");
     const text = `Assalamualaikum! I'd like to order from ${BRAND}:\n\n${lines}\n\nSubtotal: ${money(subtotal())}\n\nKindly confirm delivery across KL / Klang Valley. Shukria!`;
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");

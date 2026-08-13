@@ -62,7 +62,7 @@
             "description": "Rasa-e-Lazzat — The Taste of Home in Every Bite. Authentic Pakistani home cooking in Kuala Lumpur: Chicken Biryani, Shahi Tukray, Shahi Dahi Baray, and Sophie's Chilli Pickle (Mirch Ka Achar). Order direct via WhatsApp.",
             "slogan": "The Taste of Home in Every Bite",
             "servesCuisine": ["Pakistani", "South Asian", "Mughlai", "Heritage Home Cooking"],
-            "priceRange": "RM16–RM32",
+            "priceRange": "RM15–RM28",
             "telephone": "+60176020325",
             "foundingDate": "1920",
             "areaServed": [
@@ -95,16 +95,30 @@
             "@type": "Product",
             "@id": "https://saudagranheritage.kitchen/#biryani",
             "name": "Authentic Chicken Biryani",
-            "description": "Top-down dum biryani with saffron basmati, roasted chicken, potato, coriander, and lime. Hero dish from Rasa-e-Lazzat in Kuala Lumpur. Served with raita.",
+            "description": "Top-down dum biryani with saffron basmati, roasted chicken, potato, coriander, and lime. Hero dish from Rasa-e-Lazzat in Kuala Lumpur. Complimentary yogurt raita included.",
             "image": "assets/rasa-biryani.png",
             "category": "Main Course",
             "brand": { "@id": "https://saudagranheritage.kitchen/#brand" },
             "offers": {
               "@type": "Offer",
-              "price": "32.00",
+              "price": "15.00",
               "priceCurrency": "MYR",
               "availability": "https://schema.org/InStock",
-              "url": "https://saudagranheritage.kitchen/#menu"
+              "url": "https://saudagranheritage.kitchen/#menu",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "priceType": "https://schema.org/ListPrice",
+                  "price": "32.00",
+                  "priceCurrency": "MYR"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "priceType": "https://schema.org/SalePrice",
+                  "price": "15.00",
+                  "priceCurrency": "MYR"
+                }
+              ]
             }
           },
           {
@@ -175,7 +189,7 @@
                 "name": "Is Authentic Chicken Biryani available now?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Authentic Chicken Biryani is now available from Rasa-e-Lazzat. Order today via WhatsApp at +60 176020325. It is the hero dish, priced at RM 32.00, served with raita."
+                  "text": "Yes. Authentic Chicken Biryani is now available from Rasa-e-Lazzat. Order today via WhatsApp at +60 176020325. It is the hero dish, now RM 15.00 (was RM 32.00), with complimentary yogurt raita."
                 }
               },
               {
@@ -199,7 +213,7 @@
                 "name": "What are the top sellers and prices?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Authentic Chicken Biryani is the hero dish at RM 32.00. Shahi Tukray is a best seller at RM 16.00. Royal Shahi Dahi Baray is RM 18.00. Sophie's Chilli Pickle (Mirch Ka Achar) is RM 28.00. All prices are in Malaysian Ringgit."
+                  "text": "Authentic Chicken Biryani is the hero dish at RM 15.00 (was RM 32.00), with complimentary raita. Shahi Tukray is a best seller at RM 16.00. Royal Shahi Dahi Baray is RM 18.00. Sophie's Chilli Pickle (Mirch Ka Achar) is RM 28.00. All prices are in Malaysian Ringgit."
                 }
               },
               {
@@ -221,9 +235,9 @@
 
     <header class="nav-glass sticky top-0 z-50">
       <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" aria-label="Primary">
-        <a href="#top" class="tap flex min-h-12 min-w-0 items-center gap-2 sm:gap-3">
-          <logo-seal size="nav"></logo-seal>
-          <logo-wordmark size="nav">Rasa-e-Lazzat</logo-wordmark>
+        <a href="#top" class="brand-home tap flex h-12 min-h-12 min-w-0 items-center">
+          <logo-seal size="nav" plain></logo-seal>
+          <logo-wordmark size="nav"></logo-wordmark>
         </a>
         <div class="hidden items-center gap-7 md:flex">
           <a href="#story" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Story</a>
@@ -262,11 +276,11 @@
       <section class="hero-flyer relative overflow-hidden px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <h1>
-            <logo-wordmark size="hero">Rasa-e-Lazzat</logo-wordmark>
+            <logo-wordmark size="hero"></logo-wordmark>
           </h1>
           <p class="logo-tagline mx-auto mt-2">The Taste of Home in Every Bite</p>
 
-          <figure class="relative mx-auto mt-8 max-w-lg overflow-visible pb-8 sm:pb-10">
+          <figure class="hero-plate relative mx-auto mt-8 max-w-lg overflow-visible pb-10 sm:pb-12">
             <img
               src="assets/rasa-biryani.png"
               alt="Authentic chicken biryani with saffron rice, roasted drumsticks, potato, coriander, raita, and whole spices"
@@ -275,12 +289,18 @@
               height="528"
               fetchpriority="high"
             />
-            <logo-seal size="hero" class="pointer-events-none absolute -bottom-2 -right-1 sm:-bottom-3 sm:-right-4 lg:-right-8"></logo-seal>
+            <logo-seal size="hero" class="hero-seal pointer-events-none absolute bottom-4 right-0 sm:bottom-2 sm:-right-2 lg:-right-6"></logo-seal>
           </figure>
 
           <p class="promo-line mx-auto mt-10 max-w-xl text-[1.35rem] sm:text-2xl lg:text-[1.75rem]">
             Authentic Chicken Biryani Now Available! Order Today!
           </p>
+          <p class="mt-3 flex flex-wrap items-baseline justify-center gap-x-2.5 gap-y-1 text-cocoa">
+            <span class="price-was">RM 32</span>
+            <span class="text-2xl font-bold text-earth sm:text-3xl">RM 15</span>
+            <span class="rounded bg-saffron px-2 py-0.5 text-[0.68rem] font-bold tracking-wide text-cocoa">Promo · Save RM 17</span>
+          </p>
+          <p class="mt-2 text-sm font-medium text-earth">Complimentary yogurt raita with every plate</p>
           <p class="mt-4 text-sm font-normal text-cocoa sm:text-base">
             Order via WhatsApp:
             <a class="font-medium hover:underline" href="https://wa.me/60176020325">+60 176020325</a>
@@ -434,15 +454,21 @@
                 width="800"
                 height="600"
               />
-              <span class="absolute left-4 top-4 rounded bg-saffron px-2 py-1 text-[0.62rem] font-bold text-cocoa">Hero dish</span>
+              <span class="absolute left-4 top-4 rounded bg-saffron px-2 py-1 text-[0.62rem] font-bold text-cocoa">Promo · Save RM 17</span>
               <span class="absolute bottom-4 left-4 text-[0.68rem] font-medium text-cream">Mains</span>
             </div>
             <div class="flex flex-1 flex-col p-5">
               <h3 class="section-title text-xl sm:text-2xl">Authentic Chicken Biryani</h3>
-              <p class="mt-1 text-xs font-medium text-earth">Now available · Order today</p>
-              <p class="body-copy mt-3 flex-1 text-sm">Saffron basmati layered with roasted chicken and potato, sealed and dum-cooked. Served with raita — the plate from the flyer, cooked in KL.</p>
-              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
-                <p class="text-2xl font-bold text-earth">RM 32.00</p>
+              <p class="mt-1 text-xs font-medium text-earth">Now RM 15 · raita complimentary</p>
+              <p class="body-copy mt-3 flex-1 text-sm">Saffron basmati layered with roasted chicken and potato, sealed and dum-cooked. Yogurt raita is free with every plate — the flyer dish, cooked in KL.</p>
+              <div class="mt-5 flex items-end justify-between gap-3 border-t border-earth/10 pt-4">
+                <div>
+                  <p class="flex flex-wrap items-baseline gap-x-2">
+                    <span class="price-was">RM 32</span>
+                    <span class="text-2xl font-bold text-earth">RM 15</span>
+                  </p>
+                  <p class="mt-0.5 text-[0.68rem] font-medium text-earth">Includes free raita</p>
+                </div>
                 <button data-add="biryani" class="btn-gold tap px-4 text-sm">Add to cart</button>
               </div>
             </div>
@@ -524,7 +550,7 @@
         <div class="relative z-10 mx-auto max-w-2xl px-4 text-center">
           <p class="text-sm font-medium text-saffron">Ready to order?</p>
           <h2 class="mt-3 text-3xl font-bold text-cream sm:text-4xl">
-            Authentic Chicken Biryani — from our kitchen to your table today.
+            Authentic Chicken Biryani — RM 15 today, raita on the house.
           </h2>
           <p class="mt-5 font-normal text-cream/80">Order direct via WhatsApp. No commission, no cold food, no queue. We confirm delivery details in the chat.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-3">
@@ -557,7 +583,7 @@
               Is Authentic Chicken Biryani available now?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Yes — order today via WhatsApp at +60 176020325. RM 32.00, served with raita.</p>
+            <p class="body-copy pb-4 text-sm">Yes — order today via WhatsApp at +60 176020325. Now RM 15.00 (was RM 32.00), with complimentary yogurt raita.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
@@ -578,7 +604,7 @@
               What are the top sellers and prices?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Authentic Chicken Biryani RM 32.00 (hero dish), Shahi Tukray RM 16.00 (best seller), Royal Shahi Dahi Baray RM 18.00, Sophie's Chilli Pickle RM 28.00. All prices MYR.</p>
+            <p class="body-copy pb-4 text-sm">Authentic Chicken Biryani RM 15.00 (was RM 32.00, raita complimentary), Shahi Tukray RM 16.00 (best seller), Royal Shahi Dahi Baray RM 18.00, Sophie's Chilli Pickle RM 28.00. All prices MYR.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
@@ -593,10 +619,10 @@
 
     <footer class="border-t border-earth/10 bg-white/40">
       <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-4 py-8 sm:px-6 lg:px-8">
-        <div class="flex min-w-0 items-center gap-4">
+        <div class="footer-brand flex min-w-0 items-center">
           <logo-seal size="footer"></logo-seal>
           <div>
-            <logo-wordmark size="footer">Rasa-e-Lazzat</logo-wordmark>
+            <logo-wordmark size="footer"></logo-wordmark>
             <p class="logo-tagline !mt-1 !text-xs !whitespace-normal">The Taste of Home in Every Bite</p>
             <p class="mt-2 text-xs text-muted">Kuala Lumpur · WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></p>
           </div>
