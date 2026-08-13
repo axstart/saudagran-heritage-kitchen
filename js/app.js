@@ -627,6 +627,15 @@
   }
 
   function variantFromCard(card) {
+    const select = card && card.querySelector("[data-variant-select]");
+    if (select && select.value) {
+      const opt = select.options[select.selectedIndex];
+      return {
+        id: (opt && opt.dataset.addId) || "",
+        variant: select.value,
+        label: (opt && (opt.dataset.variantLabel || opt.textContent.trim())) || select.value,
+      };
+    }
     const on = card && card.querySelector("[data-variant].is-on");
     if (!on) return { id: "", variant: "", label: "" };
     return {
@@ -696,6 +705,12 @@
       });
       const note = group.parentElement && group.parentElement.querySelector("[data-variant-note]");
       if (note) note.hidden = variantBtn.dataset.variant !== "biryani";
+      const card = variantBtn.closest("article");
+      const photo = card && card.querySelector("[data-variant-photo]");
+      if (photo && variantBtn.dataset.img) {
+        photo.src = variantBtn.dataset.img;
+        if (variantBtn.dataset.imgAlt) photo.alt = variantBtn.dataset.imgAlt;
+      }
       return;
     }
 
@@ -779,6 +794,17 @@
   });
 
   document.addEventListener("change", (e) => {
+    const variantSelect = e.target.closest("[data-variant-select]");
+    if (variantSelect) {
+      const card = variantSelect.closest("article");
+      const opt = variantSelect.options[variantSelect.selectedIndex];
+      const photo = card && card.querySelector("[data-variant-photo]");
+      if (photo && opt && opt.dataset.img) {
+        photo.src = opt.dataset.img;
+        photo.alt = opt.dataset.variantLabel || photo.alt;
+      }
+      return;
+    }
     const occ = e.target.closest("[data-cart-occasion]");
     if (occ) {
       setOccasion(occ.dataset.cartOccasion, occ.value);

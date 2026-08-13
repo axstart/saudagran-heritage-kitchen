@@ -207,10 +207,10 @@
             "about": { "@id": "https://razzat.vercel.app/#restaurant" },
             "primaryImageOfPage": "https://razzat.vercel.app/assets/rasa-biryani.png",
             "inLanguage": "en-MY",
-            "dateModified": "2026-08-13",
+            "dateModified": "2026-08-14",
             "speakable": {
               "@type": "SpeakableSpecification",
-              "cssSelector": ["#press-facts", "#faq", "#product-biryani", "#gifts", "#reviews", "#meal-plan"]
+              "cssSelector": ["#press-facts", "#faq", "#product-biryani", "#gifts", "#reviews", "#meal-plan", "#calculator"]
             },
             "mainEntity": { "@id": "https://razzat.vercel.app/#restaurant" },
             "breadcrumb": { "@id": "https://razzat.vercel.app/#breadcrumb" },
@@ -228,6 +228,7 @@
               { "@id": "https://razzat.vercel.app/#addon-rose" },
               { "@id": "https://razzat.vercel.app/#addon-flowers" },
               { "@id": "https://razzat.vercel.app/#plan-weekly" },
+              { "@id": "https://razzat.vercel.app/#calculator" },
               { "@id": "https://razzat.vercel.app/#review-zaaviyar-ali" }
             ]
           },
@@ -258,6 +259,12 @@
                 "position": 4,
                 "name": "Meal plan",
                 "item": "https://razzat.vercel.app/#meal-plan"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Your targets",
+                "item": "https://razzat.vercel.app/#calculator"
               }
             ]
           },
@@ -560,6 +567,7 @@
             "@id": "https://razzat.vercel.app/#chicken-salan",
             "name": "Chicken Salan / Karhai",
             "description": "Fresh chicken salan or karhai. Halal. RM 15. Non-spicy on request, no extra charge.",
+            "image": "https://razzat.vercel.app/assets/menu/chicken-salan.png",
             "category": "Fresh",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
             "offers": { "@type": "Offer", "price": "15.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-chicken-salan" }
@@ -653,6 +661,69 @@
             "category": "Sauce",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
             "offers": { "@type": "Offer", "price": "10.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-sauce-imli" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#chicken-khao-suey",
+            "name": "Fresh chicken khao suey set",
+            "alternateName": ["Khaosuay", "Khsosuay"],
+            "description": "Fresh chicken khao suey set. Noodles, coconut broth, toppings. Halal. RM 40.",
+            "image": "https://razzat.vercel.app/assets/menu/khao-suey.png",
+            "category": "Fresh",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "40.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-chicken-khao-suey" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#chicken-pasta",
+            "name": "Fresh chicken pasta",
+            "description": "Fresh chicken lasagne, spaghetti, or macaroni. Halal. RM 15.",
+            "image": "https://razzat.vercel.app/assets/menu/lasagne.png",
+            "category": "Fresh",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "15.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-chicken-pasta" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#beef-khao-suey",
+            "name": "Fresh beef khao suey set",
+            "alternateName": ["Khaosuay", "Khsosuay"],
+            "description": "Fresh beef khao suey set. Noodles, coconut broth, toppings. Halal. RM 50.",
+            "image": "https://razzat.vercel.app/assets/menu/khao-suey.png",
+            "category": "Fresh",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "50.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-beef-khao-suey" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#beef-pasta",
+            "name": "Fresh beef pasta",
+            "description": "Fresh beef lasagne, spaghetti, or macaroni. Halal. RM 20.",
+            "image": "https://razzat.vercel.app/assets/menu/lasagne.png",
+            "category": "Fresh",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "20.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-beef-pasta" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#custard",
+            "name": "Custard",
+            "alternateName": "Custurd",
+            "description": "Chilled Pakistani fruit custard. Milk, cardamom, fruit. Halal, vegetarian. RM 14. Allergens: dairy; egg if used.",
+            "image": "https://razzat.vercel.app/assets/menu/custard.png",
+            "category": "Dessert",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "14.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-custard" }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://razzat.vercel.app/#truffles",
+            "name": "Truffles",
+            "description": "Homemade chocolate milk-powder truffles, box of 6–8. Halal, vegetarian. RM 18. Allergens: dairy; possible nuts.",
+            "image": "https://razzat.vercel.app/assets/menu/truffles.png",
+            "category": "Dessert",
+            "brand": { "@id": "https://razzat.vercel.app/#brand" },
+            "offers": { "@type": "Offer", "price": "18.00", "priceCurrency": "MYR", "availability": "https://schema.org/InStock", "url": "https://razzat.vercel.app/#product-truffles" }
           },
           {
             "@type": "MenuItem",
@@ -885,7 +956,7 @@
             "@type": "Product",
             "@id": "https://razzat.vercel.app/#plan-weekly",
             "name": "Weekly meal",
-            "description": "Six homemade dishes, RM 100. 1 Rice: beef/chicken biryani or pulao, shashlik rice, Afghani pulao. 2 Veg: mix veg, aloo tarkari, bhindi, palak paneer. 3 Daal tadka, karhi pakora, or chana salan. 4 Beef/chicken qorma, nihari, karhai, or handi. 5 Beef/chicken aloo qeema. 6 Zeera rice. All non-spicy on request, no extra charge. No bread or roti. Nutrition per item on the card.",
+            "description": "Six homemade dishes, RM 100. 1 Rice: beef/chicken biryani or pulao, shashlik rice, Afghani pulao. 2 Veg: mix veg, aloo tarkari, bhindi, palak paneer. 3 Daal tadka, karhi pakora, chana salan, or khao suey. 4 Beef/chicken qorma, nihari, karhai, or handi. 5 Beef/chicken aloo qeema. 6 Zeera rice. All non-spicy on request, no extra charge. No bread or roti. Nutrition per item on the card.",
             "category": "Meal plan subscription",
             "brand": { "@id": "https://razzat.vercel.app/#brand" },
             "nutrition": { "@id": "https://razzat.vercel.app/#plan-weekly-nutrition" },
@@ -987,7 +1058,15 @@
                 "name": "Do you offer a weekly meal plan?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. Weekly meal RM 100 — six homemade dishes, no bread. Pick variants on the card. Nutrition (kcal, macros in grams, ingredients) is under Nutrition & allergens, per selected dish. Tick All non-spicy for the week. WhatsApp +60 176020325."
+                  "text": "Yes. Weekly meal RM 100 — six homemade dishes, no bread. Pick variants on the card. Nutrition (kcal, macros in grams, ingredients) is under Nutrition & allergens, per selected dish. A calorie calculator at #calculator compares the six dishes to your daily target. Tick All non-spicy for the week. WhatsApp +60 176020325."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I see calories and macros for a dish?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Open Your targets (#calculator) for a weekly-box estimate from height, weight, and a lose / maintain / gain goal. Tap a menu photo or a weekly-slot photo for circular dials of that serving versus your daily goal. Figures are approximate, not medical advice."
                 }
               },
               {
@@ -1027,6 +1106,7 @@
           <a href="#gifts" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Gifts</a>
           <a href="#reviews" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Reviews</a>
           <a href="#meal-plan" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Meal plan</a>
+          <a href="#calculator" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">Calories</a>
           <a href="#faq" class="tap inline-flex items-center text-sm font-medium text-cocoa/70 hover:text-earth">FAQ</a>
         </div>
         <div class="flex items-center gap-2">
@@ -1053,6 +1133,7 @@
           <a href="#gifts" class="tap flex items-center text-sm font-medium text-cocoa">Gifts</a>
           <a href="#reviews" class="tap flex items-center text-sm font-medium text-cocoa">Reviews</a>
           <a href="#meal-plan" class="tap flex items-center text-sm font-medium text-cocoa">Meal plan</a>
+          <a href="#calculator" class="tap flex items-center text-sm font-medium text-cocoa">Calories</a>
           <a href="#faq" class="tap flex items-center text-sm font-medium text-cocoa">FAQ</a>
         </div>
       </div>
@@ -1259,6 +1340,16 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-chicken-salan">
+            <div class="card-photo">
+              <img
+                src="assets/menu/chicken-salan.png"
+                alt="Chicken salan in gravy, with visible chicken pieces"
+                data-variant-photo
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <h3 class="section-title text-xl">Chicken Salan / Karhai</h3>
               <div class="diet-chips mt-3" aria-label="Diet">
@@ -1267,8 +1358,8 @@
                 <span class="chip chip-meat">Contains meat</span>
               </div>
               <div class="opt-chips" data-variant-group role="radiogroup" aria-label="Style">
-                <button type="button" class="opt-chip is-on tap" data-variant="salan" data-add-id="chicken-salan" data-variant-label="Chicken Salan" aria-pressed="true">Salan</button>
-                <button type="button" class="opt-chip tap" data-variant="karhai" data-add-id="chicken-karhai" data-variant-label="Chicken Karhai" aria-pressed="false">Karhai</button>
+                <button type="button" class="opt-chip is-on tap" data-variant="salan" data-add-id="chicken-salan" data-variant-label="Chicken Salan" data-img="assets/menu/chicken-salan.png" data-img-alt="Chicken salan in gravy, with visible chicken pieces" aria-pressed="true">Salan</button>
+                <button type="button" class="opt-chip tap" data-variant="karhai" data-add-id="chicken-karhai" data-variant-label="Chicken Karhai" data-img="assets/menu/karhai.png" data-img-alt="Chicken karhai in a wok gravy" aria-pressed="false">Karhai</button>
               </div>
               <div class="allergen-chips mt-2" aria-label="Allergens">
                 <span class="chip chip-allergen">May contain dairy</span>
@@ -1512,6 +1603,86 @@
             </div>
           </article>
 
+          <article class="card-lux card-compact flex flex-col" id="product-custard">
+            <div class="card-photo">
+              <img src="assets/menu/custard.png" alt="Chilled Pakistani fruit custard" width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Custard</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Chilled milk custard · fruit</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">May contain egg</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Milk, custard powder (cornflour) or egg, sugar, cardamom, mixed fruit. Also written custurd.</p>
+                  <h4>Per bowl</h4>
+                  <p class="kcal-line"><strong>280 kcal</strong> <span>~250 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>8 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>42 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>8 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>1 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Dairy. Egg if used in the pot. Not vegan. Fruit garnish varies.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 14</p>
+                <button data-add="custard" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-lux card-compact flex flex-col" id="product-truffles">
+            <div class="card-photo">
+              <img src="assets/menu/truffles.png" alt="Homemade chocolate milk-powder truffles" width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Truffles</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Homemade chocolate sweets · 6–8</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-diet">Vegetarian</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains dairy</span>
+                <span class="chip chip-allergen">May contain nuts</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Milk powder, cocoa, ghee or butter, sugar, cardamom; pistachio when garnished. Homemade festive sweets, not a restaurant plate.</p>
+                  <h4>Per box (6–8)</h4>
+                  <p class="kcal-line"><strong>480 kcal</strong> <span>~120 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>10 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>42 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>28 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>2 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Dairy. Possible nuts (pistachio). Not vegan.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 18</p>
+                <button data-add="truffles" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
           <article class="card-lux flex flex-col" id="product-pickle">
             <div class="relative h-56 overflow-hidden bg-earth/10">
               <img
@@ -1671,9 +1842,105 @@
             </div>
           </article>
 
+          <article class="card-lux card-compact flex flex-col" id="product-chicken-khao-suey">
+            <div class="card-photo">
+              <img src="assets/menu/khao-suey.png" alt="Fresh chicken khao suey set" width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Chicken khao suey set</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fresh · noodles, broth, toppings</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-fresh">Fresh</span>
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains egg</span>
+                <span class="chip chip-allergen">May contain sesame</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Egg noodles, coconut milk, halal chicken, onion, garlic, ginger, spices, chilli oil, fried onion, lemon. Also called khaosuay / khsosuay.</p>
+                  <h4>Per set</h4>
+                  <p class="kcal-line"><strong>720 kcal</strong> <span>~550 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>38 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>68 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>32 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>5 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Gluten and egg (noodles). Coconut. Chilli oil may contain sesame. Contains chicken.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <label class="heat-opt"><input type="checkbox" data-non-spicy /> Non-spicy</label>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 40</p>
+                <button data-add="chicken-khao-suey" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-lux card-compact flex flex-col" id="product-chicken-pasta">
+            <div class="card-photo">
+              <img src="assets/menu/lasagne.png" alt="Fresh chicken lasagne" data-variant-photo width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Chicken pasta</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fresh · pick a shape</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-fresh">Fresh</span>
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <label class="mt-2 block text-xs font-semibold uppercase tracking-wide text-earth">
+                Pasta
+                <select class="gift-occasion" data-variant-select aria-label="Chicken pasta shape">
+                  <option value="lasagne" data-variant-label="Chicken lasagne" data-img="assets/menu/lasagne.png" selected>Lasagne</option>
+                  <option value="spaghetti" data-variant-label="Chicken spaghetti" data-img="assets/menu/spaghetti.png">Spaghetti</option>
+                  <option value="macaroni" data-variant-label="Chicken macaroni" data-img="assets/menu/macaroni.png">Macaroni</option>
+                </select>
+              </label>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains dairy</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Wheat pasta (lasagne, spaghetti, or macaroni), halal chicken, tomato, onion, cheese, milk, oil, spices.</p>
+                  <h4>Per portion</h4>
+                  <p class="kcal-line"><strong>520 kcal</strong> <span>~380 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>28 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>48 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>20 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>3 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Gluten (wheat pasta). Dairy (cheese, milk). Contains chicken. Lasagne is the cheesiest of the three.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <label class="heat-opt"><input type="checkbox" data-non-spicy /> Non-spicy</label>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 15</p>
+                <button data-add="chicken-pasta" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
           <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Frozen chicken · packs of 12</h3>
 
           <article class="card-lux card-compact flex flex-col" id="product-chicken-shami">
+            <div class="card-photo">
+              <img src="assets/menu/shami.png" alt="Chicken shami kebabs" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1713,6 +1980,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-chicken-kofta">
+            <div class="card-photo">
+              <img src="assets/menu/kofta.png" alt="Chicken kofta" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1751,6 +2021,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-chicken-chapli">
+            <div class="card-photo">
+              <img src="assets/menu/chapli.png" alt="Chicken chapli kebabs" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1789,6 +2062,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-dumplings-frozen">
+            <div class="card-photo">
+              <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80" alt="Frozen chicken dumplings" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1827,9 +2103,12 @@
             </div>
           </article>
 
-          <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Frozen beef</h3>
+          <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Frozen / fresh beef</h3>
 
           <article class="card-lux card-compact flex flex-col" id="product-beef-shami">
+            <div class="card-photo">
+              <img src="assets/menu/shami.png" alt="Beef shami kebabs" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1869,6 +2148,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-beef-kofta">
+            <div class="card-photo">
+              <img src="assets/menu/kofta.png" alt="Beef kofta" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1907,6 +2189,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-beef-chapli">
+            <div class="card-photo">
+              <img src="assets/menu/chapli.png" alt="Beef chapli kebabs" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1945,6 +2230,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-beef-dum-qeema">
+            <div class="card-photo">
+              <img src="assets/menu/dum-qeema.png" alt="Beef dum qeema" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-frozen">Frozen</span>
@@ -1981,9 +2269,105 @@
             </div>
           </article>
 
+          <article class="card-lux card-compact flex flex-col" id="product-beef-khao-suey">
+            <div class="card-photo">
+              <img src="assets/menu/khao-suey.png" alt="Fresh beef khao suey set" width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Beef khao suey set</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fresh · noodles, broth, toppings</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-fresh">Fresh</span>
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains egg</span>
+                <span class="chip chip-allergen">May contain sesame</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Egg noodles, coconut milk, halal beef, onion, garlic, ginger, spices, chilli oil, fried onion, lemon. Also called khaosuay / khsosuay.</p>
+                  <h4>Per set</h4>
+                  <p class="kcal-line"><strong>800 kcal</strong> <span>~550 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>42 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>66 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>38 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>5 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Gluten and egg (noodles). Coconut. Chilli oil may contain sesame. Contains beef.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <label class="heat-opt"><input type="checkbox" data-non-spicy /> Non-spicy</label>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 50</p>
+                <button data-add="beef-khao-suey" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-lux card-compact flex flex-col" id="product-beef-pasta">
+            <div class="card-photo">
+              <img src="assets/menu/lasagne.png" alt="Fresh beef lasagne" data-variant-photo width="800" height="500" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-4">
+              <h3 class="section-title text-xl">Beef pasta</h3>
+              <p class="mt-1 text-xs font-medium text-earth">Fresh · pick a shape</p>
+              <div class="diet-chips mt-3" aria-label="Diet">
+                <span class="chip chip-fresh">Fresh</span>
+                <span class="chip chip-diet">Halal</span>
+                <span class="chip chip-meat">Contains meat</span>
+              </div>
+              <label class="mt-2 block text-xs font-semibold uppercase tracking-wide text-earth">
+                Pasta
+                <select class="gift-occasion" data-variant-select aria-label="Beef pasta shape">
+                  <option value="lasagne" data-variant-label="Beef lasagne" data-img="assets/menu/lasagne.png" selected>Lasagne</option>
+                  <option value="spaghetti" data-variant-label="Beef spaghetti" data-img="assets/menu/spaghetti.png">Spaghetti</option>
+                  <option value="macaroni" data-variant-label="Beef macaroni" data-img="assets/menu/macaroni.png">Macaroni</option>
+                </select>
+              </label>
+              <div class="allergen-chips mt-2" aria-label="Allergens">
+                <span class="chip chip-allergen">Contains gluten</span>
+                <span class="chip chip-allergen">Contains dairy</span>
+              </div>
+              <details class="nutrition-panel">
+                <summary class="tap"><span>Nutrition &amp; allergens</span><span class="faq-chevron text-saffron-deep transition-transform" aria-hidden="true">▾</span></summary>
+                <div class="nutrition-body">
+                  <h4>Ingredients</h4>
+                  <p>Wheat pasta (lasagne, spaghetti, or macaroni), halal beef, tomato, onion, cheese, milk, oil, spices.</p>
+                  <h4>Per portion</h4>
+                  <p class="kcal-line"><strong>580 kcal</strong> <span>~380 g</span></p>
+                  <dl class="macro-grid">
+                    <div class="macro-cell"><dt>Protein</dt><dd>32 g</dd></div>
+                    <div class="macro-cell"><dt>Carbs</dt><dd>46 g</dd></div>
+                    <div class="macro-cell"><dt>Fat</dt><dd>26 g</dd></div>
+                    <div class="macro-cell"><dt>Fibre</dt><dd>3 g</dd></div>
+                  </dl>
+                  <h4>Allergens</h4>
+                  <p>Gluten (wheat pasta). Dairy (cheese, milk). Contains beef.</p>
+                  <p class="nutrition-note">Approximate; home-style portions vary.</p>
+                </div>
+              </details>
+              <label class="heat-opt"><input type="checkbox" data-non-spicy /> Non-spicy</label>
+              <div class="mt-5 flex items-center justify-between border-t border-earth/10 pt-4">
+                <p class="text-2xl font-bold text-earth">RM 20</p>
+                <button data-add="beef-pasta" class="btn-gold tap px-4 text-sm">Add to cart</button>
+              </div>
+            </div>
+          </article>
+
           <h3 class="menu-group-title sm:col-span-2 lg:col-span-3">Sauces</h3>
 
           <article class="card-lux card-compact flex flex-col" id="product-sauce-mint">
+            <div class="card-photo">
+              <img src="assets/menu/mint-sauce.png" alt="Mint sauce" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-diet">Halal</span>
@@ -2011,6 +2395,9 @@
           </article>
 
           <article class="card-lux card-compact flex flex-col" id="product-sauce-imli">
+            <div class="card-photo">
+              <img src="assets/menu/imli-sauce.png" alt="Sweet and sour imli sauce" width="800" height="500" loading="lazy" />
+            </div>
             <div class="flex flex-1 flex-col p-5">
               <div class="diet-chips" aria-label="Diet">
                 <span class="chip chip-diet">Halal</span>
@@ -2148,60 +2535,82 @@
               <h3 class="section-title text-lg">Weekly meal</h3>
               <p class="mt-1 text-xs text-muted">6 items · RM 100 · no bread</p>
               <div class="plan-picks">
-                <label>
-                  1. Rice
-                  <select class="gift-occasion" data-plan-pick="rice" aria-label="Slot 1 rice">
-                    <option value="chicken-biryani" selected>Chicken biryani</option>
-                    <option value="beef-biryani">Beef biryani</option>
-                    <option value="chicken-pulao">Chicken pulao</option>
-                    <option value="beef-pulao">Beef pulao</option>
-                    <option value="shashlik-rice">Shashlik rice</option>
-                    <option value="afghani-pulao">Afghani pulao</option>
-                  </select>
-                </label>
-                <label>
-                  2. Vegetable
-                  <select class="gift-occasion" data-plan-pick="veg" aria-label="Slot 2 vegetable">
-                    <option value="mix-veg" selected>Mix veg</option>
-                    <option value="aloo-tarkari">Aloo tarkari</option>
-                    <option value="bhindi">Bhindi</option>
-                    <option value="palak-paneer">Palak paneer</option>
-                  </select>
-                </label>
-                <label>
-                  3. Daal / karhi / chana
-                  <select class="gift-occasion" data-plan-pick="daal" aria-label="Slot 3 daal karhi or chana">
-                    <option value="daal-tadka" selected>Daal tadka</option>
-                    <option value="karhi-pakora">Karhi pakora</option>
-                    <option value="chana-salan">Chana salan</option>
-                  </select>
-                </label>
-                <label>
-                  4. Curry — meat
-                  <select class="gift-occasion" data-plan-pick="curryMeat" aria-label="Slot 4 curry meat">
-                    <option value="chicken" selected>Chicken</option>
-                    <option value="beef">Beef</option>
-                  </select>
-                </label>
-                <label>
-                  4. Curry — style
-                  <select class="gift-occasion" data-plan-pick="curryStyle" aria-label="Slot 4 curry style">
-                    <option value="qorma" selected>Qorma</option>
-                    <option value="nihari">Nihari</option>
-                    <option value="karhai">Karhai</option>
-                    <option value="handi">Handi</option>
-                  </select>
-                </label>
-                <label>
-                  5. Aloo qeema
-                  <select class="gift-occasion" data-plan-pick="qeema" aria-label="Slot 5 aloo qeema">
-                    <option value="chicken" selected>Chicken aloo qeema</option>
-                    <option value="beef">Beef aloo qeema</option>
-                  </select>
-                </label>
-                <div>
-                  <p class="text-[0.68rem] font-bold uppercase tracking-wide text-earth">6. Rice</p>
-                  <p class="plan-fixed">Zeera rice</p>
+                <div class="plan-pick">
+                  <img data-plan-thumb="rice" src="assets/menu/biryani.png" alt="Chicken biryani" width="80" height="80">
+                  <span>
+                    1. Rice
+                    <select class="gift-occasion" data-plan-pick="rice" aria-label="Slot 1 rice">
+                      <option value="chicken-biryani" data-thumb="assets/menu/biryani.png" selected>Chicken biryani</option>
+                      <option value="beef-biryani" data-thumb="assets/menu/biryani.png">Beef biryani</option>
+                      <option value="chicken-pulao" data-thumb="assets/menu/pulao.png">Chicken pulao</option>
+                      <option value="beef-pulao" data-thumb="assets/menu/pulao.png">Beef pulao</option>
+                      <option value="shashlik-rice" data-thumb="assets/menu/shashlik-rice.png">Shashlik rice</option>
+                      <option value="afghani-pulao" data-thumb="assets/menu/afghani-pulao.png">Afghani pulao</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="plan-pick">
+                  <img data-plan-thumb="veg" src="assets/menu/mix-veg.png" alt="Mix veg" width="80" height="80">
+                  <span>
+                    2. Vegetable
+                    <select class="gift-occasion" data-plan-pick="veg" aria-label="Slot 2 vegetable">
+                      <option value="mix-veg" data-thumb="assets/menu/mix-veg.png" selected>Mix veg</option>
+                      <option value="aloo-tarkari" data-thumb="assets/menu/aloo-tarkari.png">Aloo tarkari</option>
+                      <option value="bhindi" data-thumb="assets/menu/bhindi.png">Bhindi</option>
+                      <option value="palak-paneer" data-thumb="assets/menu/palak-paneer.png">Palak paneer</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="plan-pick">
+                  <img data-plan-thumb="daal" src="assets/menu/daal-tadka.png" alt="Daal tadka" width="80" height="80">
+                  <span>
+                    3. Daal / karhi / chana / khao suey
+                    <select class="gift-occasion" data-plan-pick="daal" aria-label="Slot 3 daal karhi chana or khao suey">
+                      <option value="daal-tadka" data-thumb="assets/menu/daal-tadka.png" selected>Daal tadka</option>
+                      <option value="karhi-pakora" data-thumb="assets/menu/karhi-pakora.png">Karhi pakora</option>
+                      <option value="chana-salan" data-thumb="assets/menu/chana-salan.png">Chana salan</option>
+                      <option value="khao-suey" data-thumb="assets/menu/khao-suey.png">Khao suey</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="plan-pick">
+                  <img data-plan-thumb="curryMeat" src="assets/menu/chicken-salan.png" alt="Chicken" width="80" height="80">
+                  <span>
+                    4. Curry — meat
+                    <select class="gift-occasion" data-plan-pick="curryMeat" aria-label="Slot 4 curry meat">
+                      <option value="chicken" data-thumb="assets/menu/chicken-salan.png" selected>Chicken</option>
+                      <option value="beef" data-thumb="assets/menu/dum-qeema.png">Beef</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="plan-pick">
+                  <img data-plan-thumb="curryStyle" src="assets/menu/qorma.png" alt="Qorma" width="80" height="80">
+                  <span>
+                    4. Curry — style
+                    <select class="gift-occasion" data-plan-pick="curryStyle" aria-label="Slot 4 curry style">
+                      <option value="qorma" data-thumb="assets/menu/qorma.png" selected>Qorma</option>
+                      <option value="nihari" data-thumb="assets/menu/nihari.png">Nihari</option>
+                      <option value="karhai" data-thumb="assets/menu/karhai.png">Karhai</option>
+                      <option value="handi" data-thumb="assets/menu/handi.png">Handi</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="plan-pick">
+                  <img data-plan-thumb="qeema" src="assets/menu/aloo-qeema.png" alt="Chicken aloo qeema" width="80" height="80">
+                  <span>
+                    5. Aloo qeema
+                    <select class="gift-occasion" data-plan-pick="qeema" aria-label="Slot 5 aloo qeema">
+                      <option value="chicken" data-thumb="assets/menu/aloo-qeema.png" selected>Chicken aloo qeema</option>
+                      <option value="beef" data-thumb="assets/menu/aloo-qeema.png">Beef aloo qeema</option>
+                    </select>
+                  </span>
+                </div>
+                <div class="plan-pick">
+                  <img src="assets/menu/zeera-rice.png" alt="Zeera rice" width="80" height="80" data-dish-slot="zeera" data-dish-id="zeera-rice">
+                  <div>
+                    <p class="text-[0.68rem] font-bold uppercase tracking-wide text-earth">6. Rice</p>
+                    <p class="plan-fixed">Zeera rice</p>
+                  </div>
                 </div>
               </div>
               <details class="nutrition-panel mt-4">
@@ -2229,6 +2638,99 @@
                 <button type="button" data-add="plan-weekly" class="btn-gold tap px-4 text-sm">Subscribe</button>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator" class="calc-band py-16 sm:py-20" aria-labelledby="calculator-title">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 id="calculator-title" class="section-title text-2xl sm:text-3xl">Your targets</h2>
+          <p class="body-copy mt-2 text-sm">One RM 100 box is 6 servings — not 21 meals. Tap a dish photo for dials.</p>
+
+          <form class="calc-card calc-form" id="calc-form" data-calc-form>
+            <div class="calc-row">
+              <div class="calc-field">
+                Height
+                <div class="calc-seg" role="group" aria-label="Height unit">
+                  <button type="button" class="calc-seg-btn is-on tap" data-height-unit="cm" aria-pressed="true">cm</button>
+                  <button type="button" class="calc-seg-btn tap" data-height-unit="ft" aria-pressed="false">ft/in</button>
+                </div>
+                <div data-height-cm>
+                  <input class="calc-input" name="cm" type="number" inputmode="decimal" min="120" max="220" step="0.1" placeholder="165" aria-label="Height in centimetres">
+                </div>
+                <div class="calc-ft" data-height-ft hidden>
+                  <input class="calc-input" name="ft" type="number" inputmode="numeric" min="4" max="7" placeholder="5" aria-label="Feet">
+                  <input class="calc-input" name="inch" type="number" inputmode="decimal" min="0" max="11" step="0.5" placeholder="5" aria-label="Inches">
+                </div>
+              </div>
+              <div class="calc-field">
+                Weight
+                <input class="calc-input" name="kg" type="number" inputmode="decimal" min="35" max="200" step="0.1" placeholder="kg" aria-label="Weight in kilograms">
+              </div>
+            </div>
+            <div class="calc-row">
+              <div class="calc-field">
+                Age <span class="font-medium normal-case tracking-normal text-muted">optional</span>
+                <input class="calc-input" name="age" type="number" inputmode="numeric" min="15" max="80" placeholder="30" aria-label="Age in years">
+              </div>
+              <div class="calc-field">
+                Sex <span class="font-medium normal-case tracking-normal text-muted">optional</span>
+                <div class="calc-seg" role="group" aria-label="Sex">
+                  <button type="button" class="calc-seg-btn tap" data-sex="female" aria-pressed="false">F</button>
+                  <button type="button" class="calc-seg-btn tap" data-sex="male" aria-pressed="false">M</button>
+                </div>
+              </div>
+            </div>
+            <div class="calc-field calc-field-wide">
+              Activity
+              <div class="calc-seg" role="group" aria-label="Activity">
+                <button type="button" class="calc-seg-btn tap" data-activity="sedentary" aria-pressed="false">Sedentary</button>
+                <button type="button" class="calc-seg-btn is-on tap" data-activity="light" aria-pressed="true">Light</button>
+                <button type="button" class="calc-seg-btn tap" data-activity="moderate" aria-pressed="false">Moderate</button>
+              </div>
+            </div>
+            <div class="calc-field calc-field-wide">
+              Goal
+              <div class="calc-seg" role="group" aria-label="Goal">
+                <button type="button" class="calc-seg-btn tap" data-goal="lose" aria-pressed="false">Lose</button>
+                <button type="button" class="calc-seg-btn is-on tap" data-goal="maintain" aria-pressed="true">Maintain</button>
+                <button type="button" class="calc-seg-btn tap" data-goal="gain" aria-pressed="false">Gain</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="calc-card" data-calc-out>
+            <dl class="calc-nums">
+              <div class="calc-num">
+                <dt>Daily</dt>
+                <dd><span data-calc-daily>2,000</span> <span class="text-sm font-semibold text-muted">kcal</span></dd>
+              </div>
+              <div class="calc-num">
+                <dt>Weekly</dt>
+                <dd><span data-calc-weekly>14,000</span> <span class="text-sm font-semibold text-muted">kcal</span></dd>
+              </div>
+            </dl>
+            <p class="calc-copy mt-3"><strong data-calc-box-kcal>2,340</strong> kcal from this box (6 servings)</p>
+            <p class="calc-copy-muted calc-copy" data-calc-box-macros>123 g protein · 214 g carbs · 102 g fat · 25 g fibre</p>
+            <div class="calc-bar" aria-hidden="true"><span data-calc-bar style="width:17%"></span></div>
+            <p class="calc-fill">Weekly kcal <strong data-calc-fill-kcal>17%</strong> · protein <strong data-calc-fill-pro>15%</strong></p>
+            <p class="calc-copy-muted calc-copy" data-calc-scale></p>
+            <p class="calc-copy" data-calc-gap></p>
+            <p class="calc-copy" data-calc-vs></p>
+            <p class="calc-copy-muted calc-copy" data-calc-tip></p>
+            <p class="calc-copy-muted calc-copy text-xs" data-calc-note>Approximate; not medical advice.</p>
+
+            <p class="calc-copy mt-4 text-xs font-bold uppercase tracking-wide text-earth">This box ÷ 7 days vs daily goal</p>
+            <div class="calc-dials" data-calc-macros></div>
+            <div class="calc-detail" data-calc-detail hidden></div>
+            <details class="calc-more">
+              <summary class="tap">
+                <span>More nutrients</span>
+                <span class="faq-chevron text-saffron-deep" aria-hidden="true">▾</span>
+              </summary>
+              <div class="calc-dials calc-dials-micro" data-calc-micros></div>
+            </details>
+            <p class="calc-copy-muted calc-copy text-xs">Estimates, not lab tests. Not affiliated with MyFitnessPal.</p>
           </div>
         </div>
       </section>
@@ -2269,7 +2771,7 @@
               rel="noopener noreferrer"
               class="tap inline-flex items-center gap-2 rounded-md bg-[#25d366] px-8 text-sm font-bold text-white"
             >
-              WhatsApp +60 176020325
+              WhatsApp +60 17-602 0325
             </a>
           </div>
         </div>
@@ -2311,7 +2813,14 @@
               Meal plan?
               <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
             </summary>
-            <p class="body-copy pb-4 text-sm">Weekly meal, 6 dishes, RM 100. Pick variants on the card. All non-spicy free. No bread. See <a class="font-medium text-earth hover:underline" href="#meal-plan">Weekly meal</a>.</p>
+            <p class="body-copy pb-4 text-sm">Weekly meal, 6 dishes, RM 100. Pick variants on the card. All non-spicy free. No bread. See <a class="font-medium text-earth hover:underline" href="#meal-plan">Weekly meal</a> and <a class="font-medium text-earth hover:underline" href="#calculator">Your targets</a>.</p>
+          </details>
+          <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
+            <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
+              Calories?
+              <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
+            </summary>
+            <p class="body-copy pb-4 text-sm">Height, weight, and a lose / maintain / gain goal on <a class="font-medium text-earth hover:underline" href="#calculator">Your targets</a>. The RM 100 box is 6 servings, not 21 meals. Tap a dish photo for dials. Approximate; not medical advice.</p>
           </details>
           <details class="faq-item group rounded-xl border border-earth/10 bg-cream px-5 py-2">
             <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-cocoa">
@@ -2366,7 +2875,7 @@
                   Calories and allergens?
                   <span class="faq-chevron text-saffron-deep transition-transform">▾</span>
                 </summary>
-                <p class="body-copy pb-3 text-sm">On each menu card, under Nutrition &amp; allergens. Weekly meal: open that accordion, then each slot. Approximate. Shared kitchen: dairy, gluten, nuts, sesame, mustard.</p>
+                <p class="body-copy pb-3 text-sm">On each menu card, under Nutrition &amp; allergens. Tap a dish photo for dials versus your daily goal. Weekly meal: change slots, then see <a class="font-medium text-earth hover:underline" href="#calculator">Your targets</a>. Approximate. Shared kitchen: dairy, gluten, nuts, sesame, mustard.</p>
               </details>
               <details class="faq-item group px-0 py-1">
                 <summary class="tap flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-cocoa">
@@ -2399,7 +2908,7 @@
               <dt>Service area</dt>
               <dd>Kuala Lumpur and Greater Klang Valley (Selangor)</dd>
               <dt>Order</dt>
-              <dd>WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></dd>
+              <dd>WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 17-602 0325</a></dd>
               <dt>Authentic biryani</dt>
               <dd>Rasa-e-Lazzat authentic chicken dum biryani in KL. RM 15, free raita. Halal. WhatsApp +60 176020325.</dd>
               <dt>Menu (MYR)</dt>
@@ -2407,7 +2916,7 @@
               <dt>Gifts</dt>
               <dd>Biryani is Love extras: Charm RM 18 · Single rose RM 10 · Small bouquet RM 30. Add with biryani or on their own. Rasa-e-Lazzat festive wrap only.</dd>
               <dt>Meal plan</dt>
-              <dd>Weekly meal RM 100. Six dishes. Nutrition per item in the accordion. No bread. All non-spicy free.</dd>
+              <dd>Weekly meal RM 100. Six dishes. Nutrition per item in the accordion. No bread. All non-spicy free. Calorie calculator at #calculator — 6 servings, not 21 meals.</dd>
               <dt>Site</dt>
               <dd><a class="font-medium text-cocoa hover:underline" href="https://razzat.vercel.app/">https://razzat.vercel.app/</a></dd>
             </dl>
@@ -2423,7 +2932,7 @@
             <logo-seal size="footer"></logo-seal>
             <div>
               <logo-wordmark size="footer"></logo-wordmark>
-              <p class="mt-2 text-xs text-muted">WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 176020325</a></p>
+              <p class="mt-2 text-xs text-muted">WhatsApp <a class="font-medium text-cocoa hover:underline" href="https://wa.me/60176020325">+60 17-602 0325</a></p>
             </div>
           </div>
           <p class="text-xs text-muted">© 2026 Rasa-e-Lazzat · <a class="hover:text-earth hover:underline" href="admin.html" rel="nofollow">Kitchen</a></p>
@@ -2467,8 +2976,34 @@
       </aside>
     </div>
 
+    <div id="dish-sheet" class="dish-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="dish-sheet-title">
+      <button type="button" class="dish-sheet-scrim" data-sheet-scrim aria-label="Close nutrient dials"></button>
+      <div class="dish-sheet-panel">
+        <div class="dish-sheet-head">
+          <div>
+            <h3 id="dish-sheet-title" class="section-title text-xl" data-sheet-title>Dish</h3>
+            <p class="calc-copy-muted calc-copy" data-sheet-serve></p>
+          </div>
+          <button type="button" class="dish-sheet-close tap grid place-items-center text-2xl text-muted" data-sheet-close aria-label="Close">×</button>
+        </div>
+        <p class="calc-copy text-xs font-bold uppercase tracking-wide text-earth">This serving vs daily goal</p>
+        <div class="calc-dials" data-sheet-macros></div>
+        <div class="calc-detail" data-sheet-detail hidden></div>
+        <p class="calc-copy" data-sheet-stat></p>
+        <details class="calc-more">
+          <summary class="tap">
+            <span>More nutrients</span>
+            <span class="faq-chevron text-saffron-deep" aria-hidden="true">▾</span>
+          </summary>
+          <div class="calc-dials calc-dials-micro" data-sheet-micros></div>
+        </details>
+        <p class="calc-copy-muted calc-copy text-xs">Approximate % of typical adult daily values. Not medical advice. Not affiliated with MyFitnessPal.</p>
+      </div>
+    </div>
+
     <script src="js/inventory-data.js"></script>
     <script src="js/gifts.js"></script>
+    <script src="js/calculator.js"></script>
     <script src="js/kitchen-store.js"></script>
     <script src="js/app.js"></script>
     <script src="js/pwa.js"></script>

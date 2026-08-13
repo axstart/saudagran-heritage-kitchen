@@ -806,6 +806,23 @@ h1 .logo-wordmark {
   color: var(--earth);
 }
 
+.card-photo {
+  position: relative;
+  height: 10rem;
+  overflow: hidden;
+  background: rgba(107, 62, 38, 0.08);
+}
+
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-compact .card-photo {
+  height: 9.25rem;
+}
+
 .spice-opt,
 .heat-opt {
   display: inline-flex;
@@ -883,12 +900,17 @@ h1 .logo-wordmark {
 
 .plan-picks {
   display: grid;
-  gap: 0.55rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem 0.7rem;
   margin-top: 0.85rem;
 }
 
-.plan-picks label {
-  display: block;
+.plan-picks label,
+.plan-pick {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.45rem;
+  align-items: center;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -896,11 +918,28 @@ h1 .logo-wordmark {
   color: var(--earth);
 }
 
-.plan-fixed {
-  margin-top: 0.2rem;
-  font-size: 0.85rem;
+.plan-picks img,
+.plan-pick img {
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: cover;
+  border-radius: 6px;
+  background: rgba(107, 62, 38, 0.08);
+}
+
+@media (max-width: 560px) {
+  .plan-picks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plan-picks select {
+  display: block;
+  width: 100%;
+  margin-top: 0.15rem;
+  text-transform: none;
+  letter-spacing: 0;
   font-weight: 600;
-  color: var(--cocoa);
 }
 
 .plan-nutri {
@@ -1474,6 +1513,387 @@ h1 .logo-wordmark {
   min-height: 48px;
 }
 
+/* ——— Calorie calculator + nutrient dials ——— */
+
+.calc-band {
+  background:
+    radial-gradient(ellipse 55% 40% at 8% 0%, rgba(119, 160, 71, 0.1), transparent 55%),
+    var(--cream);
+  border-top: 1px solid var(--line);
+}
+
+.calc-card {
+  margin-top: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.1rem 1.1rem 1.2rem;
+}
+
+.calc-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.calc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.calc-field-wide {
+  grid-column: 1 / -1;
+}
+
+.calc-input,
+.calc-ft {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 0.15rem;
+  padding: 0 0.7rem;
+  border: 1px solid rgba(107, 62, 38, 0.28);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--cocoa);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.calc-ft {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  border: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.calc-seg {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.calc-seg-btn {
+  flex: 1;
+  min-height: 48px;
+  border: 1px solid rgba(107, 62, 38, 0.22);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--cocoa);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.calc-seg-btn.is-on {
+  background: var(--saffron);
+  border-color: var(--saffron-deep);
+}
+
+.calc-nums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.calc-num dt {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.calc-num dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--cocoa);
+}
+
+.calc-bar {
+  margin-top: 0.85rem;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(107, 62, 38, 0.1);
+  overflow: hidden;
+}
+
+.calc-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--saffron);
+}
+
+.calc-fill {
+  margin: 0.45rem 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.calc-copy {
+  margin: 0.7rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--cocoa);
+}
+
+.calc-copy-muted {
+  color: var(--muted);
+}
+
+.calc-dials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .calc-dials {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.calc-dials-micro {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .calc-dials-micro {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+.calc-dial {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 48px;
+  padding: 0.35rem 0.15rem 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--marble);
+  color: var(--cocoa);
+}
+
+.calc-dial.is-open {
+  border-color: var(--saffron-deep);
+  box-shadow: 0 0 0 2px rgba(232, 162, 61, 0.25);
+}
+
+.calc-ring {
+  width: 4.4rem;
+  height: 4.4rem;
+}
+
+.calc-ring-track,
+.calc-ring-fill {
+  fill: none;
+  stroke-width: 7;
+}
+
+.calc-ring-track {
+  stroke: rgba(107, 62, 38, 0.12);
+}
+
+.calc-ring-fill {
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 40px 40px;
+}
+
+.calc-ring-fill.is-ok {
+  stroke: var(--herb);
+}
+
+.calc-dial[data-dial="kcal"] .calc-ring-fill.is-ok {
+  stroke: var(--saffron-deep);
+}
+
+.calc-ring-fill.is-over {
+  stroke: #d4892a;
+}
+
+.calc-ring-fill.is-high {
+  stroke: #c45c1a;
+}
+
+.calc-dial-center {
+  position: absolute;
+  top: 1.15rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.05;
+  pointer-events: none;
+}
+
+.calc-dial-center strong {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.calc-dial-center em {
+  font-size: 0.58rem;
+  font-style: normal;
+  color: var(--muted);
+}
+
+.calc-dial-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.calc-more {
+  margin-top: 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.calc-more summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 0.85rem;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.calc-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.calc-detail {
+  margin-top: 0.65rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 8px;
+  background: var(--marble);
+  border: 1px solid var(--line);
+}
+
+.calc-detail-inner h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.calc-detail-mode,
+.calc-tops {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.calc-stat {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0.55rem 0 0;
+}
+
+.calc-stat dt {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--earth);
+}
+
+.calc-stat dd {
+  margin: 0.1rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.dish-open {
+  cursor: pointer;
+}
+
+.dish-open:focus-visible {
+  outline: 2px solid var(--saffron-deep);
+  outline-offset: 2px;
+}
+
+.plan-picks img.dish-open,
+.plan-pick img.dish-open {
+  width: 3rem;
+  height: 3rem;
+}
+
+body.dish-sheet-open {
+  overflow: hidden;
+}
+
+.dish-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.dish-sheet[hidden] {
+  display: none;
+}
+
+.dish-sheet-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 27, 16, 0.45);
+}
+
+.dish-sheet-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: min(88svh, 40rem);
+  overflow: auto;
+  padding: 1rem 1.1rem 1.4rem;
+  background: var(--cream);
+  border-radius: 16px 16px 0 0;
+  border: 1px solid var(--line);
+}
+
+.dish-sheet-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.dish-sheet-close {
+  flex: 0 0 auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1481,7 +1901,8 @@ h1 .logo-wordmark {
   .card-lux,
   .btn-gold,
   .cart-drawer,
-  .toast {
+  .toast,
+  .calc-ring-fill {
     transition: none;
     animation: none;
   }

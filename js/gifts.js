@@ -62,9 +62,10 @@
     { id: "palak-paneer", label: "Palak paneer" },
   ];
   const DAAL_OPTIONS = [
-    { id: "daal-tadka", label: "Daal tadka" },
-    { id: "karhi-pakora", label: "Karhi pakora" },
-    { id: "chana-salan", label: "Chana salan" },
+    { id: "daal-tadka", label: "Daal tadka", image: "assets/menu/daal-tadka.png" },
+    { id: "karhi-pakora", label: "Karhi pakora", image: "assets/menu/karhi-pakora.png" },
+    { id: "chana-salan", label: "Chana salan", image: "assets/menu/chana-salan.png" },
+    { id: "khao-suey", label: "Khao suey", image: "assets/menu/khao-suey.png" },
   ];
   const CURRY_MEAT = [
     { id: "chicken", label: "Chicken" },
@@ -189,6 +190,13 @@
       "Chickpeas are protein and fibre; the salan is onion and spice.",
       "Vegetarian, vegan if cooked in oil. May contain mustard."
     ),
+    "khao-suey": n(
+      340, 480, 22, 48, 20, 4,
+      "Egg noodles, coconut milk, chicken or beef, onion, garlic, ginger, spices, chilli oil, fried onion, lemon.",
+      "Protein from the meat. Starch from noodles. Fat from coconut milk.",
+      "Noodles carry the broth; coconut milk is the body; meat is the protein. Also called khaosuay / khsosuay.",
+      "Contains meat. Contains gluten and egg (noodles). Coconut. Chilli oil may contain sesame."
+    ),
     "chicken-qorma": n(
       320, 420, 32, 10, 28, 2,
       "Chicken, yogurt, onion, ground spices, ghee.",
@@ -267,6 +275,51 @@
       "Vegetarian. Dairy if ghee."
     ),
   };
+
+  /* Approx. % of typical adult daily value (FDA-style) per serving. Not lab-tested. */
+  function d(iron, calcium, vita, vitc, sodium, potassium, b12) {
+    return {
+      iron: iron,
+      calcium: calcium,
+      vita: vita,
+      vitc: vitc,
+      sodium: sodium,
+      potassium: potassium,
+      b12: b12,
+    };
+  }
+
+  const PLAN_DV = {
+    "chicken-biryani": d(14, 4, 8, 12, 38, 14, 36),
+    "beef-biryani": d(28, 4, 8, 10, 40, 16, 52),
+    "chicken-pulao": d(12, 3, 4, 6, 32, 10, 32),
+    "beef-pulao": d(24, 3, 4, 6, 34, 12, 48),
+    "shashlik-rice": d(14, 4, 12, 28, 34, 14, 34),
+    "afghani-pulao": d(12, 4, 45, 8, 30, 12, 22),
+    "mix-veg": d(8, 4, 22, 30, 22, 12, 0),
+    "aloo-tarkari": d(4, 2, 4, 18, 20, 18, 0),
+    "bhindi": d(6, 6, 8, 22, 18, 10, 0),
+    "palak-paneer": d(16, 22, 90, 20, 24, 14, 4),
+    "daal-tadka": d(20, 4, 6, 8, 22, 12, 0),
+    "karhi-pakora": d(10, 18, 4, 4, 28, 8, 6),
+    "chana-salan": d(22, 6, 4, 6, 24, 12, 0),
+    "khao-suey": d(16, 6, 6, 8, 42, 12, 28),
+    "chicken-qorma": d(10, 8, 4, 4, 28, 10, 32),
+    "chicken-nihari": d(10, 4, 4, 4, 32, 10, 34),
+    "chicken-karhai": d(10, 3, 8, 12, 26, 10, 34),
+    "chicken-handi": d(10, 8, 6, 6, 28, 10, 32),
+    "beef-qorma": d(24, 8, 4, 4, 30, 12, 48),
+    "beef-nihari": d(26, 4, 4, 4, 34, 12, 52),
+    "beef-karhai": d(24, 3, 8, 10, 28, 12, 48),
+    "beef-handi": d(24, 8, 6, 6, 30, 12, 48),
+    "chicken-aloo-qeema": d(10, 3, 4, 8, 26, 14, 24),
+    "beef-aloo-qeema": d(22, 3, 4, 6, 28, 14, 40),
+    "zeera-rice": d(2, 1, 0, 0, 12, 2, 0),
+  };
+
+  Object.keys(PLAN_NUTRITION).forEach(function (id) {
+    if (PLAN_DV[id]) PLAN_NUTRITION[id].dv = PLAN_DV[id];
+  });
 
   const PLANS = {
     "plan-weekly": {
@@ -408,16 +461,75 @@
     );
   }
 
-  function renderPlanNutrition(card) {
-    const host = card.querySelector("[data-plan-nutrition]");
-    if (!host) return;
+  function picksFromCard(card) {
     const picks = defaultPicks();
+    if (!card) return picks;
     card.querySelectorAll("[data-plan-pick]").forEach((el) => {
       const key = el.getAttribute("data-plan-pick");
       if (key && el.value) picks[key] = el.value;
     });
+    return normalizePicks(picks);
+  }
+
+  function emptyDv() {
+    return { iron: 0, calcium: 0, vita: 0, vitc: 0, sodium: 0, potassium: 0, b12: 0 };
+  }
+
+  function sumNutrition(picks) {
     const rows = nutritionForPicks(picks);
-    host.innerHTML = rows.map(nutritionBlockHtml).join("");
+    const out = {
+      kcal: 0,
+      protein: 0,
+      carbs: 0,
+      fat: 0,
+      fibre: 0,
+      servingG: 0,
+      dv: emptyDv(),
+      items: [],
+    };
+    rows.forEach((row) => {
+      const data = row.data;
+      if (!data) return;
+      out.kcal += data.kcal;
+      out.protein += data.protein;
+      out.carbs += data.carbs;
+      out.fat += data.fat;
+      out.fibre += data.fibre;
+      out.servingG += data.servingG;
+      const dv = data.dv || emptyDv();
+      Object.keys(out.dv).forEach((key) => {
+        out.dv[key] += dv[key] || 0;
+      });
+      out.items.push({ id: row.id, slot: row.slot, data: data });
+    });
+    return out;
+  }
+
+  function renderPlanNutrition(card) {
+    const host = card.querySelector("[data-plan-nutrition]");
+    const picks = picksFromCard(card);
+    if (host) {
+      const rows = nutritionForPicks(picks);
+      host.innerHTML = rows.map(nutritionBlockHtml).join("");
+    }
+    syncPlanThumbs(card);
+    document.dispatchEvent(
+      new CustomEvent("lazzat:plan-picks", { detail: { picks: picks, card: card } })
+    );
+  }
+
+  function syncPlanThumbs(card) {
+    card.querySelectorAll("[data-plan-pick]").forEach((el) => {
+      const key = el.getAttribute("data-plan-pick");
+      const img = card.querySelector('[data-plan-thumb="' + key + '"]');
+      if (!img) return;
+      const opt = el.options[el.selectedIndex];
+      const src = opt && opt.getAttribute("data-thumb");
+      if (src) {
+        img.src = src;
+        img.alt = (opt.textContent || "").trim();
+      }
+    });
   }
 
   function occasionLabel(id) {
@@ -534,7 +646,10 @@
     picksKey,
     picksLines,
     PLAN_NUTRITION,
+    PLAN_DV,
     nutritionForPicks,
+    picksFromCard,
+    sumNutrition,
     renderPlanNutrition,
   };
 })(window);
