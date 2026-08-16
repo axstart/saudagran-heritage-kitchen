@@ -177,7 +177,7 @@
   }
 
   function planCard() {
-    return document.querySelector("[data-plan-card]");
+    return document.querySelector("#product-plan-weekly");
   }
 
   function currentPicks() {

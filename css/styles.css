@@ -898,6 +898,12 @@ h1 .logo-wordmark {
   border-color: var(--earth);
 }
 
+.opt-chip:disabled,
+.opt-chip.is-off {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .plan-picks {
   display: grid;
   grid-template-columns: 1fr 1fr;

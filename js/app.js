@@ -640,8 +640,99 @@
     }
   }
 
+  function kindButton(card) {
+    return card && card.querySelector("[data-kind-group] [data-variant].is-on");
+  }
+
+  function styleButton(card) {
+    return card && card.querySelector("[data-style-group] [data-variant].is-on");
+  }
+
+  function chipLabel(btn) {
+    if (!btn) return "";
+    return btn.dataset.variantLabel || btn.textContent.trim();
+  }
+
+  function syncCardOptions(card) {
+    if (!card) return;
+    const kindOn = kindButton(card);
+    const styleGroup = card.querySelector("[data-style-group]");
+    const skipStyle = !!(kindOn && kindOn.dataset.skipStyle);
+    if (styleGroup) styleGroup.hidden = skipStyle;
+
+    const select = card.querySelector("[data-style-group] [data-variant-select]");
+    const styleOn = styleButton(card);
+    const opt = select && select.options[select.selectedIndex];
+    const proteinLock = skipStyle
+      ? ""
+      : (styleOn && styleOn.dataset.protein) || (opt && opt.dataset.protein) || "";
+    const allowed = proteinLock ? proteinLock.split(",").map((s) => s.trim()) : null;
+
+    card.querySelectorAll("[data-kind-group] [data-variant]").forEach((btn) => {
+      const protein = btn.dataset.protein || "";
+      const ok = !allowed || !protein || allowed.indexOf(protein) !== -1;
+      btn.disabled = !ok;
+      btn.classList.toggle("is-off", !ok);
+    });
+
+    if (allowed && kindOn && kindOn.dataset.protein && allowed.indexOf(kindOn.dataset.protein) === -1) {
+      const first = card.querySelector(
+        '[data-kind-group] [data-variant][data-protein="' + allowed[0] + '"]'
+      );
+      if (first) {
+        card.querySelectorAll("[data-kind-group] [data-variant]").forEach((btn) => {
+          const on = btn === first;
+          btn.classList.toggle("is-on", on);
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+      }
+    }
+
+    const note = card.querySelector("[data-variant-note]");
+    const nextKind = kindButton(card);
+    const noteSource = skipStyle ? nextKind : styleOn || opt || nextKind;
+    if (note) {
+      const text = (noteSource && noteSource.dataset && noteSource.dataset.note) || "";
+      if (text) {
+        note.textContent = text;
+        note.hidden = false;
+      } else if (!nextKind || nextKind.dataset.skipStyle) {
+        note.hidden = true;
+      } else {
+        note.hidden = !text;
+      }
+    }
+
+    const priceSource = kindButton(card) || styleOn || opt;
+    if (priceSource) applyVariantMedia(card, priceSource);
+  }
+
   function variantFromCard(card) {
-    const select = card && card.querySelector("[data-variant-select]");
+    if (!card) return { id: "", variant: "", label: "" };
+    const kindOn = kindButton(card);
+    const styleOn = styleButton(card);
+    const select = card.querySelector("[data-variant-select]");
+    const skipStyle = !!(kindOn && kindOn.dataset.skipStyle);
+
+    if (kindOn) {
+      let id = kindOn.dataset.addId || "";
+      let variant = kindOn.dataset.variant || "";
+      let label = chipLabel(kindOn);
+      if (!skipStyle && select && select.closest("[data-style-group]") && select.value) {
+        const opt = select.options[select.selectedIndex];
+        const styleVar = select.value;
+        const styleLabel = (opt && (opt.dataset.variantLabel || opt.textContent.trim())) || styleVar;
+        if (opt && opt.dataset.addId) id = opt.dataset.addId;
+        variant = variant ? variant + "-" + styleVar : styleVar;
+        label = styleLabel + " · " + label;
+      } else if (!skipStyle && styleOn) {
+        const styleVar = styleOn.dataset.variant || "";
+        variant = variant ? variant + "-" + styleVar : styleVar;
+        label = chipLabel(styleOn) + " · " + label;
+      }
+      return { id: id, variant: variant, label: label };
+    }
+
     if (select && select.value) {
       const opt = select.options[select.selectedIndex];
       return {
@@ -650,12 +741,12 @@
         label: (opt && (opt.dataset.variantLabel || opt.textContent.trim())) || select.value,
       };
     }
-    const on = card && card.querySelector("[data-variant].is-on");
+    const on = card.querySelector("[data-variant].is-on");
     if (!on) return { id: "", variant: "", label: "" };
     return {
       id: on.dataset.addId || "",
       variant: on.dataset.variant || "",
-      label: on.dataset.variantLabel || on.textContent.trim(),
+      label: chipLabel(on),
     };
   }
 
@@ -676,7 +767,12 @@
     if (product && product.spicy) extra.nonSpicy = nonSpicyFromCard(card);
     if (product && product.kind === "plan") {
       extra.period = periodFromCard(card) || "weekly";
-      extra.picks = picksFromCard(card);
+      extra.picks =
+        product.id === "plan-veg-weekly"
+          ? Gifts
+            ? Gifts.defaultVegPicks()
+            : { box: "veg" }
+          : picksFromCard(card);
     }
     const chosen = variantFromCard(card);
     if (chosen.variant) {
@@ -717,10 +813,14 @@
         btn.classList.toggle("is-on", on);
         btn.setAttribute("aria-pressed", on ? "true" : "false");
       });
-      const note = group.parentElement && group.parentElement.querySelector("[data-variant-note]");
-      if (note) note.hidden = variantBtn.dataset.variant !== "biryani";
       const card = variantBtn.closest("article");
-      applyVariantMedia(card, variantBtn);
+      if (card && (card.querySelector("[data-kind-group]") || card.querySelector("[data-style-group]"))) {
+        syncCardOptions(card);
+      } else {
+        const note = group.parentElement && group.parentElement.querySelector("[data-variant-note]");
+        if (note) note.hidden = variantBtn.dataset.variant !== "biryani";
+        applyVariantMedia(card, variantBtn);
+      }
       return;
     }
 
@@ -807,8 +907,12 @@
     const variantSelect = e.target.closest("[data-variant-select]");
     if (variantSelect) {
       const card = variantSelect.closest("article");
-      const opt = variantSelect.options[variantSelect.selectedIndex];
-      applyVariantMedia(card, opt);
+      if (card && (card.querySelector("[data-kind-group]") || variantSelect.closest("[data-style-group]"))) {
+        syncCardOptions(card);
+      } else {
+        const opt = variantSelect.options[variantSelect.selectedIndex];
+        applyVariantMedia(card, opt);
+      }
       return;
     }
     const occ = e.target.closest("[data-cart-occasion]");
@@ -861,6 +965,10 @@
     heroVideo.removeAttribute("autoplay");
     heroVideo.setAttribute("hidden", "");
   }
+
+  document.querySelectorAll("article").forEach((card) => {
+    if (card.querySelector("[data-kind-group], [data-style-group]")) syncCardOptions(card);
+  });
 
   setEra("allahabad");
   renderCart();

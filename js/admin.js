@@ -311,7 +311,7 @@
             <tbody>${body}</tbody>
           </table>
         </div>
-        <p class="cost-note">Hover a row for the KL retail note. Panjiri list is RM 40. Biryani RM 15 is the public promo (was RM 32).</p>
+        <p class="cost-note">Hover a row for the KL retail note. Panjiri list is RM 40. Chicken biryani is RM 15; beef biryani is RM 25.</p>
       </div>`;
   }
 

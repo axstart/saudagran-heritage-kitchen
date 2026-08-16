@@ -274,6 +274,34 @@
       "Cumin is flavour; rice is the carbohydrate next to the salan.",
       "Vegetarian. Dairy if ghee."
     ),
+    "veg-biryani": n(
+      360, 620, 12, 88, 18, 7,
+      "Basmati rice, mixed vegetables, potato, onion, tomato, spices, oil.",
+      "Fibre from vegetables. Starch from rice and potato.",
+      "Vegetables and rice in one dum pot.",
+      "Vegetarian. May contain milk if yogurt is in the masala; may contain gluten or mustard."
+    ),
+    "bhindi-piyaz": n(
+      260, 230, 5, 18, 15, 6,
+      "Okra (bhindi), onion (piyaz), tomato, oil, spices.",
+      "Fibre and vitamin C from okra.",
+      "Okra and onion cooked together.",
+      "Vegetarian, vegan if cooked in oil. May contain mustard."
+    ),
+    "aloo-matar": n(
+      300, 290, 8, 36, 12, 7,
+      "Potato (aalu), peas (matar), onion, tomato, oil, spices.",
+      "Potassium from potato. Some protein from peas.",
+      "Peas add a little protein to the potato sabzi.",
+      "Vegetarian, vegan if cooked in oil. May contain mustard."
+    ),
+    "dahi-phulki": n(
+      280, 340, 11, 30, 16, 3,
+      "Gram-flour phulki, yogurt, tamarind, spices.",
+      "Calcium from yogurt. Protein from gram flour.",
+      "Yogurt cools the phulki.",
+      "Vegetarian, not vegan. Contains dairy. May contain gluten."
+    ),
   };
 
   /* Approx. % of typical adult daily value (FDA-style) per serving. Not lab-tested. */
@@ -315,6 +343,10 @@
     "chicken-aloo-qeema": d(10, 3, 4, 8, 26, 14, 24),
     "beef-aloo-qeema": d(22, 3, 4, 6, 28, 14, 40),
     "zeera-rice": d(2, 1, 0, 0, 12, 2, 0),
+    "veg-biryani": d(10, 4, 18, 20, 30, 14, 0),
+    "bhindi-piyaz": d(6, 6, 8, 22, 18, 10, 0),
+    "aloo-matar": d(8, 3, 12, 22, 20, 16, 0),
+    "dahi-phulki": d(10, 16, 4, 4, 26, 8, 6),
   };
 
   Object.keys(PLAN_NUTRITION).forEach(function (id) {
@@ -330,7 +362,25 @@
       periods: [{ id: "weekly", label: "Weekly", price: 100 }],
       serving: "Six homemade dishes. No bread or roti.",
     },
+    "plan-veg-weekly": {
+      id: "plan-veg-weekly",
+      name: "Weekly menu for vegetarians",
+      kicker: "6 vegetarian dishes",
+      defaultPeriod: "weekly",
+      periods: [{ id: "weekly", label: "Weekly", price: 80 }],
+      serving: "Six vegetarian dishes. No bread or roti.",
+    },
   };
+
+  const VEG_BOX_LINES = [
+    "1. Vegetable biryani",
+    "2. Bhindi piyaz sabzi",
+    "3. Daal tadka",
+    "4. Aalu mator sabzi",
+    "5. Dahi phulki",
+    "6. Zeera rice",
+  ];
+  const VEG_BOX_KEYS = ["veg-biryani", "bhindi-piyaz", "daal-tadka", "aloo-matar", "dahi-phulki", "zeera-rice"];
 
   function findLabel(list, id) {
     const row = list.find((o) => o.id === id);
@@ -348,7 +398,16 @@
     };
   }
 
+  function defaultVegPicks() {
+    return { box: "veg" };
+  }
+
+  function isVegBox(picks) {
+    return !!(picks && picks.box === "veg");
+  }
+
   function normalizePicks(raw) {
+    if (isVegBox(raw)) return defaultVegPicks();
     const base = defaultPicks();
     if (!raw || typeof raw !== "object") return base;
     if (RICE_OPTIONS.some((o) => o.id === raw.rice)) base.rice = raw.rice;
@@ -361,11 +420,13 @@
   }
 
   function picksKey(picks) {
+    if (isVegBox(picks)) return "veg";
     const p = normalizePicks(picks);
     return [p.rice, p.veg, p.daal, p.curryMeat, p.curryStyle, p.qeema].join("|");
   }
 
   function picksLines(picks) {
+    if (isVegBox(picks)) return VEG_BOX_LINES.slice();
     const p = normalizePicks(picks);
     const curry = findLabel(CURRY_MEAT, p.curryMeat) + " " + findLabel(CURRY_STYLE, p.curryStyle).toLowerCase();
     return [
@@ -379,6 +440,7 @@
   }
 
   function nutritionKeyForPicks(picks) {
+    if (isVegBox(picks)) return VEG_BOX_KEYS.slice();
     const p = normalizePicks(picks);
     return [
       p.rice,
@@ -462,6 +524,9 @@
   }
 
   function picksFromCard(card) {
+    if (card && card.getAttribute("data-plan-card") === "plan-veg-weekly") {
+      return defaultVegPicks();
+    }
     const picks = defaultPicks();
     if (!card) return picks;
     card.querySelectorAll("[data-plan-pick]").forEach((el) => {
@@ -642,6 +707,7 @@
     periodLabel,
     allowedOccasions,
     defaultPicks,
+    defaultVegPicks,
     normalizePicks,
     picksKey,
     picksLines,
